@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fargo Tire Service specials and coupons</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Barlow:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="font-family: 'Barlow', system-ui, sans-serif; color: #1F2328; background: #FFFFFF; font-size: 17px; line-height: 1.55;">
+
+<sc-if value="{{showHoliday}}" hint-placeholder-val="{{true}}">
+<div style="background: {{red}}; color: #FFFFFF;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 10px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-weight: 600; font-size: 16px;">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
+<span style="flex: 1 1 260px;">Thanksgiving hours: Closed Thursday, Nov. 26. Closing at 3:00 PM Wednesday, Nov. 25.</span>
+<a href="Hours.dc.html" style="color: #FFFFFF; font-weight: 700; text-decoration: underline; text-underline-offset: 3px;">All hours</a>
+</div>
+</div>
+</sc-if>
+
+<div style="background: {{ink}}; color: #E6EAEE; font-size: 15px;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 8px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 24px;">
+<a href="tel:+17012327177" style="color: #FFFFFF; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>(701) 232-7177</a>
+<span style="display: inline-flex; align-items: center; gap: 8px;"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{status}}</span>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Fargo+Tire+Service+2020+Main+Ave+Fargo+ND+58103" style="color: #E6EAEE; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>2020 Main Ave, Fargo</a>
+</div>
+</div>
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #E3E6EA;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 14px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px;">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: {{ink}}; flex: 0 1 auto; min-width: 0;">
+<div style="width: 60px; height: 60px; border-radius: 50%; background: #FFFFFF; border: 3px solid {{red}}; display: flex; align-items: center; justify-content: center; overflow: hidden; box-sizing: border-box;"><img src="/_blob/324a14186336fa5d81d7be08b4c9e1aa" alt="" style="width: 80%; height: auto; display: block;"></div>
+<div style="display: flex; flex-direction: column; line-height: 1;">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(24px, 6.4vw, 30px); letter-spacing: 0.02em; text-transform: uppercase; color: {{blue}};">Fargo Tire Service</span>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #4B5563; margin-top: 5px;">Locally owned since 1950</span>
+</div>
+</a>
+<nav aria-label="Main" style="flex: 1 1 420px; display: flex; gap: 4px 22px; overflow-x: auto; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap;">
+<a href="Main.dc.html#serve" style="color: {{ink}}; text-decoration: none; padding: 8px 0;">Tires</a>
+<a href="Main.dc.html#serve" style="color: {{ink}}; text-decoration: none; padding: 8px 0;">Services</a>
+<a href="Main.dc.html#serve" style="color: {{ink}}; text-decoration: none; padding: 8px 0;">Commercial &amp; Farm</a>
+<a href="Specials.dc.html" aria-current="page" style="color: {{red}}; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 3px; padding: 8px 0;">Specials</a>
+<a href="Hours.dc.html" style="color: {{ink}}; text-decoration: none; padding: 8px 0;">Hours</a>
+<a href="Main.dc.html#blog" style="color: {{ink}}; text-decoration: none; padding: 8px 0;">Blog</a>
+<a href="Main.dc.html#difference" style="color: {{ink}}; text-decoration: none; padding: 8px 0;">About</a>
+</nav>
+<a href="Main.dc.html#quote" style="background: {{red}}; color: #FFFFFF; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: 0.04em; text-transform: uppercase; padding: 12px 20px; border-radius: 6px; flex: 0 0 auto;">Request a Quote</a>
+</div>
+</header>
+
+<section aria-labelledby="page-h" style="background: {{blue}}; color: #FFFFFF;">
+<div style="max-width: 1200px; margin: 0 auto; padding: clamp(36px, 5vw, 56px) clamp(16px, 4vw, 40px);">
+<h1 id="page-h" style="margin: 0 0 10px; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(44px, 6vw, 72px); line-height: 1; text-transform: uppercase;">Specials &amp; coupons</h1>
+<p style="margin: 0; font-size: 19px; color: #EEF4FB; max-width: 680px;">Show the coupon at the counter or on your phone. One coupon per visit unless it says otherwise.</p>
+</div>
+</section>
+
+<section aria-labelledby="featured-h" style="padding: clamp(36px, 5vw, 56px) 0 12px;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px);">
+<h2 id="featured-h" style="margin: 0 0 16px; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 28px; text-transform: uppercase; color: {{ink}};">Featured special</h2>
+<article style="display: flex; flex-wrap: wrap; border-radius: 12px; overflow: hidden; border: 1px solid #E3E6EA; box-shadow: 0 1px 2px rgba(16,24,40,0.08);">
+<div style="flex: 1 1 300px; min-height: 240px; background: {{red}}; color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px; gap: 4px;">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: {{red}}; background: #FFFFFF; padding: 3px 8px; border-radius: 4px;">Sample</span>
+<p style="margin: 8px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(64px, 8vw, 96px); line-height: 0.9;">$15 OFF</p>
+<p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 0.04em;">Winter changeover</p>
+</div>
+<div style="flex: 1.6 1 380px; padding: clamp(22px, 3vw, 36px); display: flex; flex-direction: column; gap: 10px; background: #FFFFFF;">
+<h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 34px; line-height: 1.05; text-transform: uppercase; color: {{ink}};">Swap to your winter set before the snow</h3>
+<p style="margin: 0; color: #4B5563; font-size: 18px;">We'll mount and balance your winter tires and check the pressure on all four. Passenger and light truck.</p>
+<p style="margin: 4px 0 0; font-weight: 700; color: {{ink}};">Valid through Dec. 15, 2026</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
+<a href="Main.dc.html#quote" style="background: {{blue}}; color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 12px 18px; border-radius: 6px;">Request this special</a>
+<a href="tel:+17012327177" style="color: {{blue}}; text-decoration: none; font-weight: 700; padding: 10px 16px; border-radius: 6px; border: 2px solid {{blue}};">Call (701) 232-7177</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="all-h" style="padding: clamp(28px, 4vw, 44px) 0 clamp(44px, 6vw, 72px);">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px);">
+<h2 id="all-h" style="margin: 0 0 16px; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 28px; text-transform: uppercase; color: {{ink}};">All coupons</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px;">
+
+<article style="border: 2px dashed #9AA4AE; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 6px; background: #FFFFFF;">
+<span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4B5563; background: #E9ECEF; padding: 3px 8px; border-radius: 4px;">Sample</span>
+<p style="margin: 6px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 46px; line-height: 1; color: {{red}};">$20 OFF</p>
+<h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; color: {{ink}};">4-wheel alignment</h3>
+<p style="margin: 0; color: #4B5563; font-size: 15px;">Cars and pickups. One coupon per visit.</p>
+<p style="margin: 8px 0 12px; font-weight: 700; font-size: 15px; color: {{ink}};">Valid through Nov. 30, 2026</p>
+<button type="button" style="margin-top: auto; align-self: flex-start; font: inherit; font-weight: 700; color: {{blue}}; background: #FFFFFF; border: 2px solid {{blue}}; border-radius: 6px; padding: 9px 16px; cursor: pointer;">Print coupon</button>
+</article>
+
+<article style="border: 2px dashed #9AA4AE; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 6px; background: #FFFFFF;">
+<span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4B5563; background: #E9ECEF; padding: 3px 8px; border-radius: 4px;">Sample</span>
+<p style="margin: 6px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 46px; line-height: 1; color: {{red}};">10% OFF</p>
+<h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; color: {{ink}};">A set of 4 tires</h3>
+<p style="margin: 0; color: #4B5563; font-size: 15px;">Passenger and light truck tires, mounted and balanced.</p>
+<p style="margin: 8px 0 12px; font-weight: 700; font-size: 15px; color: {{ink}};">Valid through Dec. 31, 2026</p>
+<button type="button" style="margin-top: auto; align-self: flex-start; font: inherit; font-weight: 700; color: {{blue}}; background: #FFFFFF; border: 2px solid {{blue}}; border-radius: 6px; padding: 9px 16px; cursor: pointer;">Print coupon</button>
+</article>
+
+<article style="border: 2px dashed #9AA4AE; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 6px; background: #FFFFFF;">
+<span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4B5563; background: #E9ECEF; padding: 3px 8px; border-radius: 4px;">Sample</span>
+<p style="margin: 6px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 46px; line-height: 1; color: {{red}};">FREE</p>
+<h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; color: {{ink}};">Tire siping</h3>
+<p style="margin: 0; color: #4B5563; font-size: 15px;">With the purchase of 4 winter tires.</p>
+<p style="margin: 8px 0 12px; font-weight: 700; font-size: 15px; color: {{ink}};">Valid through Dec. 31, 2026</p>
+<button type="button" style="margin-top: auto; align-self: flex-start; font: inherit; font-weight: 700; color: {{blue}}; background: #FFFFFF; border: 2px solid {{blue}}; border-radius: 6px; padding: 9px 16px; cursor: pointer;">Print coupon</button>
+</article>
+
+<article style="border: 2px dashed #9AA4AE; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 6px; background: #FFFFFF;">
+<span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4B5563; background: #E9ECEF; padding: 3px 8px; border-radius: 4px;">Sample</span>
+<p style="margin: 6px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 46px; line-height: 1; color: {{red}};">$10 OFF</p>
+<h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; color: {{ink}};">Oil, lube and filter</h3>
+<p style="margin: 0; color: #4B5563; font-size: 15px;">Most cars and pickups. Synthetic extra.</p>
+<p style="margin: 8px 0 12px; font-weight: 700; font-size: 15px; color: {{ink}};">Valid through Nov. 30, 2026</p>
+<button type="button" style="margin-top: auto; align-self: flex-start; font: inherit; font-weight: 700; color: {{blue}}; background: #FFFFFF; border: 2px solid {{blue}}; border-radius: 6px; padding: 9px 16px; cursor: pointer;">Print coupon</button>
+</article>
+
+<article style="border: 2px dashed #9AA4AE; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 6px; background: #FFFFFF;">
+<span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4B5563; background: #E9ECEF; padding: 3px 8px; border-radius: 4px;">Sample</span>
+<p style="margin: 6px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 46px; line-height: 1; color: {{red}};">$25 OFF</p>
+<h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; color: {{ink}};">Brake service</h3>
+<p style="margin: 0; color: #4B5563; font-size: 15px;">Per axle, pads or shoes. Cars and pickups.</p>
+<p style="margin: 8px 0 12px; font-weight: 700; font-size: 15px; color: {{ink}};">Valid through Dec. 31, 2026</p>
+<button type="button" style="margin-top: auto; align-self: flex-start; font: inherit; font-weight: 700; color: {{blue}}; background: #FFFFFF; border: 2px solid {{blue}}; border-radius: 6px; padding: 9px 16px; cursor: pointer;">Print coupon</button>
+</article>
+
+<article style="border: 2px dashed #9AA4AE; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 6px; background: #FFFFFF;">
+<span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4B5563; background: #E9ECEF; padding: 3px 8px; border-radius: 4px;">Sample</span>
+<p style="margin: 6px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 46px; line-height: 1; color: {{red}};">FREE</p>
+<h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; color: {{ink}};">Nitrogen fill</h3>
+<p style="margin: 0; color: #4B5563; font-size: 15px;">With any set of 4 tires.</p>
+<p style="margin: 8px 0 12px; font-weight: 700; font-size: 15px; color: {{ink}};">Valid through Dec. 31, 2026</p>
+<button type="button" style="margin-top: auto; align-self: flex-start; font: inherit; font-weight: 700; color: {{blue}}; background: #FFFFFF; border: 2px solid {{blue}}; border-radius: 6px; padding: 9px 16px; cursor: pointer;">Print coupon</button>
+</article>
+
+</div>
+<p style="margin: 22px 0 0; color: #4B5563; font-size: 15px;">Specials change often. Call <a href="tel:+17012327177" style="color: {{blue}}; font-weight: 700;">(701) 232-7177</a> to check today's deals, or ask about current manufacturer rebates.</p>
+</div>
+</section>
+
+<section aria-labelledby="cta-h" style="background: #F3F4F6;">
+<div style="max-width: 1200px; margin: 0 auto; padding: clamp(36px, 5vw, 56px) clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px;">
+<div>
+<h2 id="cta-h" style="margin: 0 0 6px; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(30px, 4vw, 40px); text-transform: uppercase; color: {{ink}};">Need a price on tires?</h2>
+<p style="margin: 0; color: #4B5563; font-size: 18px;">Tell us what you drive or run, and we'll get back to you.</p>
+</div>
+<a href="Main.dc.html#quote" style="background: {{red}}; color: #FFFFFF; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 21px; letter-spacing: 0.04em; text-transform: uppercase; padding: 14px 26px; border-radius: 6px;">Request a Quote</a>
+</div>
+</section>
+
+<footer style="background: {{ink}}; color: #D7DCE1; font-size: 16px;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 52px clamp(16px, 4vw, 40px) 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 32px;">
+<div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+<div style="width: 96px; height: 96px; border-radius: 50%; background: #FFFFFF; border: 4px solid {{red}}; display: flex; align-items: center; justify-content: center; overflow: hidden; box-sizing: border-box;"><img src="/_blob/324a14186336fa5d81d7be08b4c9e1aa" alt="" style="width: 76%; height: auto; display: block;"></div>
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.02em; text-transform: uppercase; color: #FFFFFF; line-height: 1;">Fargo Tire Service</span>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;">Since 1950</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<h2 style="margin: 0 0 4px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; color: #FFFFFF;">Visit</h2>
+<span>2020 Main Ave</span>
+<span>Fargo, ND 58103</span>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Fargo+Tire+Service+2020+Main+Ave+Fargo+ND+58103" style="color: #FFFFFF; font-weight: 700;">Get directions</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<h2 style="margin: 0 0 4px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; color: #FFFFFF;">Call</h2>
+<a href="tel:+17012327177" style="color: #FFFFFF; font-weight: 700; text-decoration: none;">(701) 232-7177</a>
+<span>Toll free 800-365-2161</span>
+<span>Fax (701) 232-2939</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<h2 style="margin: 0 0 4px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; color: #FFFFFF;">Hours</h2>
+<span>Mon to Fri: 7:30 AM to 5:30 PM</span>
+<span>Sat: 7:30 AM to 12:00 PM</span>
+<span>Sun: Closed</span>
+<a href="Hours.dc.html" style="color: #FFFFFF; font-weight: 700;">Holiday hours</a>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(255,255,255,0.15);">
+<div style="max-width: 1200px; margin: 0 auto; padding: 16px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; font-size: 14px;">
+<span>© 2026 Fargo Tire Service</span>
+<span>Locally owned and operated since 1950</span>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"blue":{"editor":"color","default":"#1D4F91","section":"Brand colors"},"red":{"editor":"color","default":"#C62828","section":"Brand colors"},"charcoal":{"editor":"color","default":"#24292E","section":"Brand colors"},"showHolidayBar":{"editor":"boolean","default":true,"section":"Holiday hours"},"$preview":{"width":1440,"height":2260}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      blue: this.props.blue ?? '#1D4F91',
+      red: this.props.red ?? '#C62828',
+      ink: this.props.charcoal ?? '#24292E',
+      showHoliday: this.props.showHolidayBar ?? true,
+      status: this.openStatus()
+    };
+  }
+  openStatus() {
+    const week = [null, [7.5, 17.5], [7.5, 17.5], [7.5, 17.5], [7.5, 17.5], [7.5, 17.5], [7.5, 12]];
+    const special = {
+      '2026-11-25': { close: 15, label: 'Thanksgiving Eve' },
+      '2026-11-26': { closed: true, label: 'Thanksgiving' },
+      '2026-12-24': { close: 12, label: 'Christmas Eve' },
+      '2026-12-25': { closed: true, label: 'Christmas' },
+      '2027-01-01': { closed: true, label: "New Year's Day" }
+    };
+    const pad = (n) => String(n).padStart(2, '0');
+    const key = (d) => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+    const fmt = (h) => {
+      const hr = Math.floor(h);
+      const m = Math.round((h - hr) * 60);
+      return (((hr + 11) % 12) + 1) + ':' + pad(m) + (hr >= 12 ? ' PM' : ' AM');
+    };
+    const hoursFor = (d) => {
+      const s = special[key(d)];
+      const base = week[d.getDay()];
+      if (s && s.closed) return { hrs: null, label: s.label };
+      if (s) return { hrs: [s.open ?? (base ? base[0] : 7.5), s.close], label: s.label };
+      return { hrs: base, label: null };
+    };
+    const now = new Date();
+    const h = now.getHours() + now.getMinutes() / 60;
+    const today = hoursFor(now);
+    if (today.hrs && h >= today.hrs[0] && h < today.hrs[1]) return 'Open now · Closes ' + fmt(today.hrs[1]);
+    if (today.hrs && h < today.hrs[0]) return 'Opens today at ' + fmt(today.hrs[0]);
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    for (let i = 1; i <= 7; i++) {
+      const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+      const x = hoursFor(d);
+      if (x.hrs) {
+        const lead = (!today.hrs && today.label) ? 'Closed today for ' + today.label : 'Closed now';
+        return lead + ' · Opens ' + (i === 1 ? 'tomorrow' : days[d.getDay()]) + ' at ' + fmt(x.hrs[0]);
+      }
+    }
+    return 'Call for hours';
+  }
+}
+</script>
+</body>
+</html>

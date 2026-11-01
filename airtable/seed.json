@@ -1,0 +1,631 @@
+{
+  "_about": "Starter records for the Airtable base, keyed by table name, using the field names in schema.json. Facts come from the current fargotire.com, its About page, and the Goodyear dealer listing (hours). Rows marked SAMPLE are there to test the layout: they start hidden (Show unticked) and must be replaced or deleted before launch. Hours and holiday dates are unconfirmed until Paul signs off.",
+  "Business Info": [
+    {
+      "Name": "Fargo Tire Service",
+      "Legal Name": "Fargo Tire Service, Inc.",
+      "Tagline": "Boy, have we got tires!",
+      "Founded": 1950,
+      "Street": "2020 Main Ave",
+      "City": "Fargo",
+      "State": "ND",
+      "ZIP": "58103",
+      "Phone": "(701) 232-7177",
+      "Toll Free": "800-365-2161",
+      "Fax": "(701) 232-2939",
+      "After Hours Note": "Our service trucks take after-hours calls for trucks, farms and job sites. After-hours rates may apply.",
+      "Time Zone": "America/Chicago"
+    }
+  ],
+  "Hours": [
+    {
+      "Day": "Monday",
+      "Order": 1,
+      "Opens": "7:30 AM",
+      "Closes": "5:30 PM",
+      "Closed": false
+    },
+    {
+      "Day": "Tuesday",
+      "Order": 2,
+      "Opens": "7:30 AM",
+      "Closes": "5:30 PM",
+      "Closed": false
+    },
+    {
+      "Day": "Wednesday",
+      "Order": 3,
+      "Opens": "7:30 AM",
+      "Closes": "5:30 PM",
+      "Closed": false
+    },
+    {
+      "Day": "Thursday",
+      "Order": 4,
+      "Opens": "7:30 AM",
+      "Closes": "5:30 PM",
+      "Closed": false
+    },
+    {
+      "Day": "Friday",
+      "Order": 5,
+      "Opens": "7:30 AM",
+      "Closes": "5:30 PM",
+      "Closed": false
+    },
+    {
+      "Day": "Saturday",
+      "Order": 6,
+      "Opens": "7:30 AM",
+      "Closes": "12:00 PM",
+      "Closed": false
+    },
+    {
+      "Day": "Sunday",
+      "Order": 7,
+      "Closed": true
+    }
+  ],
+  "Special Hours": [
+    {
+      "Label": "Thanksgiving Eve",
+      "Date": "2026-11-25",
+      "Type": "Closing Early",
+      "Closes": "3:00 PM",
+      "Show From Days": 14,
+      "Show": false
+    },
+    {
+      "Label": "Thanksgiving",
+      "Date": "2026-11-26",
+      "Type": "Closed",
+      "Show From Days": 14,
+      "Show": false
+    },
+    {
+      "Label": "Christmas Eve",
+      "Date": "2026-12-24",
+      "Type": "Closing Early",
+      "Closes": "12:00 PM",
+      "Show From Days": 14,
+      "Show": false
+    },
+    {
+      "Label": "Christmas",
+      "Date": "2026-12-25",
+      "Type": "Closed",
+      "Show From Days": 14,
+      "Show": false
+    },
+    {
+      "Label": "New Year's Day",
+      "Date": "2027-01-01",
+      "Type": "Closed",
+      "Show From Days": 14,
+      "Show": false
+    }
+  ],
+  "Coupons": [
+    {
+      "Title": "SAMPLE Alignment $20 off",
+      "Offer Type": "Dollars Off",
+      "Amount": 20,
+      "Applies To": "4-wheel alignment",
+      "Details": "Cars and pickups.",
+      "Fine Print": "One coupon per visit.",
+      "Expires": "2026-11-30",
+      "Featured": true,
+      "Order": 10,
+      "Show": false
+    },
+    {
+      "Title": "SAMPLE Set of 4 tires 10% off",
+      "Offer Type": "Percent Off",
+      "Amount": 10,
+      "Applies To": "A set of 4 tires",
+      "Details": "Passenger and light truck tires, mounted and balanced.",
+      "Expires": "2026-12-31",
+      "Featured": true,
+      "Order": 20,
+      "Show": false
+    },
+    {
+      "Title": "SAMPLE Free siping with winter tires",
+      "Offer Type": "Free",
+      "Applies To": "Tire siping",
+      "Details": "With the purchase of 4 winter tires.",
+      "Expires": "2026-12-31",
+      "Featured": true,
+      "Order": 30,
+      "Show": false
+    },
+    {
+      "Title": "SAMPLE Oil change $10 off",
+      "Offer Type": "Dollars Off",
+      "Amount": 10,
+      "Applies To": "Oil, lube and filter",
+      "Details": "Most cars and pickups. Synthetic extra.",
+      "Expires": "2026-11-30",
+      "Featured": false,
+      "Order": 40,
+      "Show": false
+    },
+    {
+      "Title": "SAMPLE Brakes $25 off",
+      "Offer Type": "Dollars Off",
+      "Amount": 25,
+      "Applies To": "Brake service",
+      "Details": "Per axle, pads or shoes. Cars and pickups.",
+      "Expires": "2026-12-31",
+      "Featured": false,
+      "Order": 50,
+      "Show": false
+    },
+    {
+      "Title": "SAMPLE Free nitrogen with 4 tires",
+      "Offer Type": "Free",
+      "Applies To": "Nitrogen fill",
+      "Details": "With any set of 4 tires.",
+      "Expires": "2026-12-31",
+      "Featured": false,
+      "Order": 60,
+      "Show": false
+    }
+  ],
+  "Services": [
+    {
+      "Name": "Passenger & Light Truck Tires",
+      "Slug": "passenger-light-truck-tires",
+      "Category": "Tires",
+      "Summary": "Tires for cars, pickups and SUVs from Michelin, BFGoodrich, Goodyear, Uniroyal and more. Free road hazard coverage on passenger tires you buy here.",
+      "Order": 10,
+      "Show": true
+    },
+    {
+      "Name": "Semi & Commercial Truck Tires",
+      "Slug": "semi-commercial-truck-tires",
+      "Category": "Commercial",
+      "Summary": "Medium truck tires, computer balancing and truck alignment to keep your trucks working.",
+      "Order": 20,
+      "Show": true
+    },
+    {
+      "Name": "Farm & Ag Tires",
+      "Slug": "farm-ag-tires",
+      "Category": "Farm & Ag",
+      "Summary": "Farm tires sold, mounted and serviced, with on-site service available.",
+      "Order": 30,
+      "Show": true
+    },
+    {
+      "Name": "Industrial & Off-the-Road Tires",
+      "Slug": "industrial-otr-tires",
+      "Category": "Commercial",
+      "Summary": "Industrial and off-the-road tires, with foam fill available for equipment that can't afford a flat.",
+      "Order": 40,
+      "Show": true
+    },
+    {
+      "Name": "ATV, Lawn & Garden and Trailer Tires",
+      "Slug": "atv-lawn-garden-trailer-tires",
+      "Category": "Tires",
+      "Summary": "Tires for ATVs, lawn and garden equipment, and boat and utility trailers.",
+      "Order": 50,
+      "Show": true
+    },
+    {
+      "Name": "Hard-to-Find Tires",
+      "Slug": "hard-to-find-tires",
+      "Category": "Tires",
+      "Summary": "Odd size or hard to track down? Finding hard-to-find tires is one of our specialties.",
+      "Order": 60,
+      "Show": true
+    },
+    {
+      "Name": "On-Site & Roadside Tire Service",
+      "Slug": "on-site-roadside-tire-service",
+      "Category": "On-Site",
+      "Summary": "Fully equipped service trucks, some with cranes, come to your job site. Any tire, any size, any time. After-hours rates may apply.",
+      "Order": 70,
+      "Show": true
+    },
+    {
+      "Name": "Wheel Alignment",
+      "Slug": "wheel-alignment",
+      "Category": "Service & Repair",
+      "Summary": "Computerized four-wheel alignment for cars and pickups, domestic or foreign, plus truck alignment.",
+      "Order": 80,
+      "Show": true
+    },
+    {
+      "Name": "Tire Balancing",
+      "Slug": "tire-balancing",
+      "Category": "Service & Repair",
+      "Summary": "Computer balancing for passenger, light truck and truck tires.",
+      "Order": 90,
+      "Show": true
+    },
+    {
+      "Name": "Tire Repair & Rotation",
+      "Slug": "tire-repair-rotation",
+      "Category": "Service & Repair",
+      "Summary": "Flat repair and rotation. Free rotation, air pressure check and inspection with tire purchase.",
+      "Order": 100,
+      "Show": true
+    },
+    {
+      "Name": "Nitrogen Inflation",
+      "Slug": "nitrogen-inflation",
+      "Category": "Service & Repair",
+      "Summary": "Nitrogen tire inflation is available. Ask us whether it's right for your vehicle.",
+      "Order": 110,
+      "Show": true
+    },
+    {
+      "Name": "Tire Siping",
+      "Slug": "tire-siping",
+      "Category": "Service & Repair",
+      "Summary": "Siping cuts thin slits across the tread for extra traction on ice and snow.",
+      "Order": 120,
+      "Show": true
+    },
+    {
+      "Name": "Tire Foam Fill",
+      "Slug": "tire-foam-fill",
+      "Category": "Farm & Ag",
+      "Summary": "Rely foam filling for equipment tires that can't afford a flat.",
+      "Order": 130,
+      "Show": true
+    },
+    {
+      "Name": "Brakes & ABS",
+      "Slug": "brakes-abs",
+      "Category": "Service & Repair",
+      "Summary": "Complete brake and ABS service by ASE-certified technicians.",
+      "Order": 140,
+      "Show": true
+    },
+    {
+      "Name": "Steering, Suspension, Shocks & Struts",
+      "Slug": "steering-suspension",
+      "Category": "Service & Repair",
+      "Summary": "Complete steering and suspension service, including shocks and struts.",
+      "Order": 150,
+      "Show": true
+    },
+    {
+      "Name": "Oil, Lube & Filter",
+      "Slug": "oil-lube-filter",
+      "Category": "Service & Repair",
+      "Summary": "Oil, lube and filter service.",
+      "Order": 160,
+      "Show": true
+    },
+    {
+      "Name": "Batteries & Wiper Blades",
+      "Slug": "batteries-wipers",
+      "Category": "Service & Repair",
+      "Summary": "Vehicle batteries and Michelin wiper blades, sold and installed.",
+      "Order": 170,
+      "Show": true
+    },
+    {
+      "Name": "Extended Warranty Work",
+      "Slug": "extended-warranty-work",
+      "Category": "Service & Repair",
+      "Summary": "We handle extended warranty work.",
+      "Order": 180,
+      "Show": true
+    },
+    {
+      "Name": "Tire Retreading",
+      "Slug": "tire-retreading",
+      "Category": "Commercial",
+      "Summary": "Retreads for light truck and truck tires. CONFIRM WITH PAUL BEFORE SHOWING: may be discontinued.",
+      "Order": 190,
+      "Show": false
+    }
+  ],
+  "Who We Serve": [
+    {
+      "Title": "Cars, Pickups & SUVs",
+      "Summary": "Passenger and light truck tires, alignment, brakes, batteries and oil changes.",
+      "Photo Alt": "Pickup in the service bay",
+      "Link": "/services/passenger-light-truck-tires/",
+      "Order": 10,
+      "Show": true
+    },
+    {
+      "Title": "Semi & Commercial",
+      "Summary": "Medium truck tires, truck alignment, and tire programs for fleets.",
+      "Photo Alt": "Semi truck at the shop",
+      "Link": "/services/semi-commercial-truck-tires/",
+      "Order": 20,
+      "Show": true
+    },
+    {
+      "Title": "Farm & Ag",
+      "Summary": "Tractor, implement and industrial tires, plus foam fill so they never go flat.",
+      "Photo Alt": "Tractor tires in stock",
+      "Link": "/services/farm-ag-tires/",
+      "Order": 30,
+      "Show": true
+    },
+    {
+      "Title": "On-Site & Roadside",
+      "Summary": "Service trucks, some with cranes, come to your job site or field. After-hours service available.",
+      "Photo Alt": "Service crane truck on a job",
+      "Link": "/services/on-site-roadside-tire-service/",
+      "Order": 40,
+      "Show": true
+    }
+  ],
+  "Why Us": [
+    {
+      "Title": "Family owned since 1950",
+      "Text": "Locally owned and operated. The Anderson family has run the shop since 1972.",
+      "Icon": "home",
+      "Order": 10,
+      "Show": true
+    },
+    {
+      "Title": "Walk-ins welcome",
+      "Text": "No appointment needed for tire work. Stop in and we'll take care of you.",
+      "Icon": "door",
+      "Order": 20,
+      "Show": true
+    },
+    {
+      "Title": "ASE-certified technicians",
+      "Text": "Alignment, brakes and ABS, steering and suspension, done right.",
+      "Icon": "badge",
+      "Order": 30,
+      "Show": true
+    },
+    {
+      "Title": "We come to you",
+      "Text": "Fully equipped service trucks, some with cranes, for jobs at your site or in the field.",
+      "Icon": "truck",
+      "Order": 40,
+      "Show": true
+    },
+    {
+      "Title": "Hard-to-find tires",
+      "Text": "Passenger, truck, farm, industrial, ATV, lawn and garden, and trailer tires.",
+      "Icon": "tire",
+      "Order": 50,
+      "Show": true
+    },
+    {
+      "Title": "Free road hazard coverage",
+      "Text": "On passenger tires you buy here, plus free rotation, air check and inspection.",
+      "Icon": "shield",
+      "Order": 60,
+      "Show": true
+    }
+  ],
+  "Brands": [
+    {
+      "Brand": "Michelin",
+      "Order": 10,
+      "Show": true
+    },
+    {
+      "Brand": "BFGoodrich",
+      "Order": 20,
+      "Show": true
+    },
+    {
+      "Brand": "Goodyear",
+      "Order": 30,
+      "Show": true
+    },
+    {
+      "Brand": "Uniroyal",
+      "Order": 40,
+      "Show": true
+    },
+    {
+      "Brand": "Dunlop",
+      "Order": 50,
+      "Show": true
+    },
+    {
+      "Brand": "Hercules",
+      "Order": 60,
+      "Show": true
+    },
+    {
+      "Brand": "Titan",
+      "Order": 70,
+      "Show": true
+    }
+  ],
+  "Blog Posts": [
+    {
+      "Title": "When should you switch to winter tires in Fargo?",
+      "Address": "when-to-switch-to-winter-tires-fargo",
+      "Category": "Winter driving",
+      "Summary": "How to time the changeover before the first snow.",
+      "Show": false
+    },
+    {
+      "Title": "Why your tire pressure drops when it gets cold",
+      "Address": "why-tire-pressure-drops-in-cold",
+      "Category": "Tire care",
+      "Summary": "Cold air takes up less room. Here's what that means for your tires all winter.",
+      "Show": false
+    },
+    {
+      "Title": "Siping: extra grip on ice without studs",
+      "Address": "tire-siping-explained",
+      "Category": "Winter driving",
+      "Summary": "What siping is, how it works, and which tires it's right for.",
+      "Show": false
+    },
+    {
+      "Title": "Nitrogen in your tires: what it does and doesn't do",
+      "Address": "nitrogen-tire-inflation",
+      "Category": "Tire care",
+      "Summary": "A straight answer on nitrogen versus regular air.",
+      "Show": false
+    },
+    {
+      "Title": "Foam-filled tires for farm and industrial equipment",
+      "Address": "foam-filled-tires",
+      "Category": "Farm & ag",
+      "Summary": "When foam fill makes sense, and when it doesn't.",
+      "Show": false
+    },
+    {
+      "Title": "On-site tire service during harvest",
+      "Address": "on-site-tire-service-harvest",
+      "Category": "Farm & ag",
+      "Summary": "How our service trucks keep equipment rolling in the field.",
+      "Show": false
+    },
+    {
+      "Title": "How to read the size on your tire's sidewall",
+      "Address": "how-to-read-tire-size",
+      "Category": "Tire care",
+      "Summary": "What all those numbers mean, so you can tell us exactly what you need.",
+      "Show": false
+    }
+  ],
+  "FAQ": [
+    {
+      "Question": "Do I need an appointment?",
+      "Answer": "No. Walk-ins are welcome for tire work.",
+      "Order": 10,
+      "Show": true
+    },
+    {
+      "Question": "Do you come to job sites and farms?",
+      "Answer": "Yes. Our fully equipped service trucks, some with cranes, handle tire work at your site. Call (701) 232-7177.",
+      "Order": 20,
+      "Show": true
+    },
+    {
+      "Question": "Do you take after-hours calls?",
+      "Answer": "Yes. After-hours service is available. After-hours rates may apply.",
+      "Order": 30,
+      "Show": true
+    },
+    {
+      "Question": "What tire brands do you sell?",
+      "Answer": "Michelin, BFGoodrich, Goodyear, Uniroyal, Dunlop, Hercules and Titan, plus hard-to-find sizes.",
+      "Order": 40,
+      "Show": true
+    },
+    {
+      "Question": "Does road hazard coverage come with new tires?",
+      "Answer": "Free road hazard coverage comes with passenger tires you buy here.",
+      "Order": 50,
+      "Show": true
+    },
+    {
+      "Question": "Do you align trucks?",
+      "Answer": "Yes. We do computerized four-wheel alignment for cars and pickups, plus truck alignment.",
+      "Order": 60,
+      "Show": true
+    },
+    {
+      "Question": "Where are you located?",
+      "Answer": "2020 Main Ave in Fargo, North Dakota.",
+      "Order": 70,
+      "Show": true
+    }
+  ],
+  "Site Text": [
+    {
+      "Name": "hero_eyebrow",
+      "Text": "Fargo's family tire shop since 1950"
+    },
+    {
+      "Name": "hero_text",
+      "Text": "Passenger, light truck, semi, farm and industrial, plus the hard-to-find sizes. Walk-ins welcome, and our service trucks come to you."
+    },
+    {
+      "Name": "specials_heading",
+      "Text": "This month's specials"
+    },
+    {
+      "Name": "specials_intro",
+      "Text": "Show the coupon at the counter or on your phone. One coupon per visit unless it says otherwise."
+    },
+    {
+      "Name": "specials_footer",
+      "Text": "Specials change often. Call (701) 232-7177 to check today's deals, or ask about current manufacturer rebates."
+    },
+    {
+      "Name": "serve_heading",
+      "Text": "What are you rolling on?"
+    },
+    {
+      "Name": "serve_text",
+      "Text": "From the family pickup to the combine, we sell, install and service tires for it."
+    },
+    {
+      "Name": "difference_heading",
+      "Text": "The Fargo Tire Service difference"
+    },
+    {
+      "Name": "season_eyebrow",
+      "Text": "This season"
+    },
+    {
+      "Name": "season_title",
+      "Text": "Get ready for a Fargo winter"
+    },
+    {
+      "Name": "season_text",
+      "Text": "Beat the first-snow rush. We'll swap your winter tires, add grip with siping, and check pressure before the cold sets in."
+    },
+    {
+      "Name": "season_items",
+      "Text": "Winter tire changeover\nTire siping for ice and snow\nNitrogen inflation\nBattery check and replacement\nAlignment check"
+    },
+    {
+      "Name": "blog_heading",
+      "Text": "From the shop"
+    },
+    {
+      "Name": "quote_heading",
+      "Text": "Request a quote or ask a question"
+    },
+    {
+      "Name": "quote_text",
+      "Text": "Tell us what you're driving or running and what you need. We'll get back to you with a price or an answer."
+    },
+    {
+      "Name": "quote_thanks",
+      "Text": "Got it. We'll get back to you soon. Need it faster? Call (701) 232-7177."
+    },
+    {
+      "Name": "hours_intro",
+      "Text": "Walk-ins welcome. No appointment needed for tire work."
+    },
+    {
+      "Name": "about_history",
+      "Text": "Fargo Tire Service has been locally owned and operated since it opened in 1950.\n\nDuane \"Andy\" Anderson bought the business in 1972. In 1978 the retread department added a new curing chamber, and in 1979 a new building doubled the alignment department to four bays with computerized alignment machines.\n\nAndy's sons, Paul and Roger, joined the business in 1988 and have led the team ever since."
+    },
+    {
+      "Name": "footer_tagline",
+      "Text": "Locally owned and operated since 1950"
+    }
+  ],
+  "Site Images": [
+    {
+      "Name": "hero_photo",
+      "Alt Text": ""
+    },
+    {
+      "Name": "about_photo",
+      "Alt Text": ""
+    },
+    {
+      "Name": "share_image",
+      "Alt Text": "Fargo Tire Service, 2020 Main Ave, Fargo"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "_about": "Airtable base for fargotire.com. Each entry under tables is shaped for Airtable's Create Table API (POST https://api.airtable.com/v0/meta/bases/{baseId}/tables). The first field in each table is its primary field. Field descriptions are written for the shop owner, who will edit this base without help. Time-of-day values are text in the form 7:30 AM because Airtable has no time-only field.",
+  "baseName": "Fargo Tire Service Website",
+  "tables": [
+    {
+      "name": "Business Info",
+      "description": "One row only. Name, address, phones and other facts the whole site uses. Change something here, then click Update website.",
+      "fields": [
+        {"name": "Name", "type": "singleLineText", "description": "The business name exactly as it should appear everywhere: Fargo Tire Service. Keep it matching the Google Business Profile."},
+        {"name": "Legal Name", "type": "singleLineText", "description": "Used only in the fine print and search-engine data. Fargo Tire Service, Inc."},
+        {"name": "Tagline", "type": "singleLineText", "description": "The big line next to the tire man on the home page."},
+        {"name": "Founded", "type": "number", "options": {"precision": 0}, "description": "Year the shop opened. Shows as Since 1950."},
+        {"name": "Street", "type": "singleLineText"},
+        {"name": "City", "type": "singleLineText"},
+        {"name": "State", "type": "singleLineText", "description": "Two letters, e.g. ND."},
+        {"name": "ZIP", "type": "singleLineText"},
+        {"name": "Phone", "type": "phoneNumber", "description": "Main number. Every Call button dials this."},
+        {"name": "Toll Free", "type": "phoneNumber"},
+        {"name": "Fax", "type": "phoneNumber"},
+        {"name": "Public Email", "type": "email", "description": "Shown on the Contact page. Leave blank to show no email."},
+        {"name": "Form Notice Email", "type": "email", "description": "Where quote requests from the website get emailed. Not shown on the site."},
+        {"name": "Google Business Profile", "type": "url", "description": "Link to the shop on Google Maps. Used for the Reviews link."},
+        {"name": "Facebook", "type": "url"},
+        {"name": "Service Area", "type": "multilineText", "description": "Where the service trucks go, in plain words. Shows on the On-Site Service page."},
+        {"name": "After Hours Note", "type": "multilineText", "description": "Short note about after-hours calls. Shows on the Hours page."},
+        {"name": "Time Zone", "type": "singleLineText", "description": "Leave as America/Chicago. The Open Now line uses it."}
+      ]
+    },
+    {
+      "name": "Hours",
+      "description": "Regular weekly hours, one row per day. Holidays go in Special Hours, not here.",
+      "fields": [
+        {"name": "Day", "type": "singleLineText", "description": "Monday through Sunday. Don't rename these."},
+        {"name": "Order", "type": "number", "options": {"precision": 0}, "description": "1 for Monday through 7 for Sunday."},
+        {"name": "Opens", "type": "singleLineText", "description": "Like 7:30 AM. Leave blank if closed."},
+        {"name": "Closes", "type": "singleLineText", "description": "Like 5:30 PM. Leave blank if closed."},
+        {"name": "Closed", "type": "checkbox", "options": {"color": "redBright", "icon": "check"}, "description": "Tick for days the shop is closed all day."},
+        {"name": "Note", "type": "singleLineText", "description": "Optional short note shown next to the day."}
+      ]
+    },
+    {
+      "name": "Special Hours",
+      "description": "Holiday closures, early closes and late opens. Each row shows in the red bar at the top of the website starting Show From Days before the date, and disappears by itself after. Also update holiday hours in the Google Business Profile app.",
+      "fields": [
+        {"name": "Label", "type": "singleLineText", "description": "What it is, like Thanksgiving or Christmas Eve."},
+        {"name": "Date", "type": "date", "options": {"dateFormat": {"name": "us"}}, "description": "The day it applies."},
+        {"name": "End Date", "type": "date", "options": {"dateFormat": {"name": "us"}}, "description": "Only for closures that run several days. Leave blank for one day."},
+        {"name": "Type", "type": "singleSelect", "options": {"choices": [{"name": "Closed"}, {"name": "Closing Early"}, {"name": "Opening Late"}, {"name": "Special Hours"}]}, "description": "Closed all day, closing early, opening late, or different hours."},
+        {"name": "Opens", "type": "singleLineText", "description": "Only for Opening Late or Special Hours. Like 10:00 AM."},
+        {"name": "Closes", "type": "singleLineText", "description": "Only for Closing Early or Special Hours. Like 3:00 PM."},
+        {"name": "Show From Days", "type": "number", "options": {"precision": 0}, "description": "How many days ahead the banner starts showing. Blank means 14."},
+        {"name": "Message", "type": "singleLineText", "description": "Optional. Replaces the banner wording if you want to say it your own way."},
+        {"name": "Show", "type": "checkbox", "options": {"color": "greenBright", "icon": "check"}, "description": "Tick to put it on the website. Untick to hide it."}
+      ]
+    },
+    {
+      "name": "Coupons",
+      "description": "Specials and coupons. Featured ones show in the strip at the top of the home page; all of them show on the Specials page. Expired coupons hide themselves on the website the day after Expires.",
+      "fields": [
+        {"name": "Title", "type": "singleLineText", "description": "Short name for your own use, like Alignment $20 off Nov 2026."},
+        {"name": "Offer Type", "type": "singleSelect", "options": {"choices": [{"name": "Dollars Off"}, {"name": "Percent Off"}, {"name": "Special Price"}, {"name": "Free"}]}, "description": "Picks how the big number reads: $20 OFF, 10% OFF, $49.95, or FREE."},
+        {"name": "Amount", "type": "number", "options": {"precision": 2}, "description": "The number only. 20 for $20 off, 10 for 10% off, 49.95 for a special price. Blank for Free."},
+        {"name": "Applies To", "type": "singleLineText", "description": "What the deal is on, like 4-wheel alignment. This is the coupon's headline."},
+        {"name": "Details", "type": "multilineText", "description": "One short line under the headline, like Cars and pickups."},
+        {"name": "Fine Print", "type": "multilineText", "description": "Limits, like One coupon per visit."},
+        {"name": "Starts", "type": "date", "options": {"dateFormat": {"name": "us"}}, "description": "Optional. The coupon stays hidden until this date."},
+        {"name": "Expires", "type": "date", "options": {"dateFormat": {"name": "us"}}, "description": "Last day it's good. Shows as Valid through."},
+        {"name": "Featured", "type": "checkbox", "options": {"color": "yellowBright", "icon": "star"}, "description": "Tick to show it in the home page specials strip. Up to 3 show there."},
+        {"name": "Order", "type": "number", "options": {"precision": 0}, "description": "Lower numbers show first. Use 10, 20, 30 to leave room."},
+        {"name": "Show", "type": "checkbox", "options": {"color": "greenBright", "icon": "check"}, "description": "Tick to put it on the website. Untick to take it down early."}
+      ]
+    },
+    {
+      "name": "Services",
+      "description": "One row per service. Each shown row gets its own page at fargotire.com/services/<Slug>/.",
+      "fields": [
+        {"name": "Name", "type": "singleLineText"},
+        {"name": "Slug", "type": "singleLineText", "description": "End of the page address, lowercase words joined by hyphens. Don't change it once the page is live, or old links break."},
+        {"name": "Category", "type": "singleSelect", "options": {"choices": [{"name": "Tires"}, {"name": "Service & Repair"}, {"name": "Commercial"}, {"name": "Farm & Ag"}, {"name": "On-Site"}]}},
+        {"name": "Summary", "type": "multilineText", "description": "One or two sentences. Shows on the Services page and in Google results if Search Description is blank."},
+        {"name": "Body", "type": "richText", "description": "The full page text. Bold, headings, lists and links carry through."},
+        {"name": "Photo", "type": "multipleAttachments", "description": "One photo for the top of the page. Landscape works best."},
+        {"name": "Photo Alt", "type": "singleLineText", "description": "What the photo shows, in plain words, under 125 characters."},
+        {"name": "Order", "type": "number", "options": {"precision": 0}},
+        {"name": "Show", "type": "checkbox", "options": {"color": "greenBright", "icon": "check"}},
+        {"name": "Search Title", "type": "singleLineText", "description": "Title Google shows. Under 60 characters. Blank uses Name."},
+        {"name": "Search Description", "type": "multilineText", "description": "Description Google shows. Under 160 characters. Blank uses Summary."}
+      ]
+    },
+    {
+      "name": "Who We Serve",
+      "description": "The four photo tiles on the home page (cars, semis, farm, on-site).",
+      "fields": [
+        {"name": "Title", "type": "singleLineText"},
+        {"name": "Summary", "type": "multilineText"},
+        {"name": "Photo", "type": "multipleAttachments"},
+        {"name": "Photo Alt", "type": "singleLineText"},
+        {"name": "Link", "type": "singleLineText", "description": "Where the tile goes, like /services/farm-tires/."},
+        {"name": "Order", "type": "number", "options": {"precision": 0}},
+        {"name": "Show", "type": "checkbox", "options": {"color": "greenBright", "icon": "check"}}
+      ]
+    },
+    {
+      "name": "Why Us",
+      "description": "The Fargo Tire Service Difference section on the home page.",
+      "fields": [
+        {"name": "Title", "type": "singleLineText"},
+        {"name": "Text", "type": "multilineText"},
+        {"name": "Icon", "type": "singleSelect", "options": {"choices": [{"name": "home"}, {"name": "door"}, {"name": "badge"}, {"name": "truck"}, {"name": "tire"}, {"name": "shield"}]}},
+        {"name": "Order", "type": "number", "options": {"precision": 0}},
+        {"name": "Show", "type": "checkbox", "options": {"color": "greenBright", "icon": "check"}}
+      ]
+    },
+    {
+      "name": "Brands",
+      "description": "Tire brands in the logo grid. Use the logo files the brand's dealer program provides.",
+      "fields": [
+        {"name": "Brand", "type": "singleLineText"},
+        {"name": "Logo", "type": "multipleAttachments", "description": "One logo file, SVG or PNG with a transparent background."},
+        {"name": "Link", "type": "url", "description": "Optional link to the brand's site."},
+        {"name": "Order", "type": "number", "options": {"precision": 0}},
+        {"name": "Show", "type": "checkbox", "options": {"color": "greenBright", "icon": "check"}}
+      ]
+    },
+    {
+      "name": "Blog Posts",
+      "description": "Posts for the blog at fargotire.com/blog/. Edit here, then click Update website. Bold, headings, lists and links in Text carry through to the site.",
+      "fields": [
+        {"name": "Title", "type": "singleLineText", "description": "The post title shown on the page and in the blog list."},
+        {"name": "Address", "type": "singleLineText", "description": "End of the page address: fargotire.com/blog/<Address>/. Lowercase words joined by hyphens. Don't change it on a published post."},
+        {"name": "Date", "type": "date", "options": {"dateFormat": {"name": "us"}}, "description": "Publish date shown on the post. Newest posts list first."},
+        {"name": "Category", "type": "singleSelect", "options": {"choices": [{"name": "Winter driving"}, {"name": "Tire care"}, {"name": "Farm & ag"}, {"name": "Commercial"}, {"name": "Shop news"}]}},
+        {"name": "Show", "type": "checkbox", "options": {"color": "greenBright", "icon": "check"}, "description": "Ticked: on the website. Unticked: hidden, and its address forwards to the blog."},
+        {"name": "Cover Photo", "type": "multipleAttachments", "description": "One picture. It leads the post, shows on the blog list, and is the picture when the post is shared."},
+        {"name": "Cover Photo Alt", "type": "singleLineText"},
+        {"name": "Summary", "type": "multilineText", "description": "Two or three sentences shown under the title in the blog list. Blank uses the start of Text."},
+        {"name": "Search Title", "type": "singleLineText", "description": "The title Google shows. Under 60 characters. Blank uses Title."},
+        {"name": "Search Description", "type": "multilineText", "description": "The description Google shows. Under 160 characters."},
+        {"name": "Text", "type": "richText", "description": "The body of the post."}
+      ]
+    },
+    {
+      "name": "FAQ",
+      "description": "Questions and answers for the FAQ page. Edit here, then click Update website.",
+      "fields": [
+        {"name": "Question", "type": "singleLineText"},
+        {"name": "Answer", "type": "richText", "description": "Bold, lists and links carry through to the site."},
+        {"name": "Order", "type": "number", "options": {"precision": 0}, "description": "Position on the page, lowest first. Use gaps (10, 20, 30)."},
+        {"name": "Show", "type": "checkbox", "options": {"color": "greenBright", "icon": "check"}}
+      ]
+    },
+    {
+      "name": "Site Text",
+      "description": "Headlines and short text blocks on the website, one row each. Edit Text, then click Update website. Don't rename rows: the site finds each one by its Name.",
+      "fields": [
+        {"name": "Name", "type": "singleLineText", "description": "Where the text shows. The site looks rows up by this name, so leave it as is."},
+        {"name": "Text", "type": "multilineText", "description": "The words on the site. A blank line starts a new paragraph."}
+      ]
+    },
+    {
+      "name": "Site Images",
+      "description": "Pictures used on fixed parts of the site (tire man, home page photo, About photo, sharing image), one row each. Replace a picture here, then click Update website. Don't rename rows.",
+      "fields": [
+        {"name": "Name", "type": "singleLineText", "description": "Where the picture shows. The site looks rows up by this name, so leave it as is."},
+        {"name": "Image", "type": "multipleAttachments", "description": "One picture."},
+        {"name": "Alt Text", "type": "singleLineText", "description": "What the picture shows, for screen readers and search. Under 125 characters."}
+      ]
+    },
+    {
+      "name": "Leads",
+      "description": "Quote requests and questions from the website form land here, and an email goes to Form Notice Email. Update Status as you work them.",
+      "fields": [
+        {"name": "Name", "type": "singleLineText"},
+        {"name": "Phone", "type": "phoneNumber"},
+        {"name": "Email", "type": "email"},
+        {"name": "Contact Pref", "type": "singleSelect", "options": {"choices": [{"name": "Call"}, {"name": "Text"}, {"name": "Email"}]}},
+        {"name": "Need", "type": "singleSelect", "options": {"choices": [{"name": "Passenger or light truck tires"}, {"name": "Semi or commercial tires"}, {"name": "Farm or ag tires"}, {"name": "Service or repair"}, {"name": "On-site service"}, {"name": "Just a question"}]}},
+        {"name": "Vehicle or Equipment", "type": "singleLineText"},
+        {"name": "Tire Size", "type": "singleLineText"},
+        {"name": "Quantity", "type": "number", "options": {"precision": 0}},
+        {"name": "Photo", "type": "multipleAttachments"},
+        {"name": "Message", "type": "multilineText"},
+        {"name": "Coupon", "type": "singleLineText", "description": "Filled when someone used Request this special on a coupon."},
+        {"name": "Page", "type": "singleLineText", "description": "The page the form was sent from."},
+        {"name": "Received", "type": "dateTime", "options": {"dateFormat": {"name": "us"}, "timeFormat": {"name": "12hour"}, "timeZone": "America/Chicago"}},
+        {"name": "Status", "type": "singleSelect", "options": {"choices": [{"name": "New"}, {"name": "Contacted"}, {"name": "Quoted"}, {"name": "Won"}, {"name": "Lost"}, {"name": "Spam"}]}}
+      ]
+    }
+  ]
+}

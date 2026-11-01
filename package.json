@@ -1,0 +1,20 @@
+{
+  "name": "fargotire-site",
+  "private": true,
+  "type": "module",
+  "description": "fargotire.com: Eleventy site with Airtable content, hosted on Netlify",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "samples": "node scripts/serve-samples.mjs",
+    "airtable:setup": "node scripts/airtable-setup.mjs"
+  },
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@fontsource/barlow": "^5.2.5",
+    "@fontsource/barlow-condensed": "^5.2.5",
+    "markdown-it": "^14.1.0"
+  }
+}

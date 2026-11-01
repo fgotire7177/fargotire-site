@@ -1,0 +1,14 @@
+{%- from "partials/icons.njk" import icon -%}
+{%- if airtable.special.length -%}
+<div class="holiday-bar"{% if not airtable.holidayLive %} hidden{% endif %} role="region" aria-label="Holiday hours">
+<div class="wrap">
+<div class="holiday-lines">
+{%- for s in airtable.special %}
+<p class="holiday-line" data-start="{{ s.start }}" data-end="{{ s.end }}"{% if not s.live %} hidden{% endif %}>{{ icon("calendar", 20) }}<span>{{ s.message }}</span></p>
+{%- endfor %}
+</div>
+<a class="holiday-more" href="/hours/#holidays" hidden>More holiday hours</a>
+<a href="/hours/">All hours</a>
+</div>
+</div>
+{%- endif -%}

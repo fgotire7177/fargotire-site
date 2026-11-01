@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: Tires and Auto Service in Fargo, ND
+eleventyComputed:
+  description: "Passenger, truck, farm and industrial tires, alignment, brakes and on-site tire service from {{ airtable.biz.Name }} in {{ airtable.biz.City }}, {{ airtable.biz.State }}."
+permalink: /services/
+---
+{%- set ids = { "Tires": "tires", "Commercial": "commercial", "Farm & Ag": "farm", "On-Site": "on-site", "Service & Repair": "service" } -%}
+<section class="page-hero bg-blue on-dark">
+<div class="wrap"><div>
+<h1>Tires &amp; service</h1>
+<p>{{ airtable.text.hero_text }}</p>
+</div></div>
+</section>
+
+<section class="section">
+<div class="wrap">
+{%- for g in airtable.serviceGroups %}
+<div class="service-group" id="{{ ids[g.name] }}">
+<h2>{{ g.name }}</h2>
+<div class="service-list">
+{%- for s in g.items %}
+<a class="service-card" href="{{ s.url }}"><h3>{{ s.name }}</h3><p>{{ s.summary }}</p></a>
+{%- endfor %}
+</div>
+</div>
+{%- endfor %}
+</div>
+</section>
+
+<section class="cta-band bg-gray">
+<div class="wrap">
+<div><h2>Don't see it listed?</h2><p>Ask us. Call or send a quick question.</p></div>
+<a class="btn btn-red" href="/contact-us/#quote">Ask a Question</a>
+</div>
+</section>

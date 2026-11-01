@@ -1,0 +1,9 @@
+{%- from "partials/icons.njk" import icon -%}
+{%- set biz = airtable.biz -%}
+<div class="utility on-dark">
+<div class="wrap">
+<a class="utility-item utility-phone" href="tel:{{ biz.Phone | tel }}">{{ icon("phone", 16) }}{{ biz.Phone }}</a>
+<a class="utility-item" href="/hours/">{{ icon("clock", 16) }}<span data-open-status>{% for l in airtable.hoursLines %}{{ l.days }} {{ l.text }}{% if not loop.last %} · {% endif %}{% endfor %}</span></a>
+<a class="utility-item" href="https://www.google.com/maps/search/?api=1&amp;query={{ (biz.Name ~ ' ' ~ biz.Street ~ ' ' ~ biz.City ~ ' ' ~ biz.State ~ ' ' ~ biz.ZIP) | urlencode }}">{{ icon("pin", 16) }}{{ biz.Street }}, {{ biz.City }}</a>
+</div>
+</div>

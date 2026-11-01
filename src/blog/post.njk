@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+ogType: article
+pagination:
+  data: airtable.posts
+  size: 1
+  addAllPagesToCollections: true
+  alias: post
+permalink: "/blog/{{ post.address }}/"
+eleventyComputed:
+  title: "{{ post.title }}"
+  fullTitle: "{{ post.searchTitle }}"
+  description: "{{ post.searchDescription or post.summary }}"
+---
+{%- from "partials/icons.njk" import picture -%}
+{%- set biz = airtable.biz -%}
+<section class="page-hero bg-blue on-dark">
+<div class="wrap"><div>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a>{% if post.category %} / {{ post.category }}{% endif %}</nav>
+<h1>{{ post.title }}</h1>
+{%- if post.date %}<p>{{ post.date | apDate }}</p>{% endif %}
+</div></div>
+</section>
+
+<article class="section">
+<div class="wrap">
+{%- if post.cover %}<div style="max-width: 900px; margin-bottom: 28px; border-radius: var(--radius); overflow: hidden;">{{ picture(post.cover, post.coverAlt, "(max-width: 960px) 100vw, 900px", true) }}</div>{% endif %}
+<div class="prose">
+{%- if post.text %}{{ post.text | md | safe }}{% else %}<p>{{ post.summary }}</p>{% endif %}
+</div>
+<p class="actions" style="margin-top: 32px;"><a class="btn btn-red" href="/contact-us/#quote">Request a Quote</a><a class="btn btn-outline-blue" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a></p>
+</div>
+</article>
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": post.summary,
+  "datePublished": post.date or null,
+  "url": (post.url | absUrl(site.url)),
+  "image": ((post.cover.src | absUrl(site.url)) if post.cover else null),
+  "author": { "@id": site.url ~ "/#business" },
+  "publisher": { "@id": site.url ~ "/#business" }
+} | json | safe }}</script>

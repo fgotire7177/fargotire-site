@@ -1,0 +1,49 @@
+{%- set biz = airtable.biz -%}
+{%- set pageTitle = fullTitle if fullTitle else ((title ~ " | " ~ biz.Name) if title else biz.Name) -%}
+{%- set pageDesc = description or airtable.text.hero_text -%}
+{%- set share = airtable.images.share_image -%}
+{%- set shareUrl = (share.img.src if share and share.img else "/assets/icon-512.png") | absUrl(site.url) -%}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDesc }}">
+<link rel="canonical" href="{{ page.url | absUrl(site.url) }}">
+{%- if noindex %}<meta name="robots" content="noindex">{% endif %}
+<meta property="og:type" content="{{ ogType or 'website' }}">
+<meta property="og:site_name" content="{{ biz.Name }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:url" content="{{ page.url | absUrl(site.url) }}">
+<meta property="og:image" content="{{ shareUrl }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1D4F91">
+<link rel="preload" href="/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+<script type="application/ld+json">{{ airtable.businessLd | json | safe }}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+{% include "partials/holiday-bar.njk" %}
+{% include "partials/utility-bar.njk" %}
+{% include "partials/header.njk" %}
+<main id="main">
+{{ content | safe }}
+</main>
+{% include "partials/footer.njk" %}
+<div class="mobile-bar" aria-label="Quick actions">
+<a class="btn btn-blue" href="tel:{{ biz.Phone | tel }}">Call</a>
+<a class="btn btn-red" href="/contact-us/#quote">Request a Quote</a>
+</div>
+<script type="application/json" id="hours-data">{{ airtable.clientHours | json | safe }}</script>
+<script src="/js/site.js" defer></script>
+</body>
+</html>

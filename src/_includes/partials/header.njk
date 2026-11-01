@@ -1,0 +1,31 @@
+{%- from "partials/icons.njk" import icon -%}
+{%- set biz = airtable.biz -%}
+{%- set navItems = [
+  { label: "Tires", url: "/services/#tires", match: "" },
+  { label: "Services", url: "/services/", match: "/services/" },
+  { label: "Commercial & Farm", url: "/services/#commercial", match: "" },
+  { label: "Specials", url: "/coupons/", match: "/coupons/" },
+  { label: "Hours", url: "/hours/", match: "/hours/" },
+  { label: "Blog", url: "/blog/", match: "/blog/" },
+  { label: "About", url: "/about-us/", match: "/about-us/" }
+] -%}
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/">
+<span class="badge"><img src="/assets/tireboy.svg" alt="" width="474" height="494"></span>
+<span class="brand-text"><span class="brand-name">{{ biz.Name }}</span><span class="brand-sub">Locally owned since {{ biz.Founded }}</span></span>
+</a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">{{ icon("menu", 22) }}Menu</button>
+<nav class="nav" id="site-nav" aria-label="Main">
+<ul>
+{%- for item in navItems %}
+{%- if item.label != "Blog" or airtable.posts.length %}
+<li><a href="{{ item.url }}"{% if item.match and page.url.startsWith(item.match) %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+{%- endif %}
+{%- endfor %}
+<li class="nav-quote"><a class="btn btn-red" href="/contact-us/#quote">Request a Quote</a></li>
+</ul>
+</nav>
+<a class="btn btn-red header-quote" href="/contact-us/#quote">Request a Quote</a>
+</div>
+</header>

@@ -1,0 +1,124 @@
+---
+layout: layouts/base.njk
+title: Tires in Fargo, ND
+---
+{%- from "partials/icons.njk" import icon, picture -%}
+{%- from "partials/coupons.njk" import couponCard -%}
+{%- set biz = airtable.biz -%}
+{%- set t = airtable.text -%}
+
+{%- if airtable.featured.length %}
+<section class="section-tight bg-gray" aria-labelledby="specials-h" data-hide-when-empty>
+<div class="wrap">
+<div class="section-head">
+<h2 id="specials-h" class="h2-sm">{{ t.specials_heading }}</h2>
+<a class="link-strong" href="/coupons/">See all specials and coupons</a>
+</div>
+<div class="coupon-row coupon-row--strip" data-coupons data-limit="3">
+{%- for c in airtable.featured %}{{ couponCard(c, "card", biz, site.today) }}{% endfor %}
+</div>
+</div>
+</section>
+{%- endif %}
+
+<section class="hero bg-blue on-dark" aria-labelledby="hero-h">
+<div class="wrap">
+<div class="hero-art">
+<span class="badge hero-badge"><img src="/assets/tireboy.svg" alt="The {{ biz.Name }} tire man, leaning on a stack of tires" width="474" height="494" fetchpriority="high"></span>
+</div>
+<div class="hero-copy">
+<p class="eyebrow">{{ t.hero_eyebrow }}</p>
+<h1 id="hero-h">{{ biz.Tagline }}</h1>
+<p class="hero-text">{{ t.hero_text }}</p>
+<div class="actions">
+<a class="btn btn-red" href="#quote">Request a Quote</a>
+<a class="btn btn-outline-white" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a>
+</div>
+</div>
+</div>
+</section>
+
+{%- if airtable.serve.length %}
+<section class="section" aria-labelledby="serve-h">
+<div class="wrap">
+<h2 id="serve-h" class="h2" style="margin-bottom: 8px;">{{ t.serve_heading }}</h2>
+<p class="lead" style="margin-bottom: 28px;">{{ t.serve_text }}</p>
+<div class="tiles">
+{%- for s in airtable.serve %}
+<a class="tile" href="{{ s.link }}">
+<div class="tile-photo">{% if s.photo %}{{ picture(s.photo, s.photoAlt, "(max-width: 720px) 100vw, 300px") }}{% else %}{{ icon("tire", 64, "currentColor", 1.5) }}{% endif %}</div>
+<div class="tile-body"><h3>{{ s.title }}</h3><p>{{ s.summary }}</p></div>
+</a>
+{%- endfor %}
+</div>
+</div>
+</section>
+{%- endif %}
+
+{%- if airtable.whyUs.length %}
+<section class="section bg-gray" aria-labelledby="diff-h">
+<div class="wrap">
+<h2 id="diff-h" class="h2 center" style="margin-bottom: 28px;">{{ t.difference_heading }}</h2>
+<div class="why-grid">
+{%- for w in airtable.whyUs %}
+<div class="why-item"><span class="why-icon">{{ icon(w.icon, 26) }}</span><div><h3>{{ w.title }}</h3><p>{{ w.text }}</p></div></div>
+{%- endfor %}
+</div>
+</div>
+</section>
+{%- endif %}
+
+{%- if airtable.brands.length %}
+<section class="section-tight" aria-labelledby="brands-h">
+<div class="wrap">
+<h2 id="brands-h" class="h2-sm center" style="margin-bottom: 20px;">Brands we sell</h2>
+<div class="brands-grid">
+{%- for b in airtable.brands %}
+{%- if b.link %}<a class="brand-cell" href="{{ b.link }}">{% else %}<div class="brand-cell">{% endif -%}
+{%- if b.logo %}<img src="{{ b.logo.src }}" alt="{{ b.name }}" width="{{ b.logo.width }}" height="{{ b.logo.height }}" loading="lazy">{% else %}{{ b.name }}{% endif -%}
+{%- if b.link %}</a>{% else %}</div>{% endif %}
+{%- endfor %}
+</div>
+</div>
+</section>
+{%- endif %}
+
+{%- if t.season_title %}
+<section class="season bg-ink on-dark" aria-labelledby="season-h">
+<div class="wrap">
+<div class="season-copy">
+<p class="eyebrow">{{ t.season_eyebrow }}</p>
+<h2 id="season-h">{{ t.season_title }}</h2>
+<p>{{ t.season_text }}</p>
+<div class="actions">
+<a class="btn btn-red" href="#quote">Request a Quote</a>
+<a class="btn btn-outline-white" href="/coupons/">See specials</a>
+</div>
+</div>
+<ul class="season-list">
+{%- for item in t.season_items | lines %}<li>{{ icon("check", 20, "#F2B8B5", 2.5) }}{{ item }}</li>{% endfor %}
+</ul>
+</div>
+</section>
+{%- endif %}
+
+{%- if airtable.posts.length %}
+<section class="section" aria-labelledby="blog-h">
+<div class="wrap">
+<div class="section-head">
+<h2 id="blog-h" class="h2">{{ t.blog_heading }}</h2>
+<a class="link-strong" href="/blog/">All articles</a>
+</div>
+<div class="posts-grid">
+{%- for p in airtable.posts | limit(3) %}
+<a class="post-card" href="{{ p.url }}">
+<div class="tile-photo">{% if p.cover %}{{ picture(p.cover, p.coverAlt, "(max-width: 720px) 100vw, 380px") }}{% else %}{{ icon("tire", 64, "currentColor", 1.5) }}{% endif %}</div>
+<div class="post-card-body">{% if p.category %}<span class="post-cat">{{ p.category }}</span>{% endif %}<h3>{{ p.title }}</h3><p>{{ p.summary }}</p></div>
+</a>
+{%- endfor %}
+</div>
+</div>
+</section>
+{%- endif %}
+
+{% include "partials/quote-form.njk" %}

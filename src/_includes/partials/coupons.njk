@@ -1,0 +1,41 @@
+{#- Coupon macros. data-starts/data-expires let site.js hide a coupon the moment it expires,
+    with no rebuild. A coupon whose start date is still ahead at build time starts hidden. -#}
+{%- macro couponCard(c, variant, biz, today) -%}
+<article class="coupon coupon--{{ variant }}" id="{{ c.id }}-{{ variant }}" data-starts="{{ c.starts }}" data-expires="{{ c.expires }}" data-print-footer="{{ biz.Name }} · {{ biz.Street }}, {{ biz.City }} · {{ biz.Phone }}"{% if c.starts and c.starts > today %} hidden{% endif %}>
+{%- if c.sample %}<span class="chip-sample">Sample</span>{% endif %}
+<p class="coupon-big">{{ c.big }}</p>
+<h3>{{ c.appliesTo }}</h3>
+{%- if c.details %}<p class="coupon-details">{{ c.details }}</p>{% endif %}
+{%- if c.finePrint %}<p class="coupon-fine">{{ c.finePrint }}</p>{% endif %}
+{%- if c.expires %}<p class="coupon-valid">Valid through {{ c.expires | apDate }}</p>{% else %}<p class="coupon-valid">Ongoing</p>{% endif %}
+<div class="coupon-actions">
+{%- if variant == "card" %}
+<a class="btn btn-blue btn-small" href="/coupons/#{{ c.id }}-dashed">Show coupon</a>
+{%- else %}
+<a class="btn btn-blue btn-small" href="/contact-us/?coupon={{ c.requestLabel | urlencode }}#quote">Request this special</a>
+<button class="btn btn-outline-blue btn-small" type="button" data-print-coupon="{{ c.id }}-{{ variant }}">Print coupon</button>
+{%- endif %}
+</div>
+</article>
+{%- endmacro -%}
+
+{%- macro featuredCard(c, biz, today) -%}
+<article class="featured" id="{{ c.id }}-featured" data-starts="{{ c.starts }}" data-expires="{{ c.expires }}" data-print-footer="{{ biz.Name }} · {{ biz.Street }}, {{ biz.City }} · {{ biz.Phone }}"{% if c.starts and c.starts > today %} hidden{% endif %}>
+<div class="featured-left">
+{%- if c.sample %}<span class="chip-sample">Sample</span>{% endif %}
+<p class="coupon-big">{{ c.big }}</p>
+<p class="featured-applies">{{ c.appliesTo }}</p>
+</div>
+<div class="featured-right">
+<h3>{{ c.appliesTo }}</h3>
+{%- if c.details %}<p class="lead">{{ c.details }}</p>{% endif %}
+{%- if c.finePrint %}<p class="coupon-fine">{{ c.finePrint }}</p>{% endif %}
+{%- if c.expires %}<p class="coupon-valid">Valid through {{ c.expires | apDate }}</p>{% endif %}
+<div class="actions coupon-actions">
+<a class="btn btn-blue btn-small" href="/contact-us/?coupon={{ c.requestLabel | urlencode }}#quote">Request this special</a>
+<a class="btn btn-outline-blue btn-small" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a>
+<button class="btn btn-outline-blue btn-small" type="button" data-print-coupon="{{ c.id }}-featured">Print coupon</button>
+</div>
+</div>
+</article>
+{%- endmacro -%}

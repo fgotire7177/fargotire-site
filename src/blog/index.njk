@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+title: Tire Tips and Shop News
+permalink: /blog/
+eleventyComputed:
+  description: "Tire tips, winter driving advice and shop news from {{ airtable.biz.Name }} in {{ airtable.biz.City }}, {{ airtable.biz.State }}."
+---
+{%- from "partials/icons.njk" import icon, picture -%}
+<section class="page-hero bg-blue on-dark">
+<div class="wrap"><div>
+<h1>{{ airtable.text.blog_heading or "Blog" }}</h1>
+<p>Tire tips, winter driving advice and shop news.</p>
+</div></div>
+</section>
+
+<section class="section">
+<div class="wrap">
+{%- if airtable.posts.length %}
+<div class="posts-grid">
+{%- for p in airtable.posts %}
+<a class="post-card" href="{{ p.url }}">
+<div class="tile-photo">{% if p.cover %}{{ picture(p.cover, p.coverAlt, "(max-width: 720px) 100vw, 380px") }}{% else %}{{ icon("tire", 64, "currentColor", 1.5) }}{% endif %}</div>
+<div class="post-card-body">{% if p.category %}<span class="post-cat">{{ p.category }}</span>{% endif %}<h3>{{ p.title }}</h3><p>{{ p.summary }}</p>{% if p.date %}<p style="font-size: 14px;">{{ p.date | apDate }}</p>{% endif %}</div>
+</a>
+{%- endfor %}
+</div>
+{%- else %}
+<p class="lead">Posts are on the way. In the meantime, <a href="/contact-us/#quote">ask us anything</a>.</p>
+{%- endif %}
+</div>
+</section>

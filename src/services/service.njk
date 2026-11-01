@@ -1,0 +1,56 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: airtable.services
+  size: 1
+  addAllPagesToCollections: true
+  alias: svc
+permalink: "/services/{{ svc.slug }}/"
+eleventyComputed:
+  title: "{{ svc.name }} in Fargo, ND"
+  fullTitle: "{{ svc.searchTitle }}"
+  description: "{{ svc.searchDescription or svc.summary }}"
+---
+{%- from "partials/icons.njk" import picture -%}
+{%- set biz = airtable.biz -%}
+<section class="page-hero bg-blue on-dark">
+<div class="wrap"><div>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/services/">Services</a> / {{ svc.category }}</nav>
+<h1>{{ svc.name }}</h1>
+<p>{{ svc.summary }}</p>
+</div></div>
+</section>
+
+<section class="section">
+<div class="wrap two-col">
+<div>
+{%- if svc.photo %}<div style="margin-bottom: 24px; border-radius: var(--radius); overflow: hidden;">{{ picture(svc.photo, svc.photoAlt, "(max-width: 900px) 100vw, 560px", true) }}</div>{% endif %}
+{%- if svc.body %}
+<div class="prose">{{ svc.body | md | safe }}</div>
+{%- else %}
+<div class="prose"><p>{{ svc.summary }}</p><p>Call <a href="tel:{{ biz.Phone | tel }}">{{ biz.Phone }}</a> or send a quick request and we'll get back to you.</p></div>
+{%- endif %}
+<p class="actions" style="margin-top: 24px;"><a class="btn btn-red" href="/contact-us/#quote">Request a Quote</a><a class="btn btn-outline-blue" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a></p>
+</div>
+<div>
+{%- set related = airtable.services | whereEq("category", svc.category) %}
+{%- if related.length > 1 %}
+<h2 class="h2-sm" style="margin-bottom: 14px;">More {{ svc.category }}</h2>
+<div class="service-list" style="grid-template-columns: 1fr;">
+{%- for s in related %}{% if s.slug != svc.slug %}<a class="service-card" href="{{ s.url }}"><h3>{{ s.name }}</h3><p>{{ s.summary }}</p></a>{% endif %}{% endfor %}
+</div>
+{%- endif %}
+</div>
+</div>
+</section>
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Service", "name": svc.name, "description": svc.summary, "url": (svc.url | absUrl(site.url)), "areaServed": biz.City ~ ", " ~ biz.State, "provider": { "@id": site.url ~ "/#business" } },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url ~ "/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": site.url ~ "/services/" },
+      { "@type": "ListItem", "position": 3, "name": svc.name, "item": (svc.url | absUrl(site.url)) }
+    ] }
+  ]
+} | json | safe }}</script>

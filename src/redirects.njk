@@ -1,0 +1,22 @@
+---
+permalink: /_redirects
+eleventyExcludeFromCollections: true
+---
+# Old WordPress pages and paths
+/employment/       /contact-us/  301
+/employment        /contact-us/  301
+/specials/         /coupons/     301
+/specials          /coupons/     301
+/wp-admin/*        /             301
+/wp-login.php      /             301
+/wp-content/*      /             301
+/feed/*            /             301
+/feed              /             301
+
+# Hidden in Airtable: send old links somewhere useful
+{%- for slug in airtable.hiddenServices %}
+/services/{{ slug }}/*  /services/  302
+{%- endfor %}
+{%- for address in airtable.hiddenPosts %}
+/blog/{{ address }}/*  /blog/  302
+{%- endfor %}

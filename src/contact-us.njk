@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+title: Contact Us and Request a Quote
+eleventyComputed:
+  description: "Request a tire quote or ask a question. {{ airtable.biz.Name }}, {{ airtable.biz.Street }}, {{ airtable.biz.City }}, {{ airtable.biz.State }}. Call {{ airtable.biz.Phone }}."
+---
+<section class="page-hero bg-blue on-dark">
+<div class="wrap"><div>
+<h1>Contact us</h1>
+<p>Ask for a price, ask a question, or just call. Walk-ins are always welcome.</p>
+</div></div>
+</section>
+
+{% include "partials/quote-form.njk" %}
+
+{% include "partials/find-us.njk" %}

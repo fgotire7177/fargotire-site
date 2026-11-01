@@ -1,0 +1,37 @@
+/* Every color and font for the site lives here. Brand colors are stand-ins until Paul's
+   vinyl color codes arrive: change --blue and --red here and the whole site follows. */
+@font-face { font-family: "Barlow"; font-weight: 400; font-style: normal; font-display: swap; src: url("/fonts/barlow-400.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 500; font-style: normal; font-display: swap; src: url("/fonts/barlow-500.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 600; font-style: normal; font-display: swap; src: url("/fonts/barlow-600.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 700; font-style: normal; font-display: swap; src: url("/fonts/barlow-700.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 600; font-style: normal; font-display: swap; src: url("/fonts/barlow-condensed-600.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-style: normal; font-display: swap; src: url("/fonts/barlow-condensed-700.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 800; font-style: normal; font-display: swap; src: url("/fonts/barlow-condensed-800.woff2") format("woff2"); }
+
+:root {
+  --blue: #1D4F91;
+  --red: #C62828;
+  --ink: #24292E;
+  --white: #FFFFFF;
+  --text: #1F2328;
+  --muted: #4B5563;
+  --gray-50: #F3F4F6;
+  --gray-100: #E9ECEF;
+  --gray-200: #D9DDE2;
+  --border: #E3E6EA;
+  --field-border: #9AA4AE;
+  --today: #EAF1FA;
+  --on-blue-soft: #EEF4FB;
+  --on-blue-eyebrow: #CFE0F5;
+  --on-ink: #D7DCE1;
+  --on-ink-accent: #F2B8B5;
+
+  --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.08);
+  --max: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+}

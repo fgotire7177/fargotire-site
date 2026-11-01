@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+title: Hours and Location
+eleventyComputed:
+  description: "Hours, holiday hours and directions for {{ airtable.biz.Name }}, {{ airtable.biz.Street }}, {{ airtable.biz.City }}, {{ airtable.biz.State }}. Walk-ins welcome."
+---
+{%- set biz = airtable.biz -%}
+<section class="page-hero bg-blue on-dark">
+<div class="wrap">
+<div>
+<h1>Hours &amp; location</h1>
+<p>{{ airtable.text.hours_intro }}</p>
+</div>
+<p class="status-pill" data-open-status>{{ biz.Street }}, {{ biz.City }}</p>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap two-col">
+<div>
+<h2 class="h2-sm" style="margin-bottom: 14px;">Regular hours</h2>
+<div class="hours-table">
+{%- for h in airtable.hours %}
+<div class="hours-row" data-dow="{{ h.dow }}"><span class="hours-day">{{ h.day }}</span><span>{% if h.closed %}Closed{% else %}{{ h.opens }} to {{ h.closes }}{% endif %}{% if h.note %} ({{ h.note }}){% endif %}</span></div>
+{%- endfor %}
+</div>
+{%- if biz["After Hours Note"] %}<p style="margin-top: 16px; color: var(--muted);">{{ biz["After Hours Note"] }} Call <a class="link-strong" href="tel:{{ biz.Phone | tel }}">{{ biz.Phone }}</a>.</p>{% endif %}
+</div>
+<div id="holidays">
+<h2 class="h2-sm" style="margin-bottom: 14px;">Upcoming holiday hours</h2>
+{%- if airtable.special.length %}
+<ul class="holiday-list">
+{%- for s in airtable.special %}
+<li data-end="{{ s.end }}">
+<span class="holiday-date">{{ s.date | shortDayDate }}{% if s.end != s.date %} to {{ s.end | shortDayDate }}{% endif %}</span>
+<span class="holiday-label">{{ s.label }}{% if s.sample %} <span class="chip-sample">Sample</span>{% endif %}</span>
+{%- if s.type == "Closed" %}<span class="tag-closed">Closed</span>
+{%- elif s.type == "Closing Early" %}<span class="tag-hours">Closing at {{ s.closes }}</span>
+{%- elif s.type == "Opening Late" %}<span class="tag-hours">Opening at {{ s.opens }}</span>
+{%- else %}<span class="tag-hours">{{ s.opens }} to {{ s.closes }}</span>{% endif %}
+</li>
+{%- endfor %}
+</ul>
+{%- else %}
+<p class="lead">No holiday changes coming up. We're open our regular hours.</p>
+{%- endif %}
+</div>
+</div>
+</section>
+
+{% include "partials/find-us.njk" %}

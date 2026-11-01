@@ -1,0 +1,37 @@
+{%- set biz = airtable.biz -%}
+<footer class="site-footer on-dark">
+<div class="wrap footer-grid">
+<div class="footer-col footer-brand">
+<span class="badge"><img src="/assets/tireboy.svg" alt="" width="474" height="494" loading="lazy"></span>
+<span class="footer-name">{{ biz.Name }}</span>
+<span class="footer-since">Since {{ biz.Founded }}</span>
+</div>
+<div class="footer-col">
+<h2>Visit</h2>
+<span>{{ biz.Street }}</span>
+<span>{{ biz.City }}, {{ biz.State }} {{ biz.ZIP }}</span>
+<a href="https://www.google.com/maps/search/?api=1&amp;query={{ (biz.Name ~ ' ' ~ biz.Street ~ ' ' ~ biz.City ~ ' ' ~ biz.State ~ ' ' ~ biz.ZIP) | urlencode }}">Get directions</a>
+</div>
+<div class="footer-col">
+<h2>Call</h2>
+<a href="tel:{{ biz.Phone | tel }}">{{ biz.Phone }}</a>
+{%- if biz["Toll Free"] %}<span>Toll free {{ biz["Toll Free"] }}</span>{% endif %}
+{%- if biz.Fax %}<span>Fax {{ biz.Fax }}</span>{% endif %}
+{%- if biz["Public Email"] %}<a href="mailto:{{ biz['Public Email'] }}">{{ biz["Public Email"] }}</a>{% endif %}
+</div>
+<div class="footer-col">
+<h2>Hours</h2>
+{%- for l in airtable.hoursLines %}<span>{{ l.days }}: {{ l.text }}</span>{% endfor %}
+<a href="/hours/#holidays">Holiday hours</a>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="wrap">
+<span>© {{ site.year }} {{ biz["Legal Name"] or biz.Name }}</span>
+<span>
+{%- if biz["Google Business Profile"] %}<a href="{{ biz['Google Business Profile'] }}">Google reviews</a> · {% endif -%}
+{%- if biz.Facebook %}<a href="{{ biz.Facebook }}">Facebook</a> · {% endif -%}
+<a href="/faq/">FAQ</a> · <a href="/contact-us/">Contact</a></span>
+</div>
+</div>
+</footer>

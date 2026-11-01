@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+title: Frequently Asked Questions
+eleventyComputed:
+  description: "Answers to common questions about tires, service, hours and on-site work at {{ airtable.biz.Name }} in {{ airtable.biz.City }}, {{ airtable.biz.State }}."
+---
+<section class="page-hero bg-blue on-dark">
+<div class="wrap"><div>
+<h1>Questions &amp; answers</h1>
+<p>Don't see yours? <a href="/contact-us/#quote" style="color: var(--white); font-weight: 700;">Ask us</a>.</p>
+</div></div>
+</section>
+
+<section class="section">
+<div class="wrap faq-list">
+{%- for f in airtable.faq %}
+<div class="faq-item"><h2>{{ f.q }}</h2><div class="prose" style="font-size: 17px;">{{ f.a | md | safe }}</div></div>
+{%- endfor %}
+</div>
+</section>
+<script type="application/ld+json">{{ airtable.faqLd | json | safe }}</script>

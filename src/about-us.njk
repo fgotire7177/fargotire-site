@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+title: About Us
+eleventyComputed:
+  description: "{{ airtable.biz.Name }} has been locally owned and operated in {{ airtable.biz.City }}, {{ airtable.biz.State }} since {{ airtable.biz.Founded }}."
+---
+{%- from "partials/icons.njk" import icon, picture -%}
+{%- set biz = airtable.biz -%}
+{%- set photo = airtable.images.about_photo -%}
+<section class="page-hero bg-blue on-dark">
+<div class="wrap"><div>
+<h1>About us</h1>
+<p>Locally owned and operated since {{ biz.Founded }}.</p>
+</div></div>
+</section>
+
+<section class="section">
+<div class="wrap two-col">
+<div class="prose">
+{%- for p in airtable.text.about_history | paras %}<p>{{ p }}</p>{% endfor %}
+</div>
+<div style="display: flex; justify-content: center;">
+{%- if photo and photo.img %}
+<div style="border-radius: var(--radius); overflow: hidden;">{{ picture(photo.img, photo.alt, "(max-width: 900px) 100vw, 560px") }}</div>
+{%- else %}
+<span class="badge hero-badge" style="width: min(100%, 320px);"><img src="/assets/tireboy.svg" alt="The {{ biz.Name }} tire man, leaning on a stack of tires" width="474" height="494" loading="lazy"></span>
+{%- endif %}
+</div>
+</div>
+</section>
+
+{%- if airtable.whyUs.length %}
+<section class="section bg-gray" aria-labelledby="diff-h">
+<div class="wrap">
+<h2 id="diff-h" class="h2 center" style="margin-bottom: 28px;">{{ airtable.text.difference_heading }}</h2>
+<div class="why-grid">
+{%- for w in airtable.whyUs %}
+<div class="why-item"><span class="why-icon">{{ icon(w.icon, 26) }}</span><div><h3>{{ w.title }}</h3><p>{{ w.text }}</p></div></div>
+{%- endfor %}
+</div>
+</div>
+</section>
+{%- endif %}
+
+<section class="cta-band">
+<div class="wrap">
+<div><h2>Stop in or give us a call</h2><p>{{ biz.Street }}, {{ biz.City }}. Walk-ins welcome.</p></div>
+<a class="btn btn-red" href="/contact-us/#quote">Request a Quote</a>
+</div>
+</section>
