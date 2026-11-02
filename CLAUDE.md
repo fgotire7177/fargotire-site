@@ -253,7 +253,11 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
    - ~~test `update-site`~~ done
    - ~~IndexNow on deploy~~ built Nov. 2 (`deploy-succeeded`); it first runs after launch
    - ~~a noindex tag while the site is only on the netlify.app address~~ built Nov. 2
-5. Performance and accessibility pass on the deploy preview (Lighthouse mobile), Search Console prep. JSON-LD, sitemap, robots and headers are done.
+5. Performance and accessibility pass (Lighthouse mobile), Search Console prep. JSON-LD, sitemap, robots and headers are done.
+   - Nov. 2, Lighthouse 12.8 mobile on the live site: perf 96 to 100, accessibility 100, best practices 100 on home, Specials, Services, a service page, About, Contact and the nitrogen post. SEO 69 everywhere only because of the pre-launch noindex. Hours scored perf 70 and a11y 95.
+   - Fixed: the Hours status pill was near-white on white (`.page-hero p` overrode it), and the Google map loaded on page load. It now loads after the page loads, when its box nears the screen (`data-map-src` in `find-us.njk` plus `site.js`).
+   - Netlify's injected "Powered by Netlify" badge covered the Request a Quote button in the phone bar. Turn it off in Project configuration, General, Powered by Netlify badge.
+   - Lighthouse runs locally with `npx lighthouse@12` (CHROME_PATH set to Chrome). The free PageSpeed API often hits its shared daily quota.
 6. Real content (Nov. 2: King blue, script fonts, motto and Paul's fact fixes done; retreading is offered and shown; the items kept from the old site that Paul didn't list stay, per Jay; first blog post, nitrogen in cold weather, published):
    - photos, logos, coupons, confirmed hours
    - `docs/paul-claude-instructions.md`

@@ -161,4 +161,25 @@
       if (note) { note.hidden = false; note.querySelector("span").textContent = coupon.slice(0, 120); }
     }
   });
+
+  // ---- Map: Google's embed pulls in about 17 requests, so add it after the page has loaded and only
+  // when its box is about to scroll into view. Phones start native lazy iframes far too early. ----
+  function addMaps() {
+    document.querySelectorAll("[data-map-src]").forEach(function (box) {
+      function load() {
+        var frame = document.createElement("iframe");
+        frame.src = box.getAttribute("data-map-src");
+        frame.title = box.getAttribute("data-map-title") || "Map";
+        frame.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+        box.replaceChildren(frame);
+      }
+      if (!("IntersectionObserver" in window)) { load(); return; }
+      var io = new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); load(); }
+      }, { rootMargin: "300px 0px" });
+      io.observe(box);
+    });
+  }
+  if (document.readyState === "complete") addMaps();
+  else window.addEventListener("load", addMaps);
 })();

@@ -2,7 +2,7 @@
 {%- set q = (biz.Name ~ ' ' ~ biz.Street ~ ' ' ~ biz.City ~ ' ' ~ biz.State ~ ' ' ~ biz.ZIP) | urlencode -%}
 <section class="section bg-gray" aria-labelledby="find-h">
 <div class="wrap find-row">
-<div class="map-box"><iframe title="Map to {{ biz.Name }}" src="https://maps.google.com/maps?q={{ q }}&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+<div class="map-box" data-map-src="https://maps.google.com/maps?q={{ q }}&amp;output=embed" data-map-title="Map to {{ biz.Name }}"><noscript><iframe title="Map to {{ biz.Name }}" src="https://maps.google.com/maps?q={{ q }}&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></noscript></div>
 <div class="find-us">
 <h2 id="find-h" class="h2-sm">Find us</h2>
 <p style="font-size: 19px; font-weight: 600;">{{ biz.Street }}<br>{{ biz.City }}, {{ biz.State }} {{ biz.ZIP }}</p>
