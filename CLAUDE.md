@@ -30,13 +30,16 @@ Built in Cowork and tested against the seed data at 390px, 1024px, 1200px and 14
 - Both Netlify functions. `submission-created` was tested with a mocked Airtable; `update-site` has not been run yet.
 - `scripts/airtable-setup.mjs`.
 
+Since then (Nov. 2, 2026):
+- The repo is on GitHub at `fgotire7177/fargotire-site`.
+- The Airtable base "Fargo Tire Service Website" (`app0Uq2vOASSgJXvu`, workspace `wspgEJFdTL9Nc4hm6`, shop's account) was created by `npm run airtable:setup` and holds the seed. A build from it costs 12 API calls (one per table) and matches the seed build page for page. The only exception is the order of undated hidden blog posts, which is whatever order Airtable returns.
+
 Not yet run against real services:
-- No Airtable base exists yet.
 - No Netlify site exists yet.
 - No real form submission has been sent.
 - No real attachments have gone through the image pipeline.
 
-Start from Milestone 2 in the list at the bottom.
+Start from Milestone 4 in the list at the bottom.
 
 ## Repo layout (as built)
 
@@ -69,7 +72,8 @@ Local commands:
 - `src/_data/airtable.js` reads every table at build with `AIRTABLE_TOKEN` and `AIRTABLE_BASE_ID`. If either is missing, load `airtable/seed.json` and log that it did, so local dev and deploy previews work without credentials.
 - Keep rows with Show ticked; sort by Order.
 - Download attachments at build and serve them from the site. Airtable attachment URLs expire after a couple of hours, so never hotlink them. Resize with `@11ty/eleventy-img` (WebP plus JPEG, about 480/960/1600 wide) and cache between builds.
-- Airtable Free allows 1,000 API calls per month per workspace. A build should cost about one call per table plus pagination. Never fetch per page, never poll.
+- Airtable Free allows 1,000 API calls per month per workspace. A build costs one call per table (12 today) plus pagination. Never fetch per page, never poll.
+- `npm run dev` and `npm run samples` rebuild on every save, so while serving or watching, `airtable.js` reuses its last read from `.cache/airtable.json` for 30 minutes. Delete that file to read again. Plain builds, including Netlify's, always read fresh.
 
 - Seed rows marked SAMPLE (Coupons, Special Hours) and the planned Blog Posts have Show unticked. With `SHOW_SAMPLES=1`, local builds treat hidden rows in those three tables as shown, so layouts can be checked. Never set it on Netlify.
 
@@ -207,7 +211,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
   - The Airtable base in the shop's workspace.
 - The `AIRTABLE_TOKEN` used by Netlify must be created by the shop's Airtable user. A token tied to Jay breaks the site the day he is removed.
 - Never use Jay's Dakota Skyhook accounts for anything in this project. The Airtable and Netlify connectors in Jay's Claude are signed in to Dakota Skyhook, so don't use them here. Reach Airtable only with the shop's token in `.env`, and GitHub and Netlify only as the shop's accounts. Reading the `dakotaskyhook-site` code for patterns is fine.
-- DNS stays at the current registrar. Check MX records before touching anything, and change only the web records (A/CNAME) so the shop's email keeps working. Get into the existing Google Search Console property, or re-verify by DNS.
+- DNS stays at the current registrar. Check MX records before touching anything, and change only the web records (A/CNAME) so the shop's email keeps working. As of Nov. 1, 2026: DNS is at GoDaddy (`ns09`/`ns10.domaincontrol.com`); email is Microsoft 365 (MX `fargotire-com.mail.protection.outlook.com`, SPF `include:spf.protection.outlook.com -all`, TXT `MS=ms82426383`). Leave all of those alone. Get into the existing Google Search Console property, or re-verify by DNS.
 - Before handoff:
   - Replace `README.md` with an owner guide: how to edit in Airtable, Update website, where leads go, who to call.
   - Keep this file current.
@@ -227,14 +231,14 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 - Paul's exact brand colors (from the vinyl sample), plus logo files if he has any.
 - Form Notice Email, public email, Google Business Profile URL, Facebook URL.
 - Photos (drone shots exist; ground shots coming) and dealer logo files.
-- Registrar and current host access; current MX records.
+- GoDaddy (registrar/DNS) and current host access.
 
 ## Milestones
 
 1. ~~Scaffold, tokens and partials; Home, Specials and Hours from the seed.~~ Done.
-2. Create the Airtable base with `npm run airtable:setup` (shop's token), then confirm a build reads it and log the API call count. **Next.**
+2. ~~Create the Airtable base with `npm run airtable:setup` (shop's token), then confirm a build reads it and log the API call count.~~ Done Nov. 2: 12 calls per build.
 3. ~~Services, About, Contact, Blog, FAQ, 404, redirects.~~ Done. Review the copy with Jay.
-4. Netlify site and environment variables, then:
+4. Netlify site and environment variables (**next**), then:
    - a test quote on a deploy preview (Leads row plus email notice)
    - Update website buttons in Airtable
    - test `update-site`

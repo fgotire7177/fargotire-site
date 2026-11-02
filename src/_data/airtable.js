@@ -28,13 +28,33 @@ async function fetchTable(base, token, table) {
   return rows;
 }
 
+// `npm run dev` and `npm run samples` rebuild on every save, which would cost 12 calls each time.
+// While serving or watching, reuse the last read for 30 minutes. Plain builds (Netlify) always read fresh.
+const CACHE_FILE = new URL("../../.cache/airtable.json", import.meta.url);
+const CACHE_MINUTES = 30;
+
 async function load() {
   const token = process.env.AIRTABLE_TOKEN;
   const base = process.env.AIRTABLE_BASE_ID;
   if (token && base) {
+    const watching = ["serve", "watch"].includes(process.env.ELEVENTY_RUN_MODE);
+    if (watching) {
+      try {
+        const cached = JSON.parse(await fs.readFile(CACHE_FILE, "utf8"));
+        const age = Math.round((Date.now() - cached.savedAt) / 60000);
+        if (cached.base === base && age < CACHE_MINUTES) {
+          console.log(`[airtable] Using Airtable data read ${age} min ago (delete .cache/airtable.json to read again).`);
+          return { source: "airtable", raw: cached.raw };
+        }
+      } catch { /* no cache yet */ }
+    }
     const raw = {};
     for (const t of TABLES) raw[t] = await fetchTable(base, token, t);
     console.log(`[airtable] Read ${TABLES.length} tables from Airtable.`);
+    if (watching) {
+      await fs.mkdir(new URL("./", CACHE_FILE), { recursive: true });
+      await fs.writeFile(CACHE_FILE, JSON.stringify({ base, savedAt: Date.now(), raw }));
+    }
     return { source: "airtable", raw };
   }
   const raw = JSON.parse(await fs.readFile(new URL("../../airtable/seed.json", import.meta.url), "utf8"));
@@ -216,7 +236,7 @@ export default async function () {
       url: `/services/${r.Slug}/`,
       category: r.Category || "Service & Repair",
       summary: r.Summary || "",
-      body: r.Body || "",
+      body: (r.Body || "").trim(),
       photo: await image(first(r.Photo)),
       photoAlt: r["Photo Alt"] || "",
       searchTitle: r["Search Title"] || "",
@@ -240,7 +260,7 @@ export default async function () {
       date: r.Date || "",
       category: r.Category || "",
       summary: r.Summary || "",
-      text: r.Text || "",
+      text: (r.Text || "").trim(),
       cover: await image(first(r["Cover Photo"])),
       coverAlt: r["Cover Photo Alt"] || "",
       searchTitle: r["Search Title"] || "",
@@ -252,7 +272,8 @@ export default async function () {
 
   const shownPostAddresses = new Set(posts.map((p) => p.address));
   const shownServiceSlugs = new Set(services.map((s) => s.slug));
-  const faq = shown("FAQ").map((r) => ({ q: r.Question, a: r.Answer || "" }));
+  // Airtable rich text comes back with a trailing newline; trim it so it stays out of JSON-LD.
+  const faq = shown("FAQ").map((r) => ({ q: r.Question, a: (r.Answer || "").trim() }));
 
   // ---- Structured data (search engines and AI search) ----
   const hhmm = (min) => (min == null ? null : `${String(Math.floor(min / 60)).padStart(2, "0")}:${String(min % 60).padStart(2, "0")}`);
