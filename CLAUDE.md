@@ -34,12 +34,12 @@ Since then (Nov. 2, 2026):
 - The repo is on GitHub at `fgotire7177/fargotire-site`.
 - The Airtable base "Fargo Tire Service Website" (`app0Uq2vOASSgJXvu`, workspace `wspgEJFdTL9Nc4hm6`, shop's account) was created by `npm run airtable:setup` and holds the seed. A build from it costs 12 API calls (one per table) and matches the seed build page for page. The only exception is the order of undated hidden blog posts, which is whatever order Airtable returns.
 
+- The Netlify project `fargotire-site` (shop's team) deploys `main` to https://fargotire-site.netlify.app. Production visitor access must stay public; protect previews only. Tested Nov. 2: pages, redirects and headers; a quote with a photo landed in Leads with the photo attached; the Update website link started a hook deploy.
+
 Not yet run against real services:
-- No Netlify site exists yet.
-- No real form submission has been sent.
 - No real attachments have gone through the image pipeline.
 
-Start from Milestone 4 in the list at the bottom.
+Continue Milestone 4 (Airtable buttons, IndexNow) in the list at the bottom.
 
 ## Repo layout (as built)
 
@@ -55,7 +55,7 @@ src/
   index.njk coupons.njk hours.njk about-us.njk contact-us.njk faq.njk thanks.njk 404.njk
   services/ (index + one page per row)   blog/ (index + one page per post)
   sitemap.njk robots.njk redirects.njk
-netlify/functions/       submission-created.mjs (form to Airtable Leads), update-site.mjs (Update website button)
+netlify/functions/       submission-created.mjs (form to Airtable Leads), update-site.mjs (Update website button), deploy-succeeded.mjs (IndexNow)
 netlify.toml             build, Node 22, headers
 scripts/airtable-setup.mjs   creates the base from airtable/schema.json and loads airtable/seed.json
 assets/                  tire man art and icons, copied to /assets/
@@ -167,13 +167,13 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
   - Coupon (hidden), Page (hidden)
 - Netlify only captures fields present in the built HTML, so no JS-added fields.
 - `submission-created` creates a Leads record: Received = now, Status = New, Page and Coupon filled. If the photo can't be attached cleanly, store its link in Message instead.
-- Email notices use Netlify's built-in form notification to the Form Notice Email address, set in the Netlify UI. No email code.
+- Email notices come from an Airtable automation in the website base, "Email new quote requests": when a Leads record is created, a Microsoft Outlook "Send email" step sends the lead's fields and record link from web@fargotire.com to itself. Netlify's own form email notices need its Pro plan, so they aren't used. No email code. Tested end to end Nov. 2, 2026. It uses Airtable automation runs (100 a month on Free).
 - After sending, show the Site Text `quote_thanks` message.
 - Add reCAPTCHA only if spam shows up.
 
 ### Publishing
 
-- `update-site` function: called with `?key=UPDATE_SITE_KEY`, it POSTs to `NETLIFY_BUILD_HOOK_URL` and returns a small page saying "Website update started. It will be live in about a minute." In Airtable, add a button field (Open URL) named "Update website" to Coupons, Special Hours, Blog Posts and Business Info, like the Dakota Skyhook base.
+- `update-site` function: called with `?key=UPDATE_SITE_KEY`, it POSTs to `NETLIFY_BUILD_HOOK_URL` and returns a small page saying "Website update started. It will be live in about a minute." Coupons, Special Hours, Blog Posts and Business Info each have an "Update Website" button field (Open URL, added by hand Nov. 2, 2026; the API can't create or read buttons) pointing at `https://fargotire-site.netlify.app/.netlify/functions/update-site?key=...`. If `UPDATE_SITE_KEY` ever changes, update all 4 buttons. After launch they can point at fargotire.com instead.
 - Optional, verify on the shop's Free Airtable plan: an automation on Coupons and Special Hours (record created, or Show changed) that runs a script calling the build hook. Free allows 100 automation runs a month.
 - No scheduled rebuilds. Expiry is handled in the browser.
 
@@ -197,7 +197,8 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
   - Home: `Tires in Fargo, ND | Fargo Tire Service`
   - Service pages: `{Service} in Fargo, ND | Fargo Tire Service`
   - Search Title overrides either.
-- `sitemap.xml`, `robots.txt` with the sitemap line, and IndexNow on deploy like dakotaskyhook.com.
+- `sitemap.xml`, `robots.txt` with the sitemap line, and IndexNow on deploy: `netlify/functions/deploy-succeeded.mjs` sends the sitemap's URLs to api.indexnow.org after each production deploy. The key is in `src/_data/indexnow.js` and is served at `/<key>.txt` by `src/indexnow-key.11ty.js`. It's public by design.
+- Pre-launch: while production is on `*.netlify.app`, `site.preLaunch` puts `noindex` on every page and the IndexNow function skips. Both switch off by themselves once Netlify's primary domain is fargotire.com, after one redeploy.
 - Performance: images sized and lazy-loaded below the fold, no layout shift, fonts preloaded. Target Lighthouse 95+ on mobile.
 
 ## Limits that bite
@@ -235,7 +236,9 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 
 - Confirm the hours and holiday closures with Paul. They come from Goodyear's listing.
 - Logo files, if Paul has any.
-- Form Notice Email, public email, Google Business Profile URL, Facebook URL.
+- Public email, Google Business Profile URL, Facebook URL. (Quote emails go to web@fargotire.com; see Quote form.)
+- The shop's Airtable Team trial ends about Nov. 16, 2026. Afterwards, send one test quote to confirm the Outlook email automation still runs on Free.
+- Which Netlify plan the shop's team ended up on (Free: 300 credits; Personal: $9 a month, 1,000 credits). Update Limits to match.
 - Photos (drone shots exist; ground shots coming) and dealer logo files.
 - GoDaddy (registrar/DNS) and current host access.
 
@@ -244,15 +247,16 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 1. ~~Scaffold, tokens and partials; Home, Specials and Hours from the seed.~~ Done.
 2. ~~Create the Airtable base with `npm run airtable:setup` (shop's token), then confirm a build reads it and log the API call count.~~ Done Nov. 2: 12 calls per build.
 3. ~~Services, About, Contact, Blog, FAQ, 404, redirects.~~ Done. Review the copy with Jay.
-4. Netlify site and environment variables (**next**), then:
-   - a test quote on a deploy preview (Leads row plus email notice)
-   - Update website buttons in Airtable
-   - test `update-site`
-   - IndexNow on deploy, like dakotaskyhook.com (not built yet)
+4. Netlify site and environment variables. Done Nov. 2, plus:
+   - ~~a test quote (Leads row plus email notice)~~ done; the email comes from the Airtable automation
+   - ~~Update website buttons in Airtable~~ done on all 4 tables
+   - ~~test `update-site`~~ done
+   - ~~IndexNow on deploy~~ built Nov. 2 (`deploy-succeeded`); it first runs after launch
+   - ~~a noindex tag while the site is only on the netlify.app address~~ built Nov. 2
 5. Performance and accessibility pass on the deploy preview (Lighthouse mobile), Search Console prep. JSON-LD, sitemap, robots and headers are done.
 6. Real content (Nov. 2: King blue, script fonts, motto and Paul's fact fixes done; retreading is offered and shown; the items kept from the old site that Paul didn't list stay, per Jay; first blog post, nitrogen in cold weather, published):
    - photos, logos, coupons, confirmed hours
    - `docs/paul-claude-instructions.md`
    - the owner guide in README.md
    - an optional Airtable interface for Paul
-7. Launch: DNS cutover, Search Console, Google Business Profile check, a week of watching, then handoff.
+7. Launch: DNS cutover, Search Console, Google Business Profile check, a week of watching, then handoff. After fargotire.com is the primary domain in Netlify, trigger one deploy: that removes the pre-launch noindex, switches canonical URLs and the sitemap to fargotire.com, and runs IndexNow for the first time (check the function log for 200 or 202).

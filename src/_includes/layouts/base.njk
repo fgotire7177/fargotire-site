@@ -11,7 +11,7 @@
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDesc }}">
 <link rel="canonical" href="{{ page.url | absUrl(site.url) }}">
-{%- if noindex %}<meta name="robots" content="noindex">{% endif %}
+{%- if noindex or site.preLaunch %}<meta name="robots" content="noindex">{% endif %}
 <meta property="og:type" content="{{ ogType or 'website' }}">
 <meta property="og:site_name" content="{{ biz.Name }}">
 <meta property="og:title" content="{{ pageTitle }}">
