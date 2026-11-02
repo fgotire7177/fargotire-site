@@ -8,9 +8,10 @@ pagination:
   alias: post
 permalink: "/blog/{{ post.address }}/"
 eleventyComputed:
-  title: "{{ post.title }}"
-  fullTitle: "{{ post.searchTitle }}"
-  description: "{{ post.searchDescription or post.summary }}"
+  # | safe here because base.njk escapes these once; without it "&" and "'" come out double-escaped.
+  title: "{{ post.title | safe }}"
+  fullTitle: "{{ post.searchTitle | safe }}"
+  description: "{{ (post.searchDescription or post.summary) | safe }}"
 ---
 {%- from "partials/icons.njk" import picture -%}
 {%- set biz = airtable.biz -%}

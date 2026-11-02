@@ -75,7 +75,7 @@ Local commands:
 - Airtable Free allows 1,000 API calls per month per workspace. A build costs one call per table (12 today) plus pagination. Never fetch per page, never poll.
 - `npm run dev` and `npm run samples` rebuild on every save, so while serving or watching, `airtable.js` reuses its last read from `.cache/airtable.json` for 30 minutes. Delete that file to read again. Plain builds, including Netlify's, always read fresh.
 
-- Seed rows marked SAMPLE (Coupons, Special Hours) and the planned Blog Posts have Show unticked. With `SHOW_SAMPLES=1`, local builds treat hidden rows in those three tables as shown, so layouts can be checked. Never set it on Netlify.
+- Seed rows marked SAMPLE (Coupons, Special Hours) and the planned Blog Posts have Show unticked. The nitrogen post (`nitrogen-tire-inflation`) is written and shown. With `SHOW_SAMPLES=1`, local builds treat hidden rows in those three tables as shown, so layouts can be checked. Never set it on Netlify.
 
 Environment variables (document in `.env.example`, never commit values): `AIRTABLE_TOKEN`, `AIRTABLE_BASE_ID`, `AIRTABLE_WORKSPACE_ID` (setup script only), `NETLIFY_BUILD_HOOK_URL`, `UPDATE_SITE_KEY`, and the local-only `SHOW_SAMPLES`, `PREVIEW_DATE`, `PREVIEW_TIME`.
 
@@ -233,7 +233,6 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 ## Open items (ask Jay)
 
 - Confirm the hours and holiday closures with Paul. They come from Goodyear's listing.
-- Still on the site from the old website but not in Paul's Nov. 2 list, so worth confirming: Extended Warranty Work, ASE-certified technicians, free road hazard coverage, service trucks with cranes, after-hours service, ABS and steering work, toll-free number and fax, the 1978/1979 history.
 - Logo files, if Paul has any.
 - Form Notice Email, public email, Google Business Profile URL, Facebook URL.
 - Photos (drone shots exist; ground shots coming) and dealer logo files.
@@ -250,7 +249,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
    - test `update-site`
    - IndexNow on deploy, like dakotaskyhook.com (not built yet)
 5. Performance and accessibility pass on the deploy preview (Lighthouse mobile), Search Console prep. JSON-LD, sitemap, robots and headers are done.
-6. Real content (Nov. 2: King blue, script fonts, motto and Paul's fact fixes done; retreading is offered and shown):
+6. Real content (Nov. 2: King blue, script fonts, motto and Paul's fact fixes done; retreading is offered and shown; the items kept from the old site that Paul didn't list stay, per Jay; first blog post, nitrogen in cold weather, published):
    - photos, logos, coupons, confirmed hours
    - `docs/paul-claude-instructions.md`
    - the owner guide in README.md

@@ -7,9 +7,10 @@ pagination:
   alias: svc
 permalink: "/services/{{ svc.slug }}/"
 eleventyComputed:
-  title: "{{ svc.name }} in Fargo, ND"
-  fullTitle: "{{ svc.searchTitle }}"
-  description: "{{ svc.searchDescription or svc.summary }}"
+  # | safe here because base.njk escapes these once; without it "&" and "'" come out double-escaped.
+  title: "{{ svc.name | safe }} in Fargo, ND"
+  fullTitle: "{{ svc.searchTitle | safe }}"
+  description: "{{ (svc.searchDescription or svc.summary) | safe }}"
 ---
 {%- from "partials/icons.njk" import picture -%}
 {%- set biz = airtable.biz -%}
