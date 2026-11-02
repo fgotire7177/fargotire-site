@@ -101,11 +101,17 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
 ## Design
 
 - Match `design/mockup/*.html` and the screenshots next to them. That is the approved look. Layout follows Sullivan Tire's homepage structure; the coupons page follows Pugh's Tire. Never copy their words, photos, colors or logos.
-- The name is **Fargo Tire Service**, written exactly that way everywhere. "Fargo Tire Service, Inc." appears only in the footer copyright and JSON-LD `legalName`.
-- Fonts: Barlow Condensed 600/700/800 for the name, headings and buttons (uppercase); Barlow 400 to 700 for body. Self-host (`@fontsource`) and preload the two main weights.
-- Colors are stand-ins until we get Paul's vinyl color codes. Keep every color in `tokens.css` so the swap is one edit: `--blue #1D4F91`, `--red #C62828`, `--ink #24292E`, `--white #FFFFFF`, `--gray-50 #F3F4F6`, `--gray-200 #D9DDE2`, `--border #E3E6EA`, `--muted #4B5563`.
-- The tire man (`assets/tireboy.svg`) is black line art with no fill, so he always sits on a white circle with a red ring (`assets/tireboy-badge.svg`, or a CSS circle around the SVG). Never put him straight onto blue or charcoal. He appears in the header (about 60px), the home hero (about 380px, to the left of the tagline so his arm points at it), the footer (about 96px), and as the favicon and app icons (`assets/favicon.*`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`).
-- Tagline: "Boy, have we got tires!" from Business Info.
+- The name is **Fargo Tire Service**, written exactly that way in page text. The logo name in the header and footer is "Fargo Tire Service Inc." (Paul's own lockup, no comma). "Fargo Tire Service, Inc." appears only in the footer copyright and JSON-LD `legalName`.
+- Fonts, all self-hosted from `@fontsource`:
+  - Rouge Script, bolded, for the logo name.
+  - Dancing Script 600 for the tagline (the home page h1) and the motto.
+  - Barlow Condensed 600/700/800 for headings and buttons (uppercase); Barlow 400 to 700 for body.
+  - Preload Barlow 400, Barlow Condensed 800 and Rouge Script on every page, plus Dancing Script on the home page.
+- Every color lives in `tokens.css`. Paul's colors are king blue and white: `--blue #152A78` is Oracal 651 #049 King blue (sRGB 21, 42, 120), chosen Nov. 2, 2026. Others: `--red #C62828`, `--ink #24292E`, `--white #FFFFFF`, `--gray-50 #F3F4F6`, `--gray-200 #D9DDE2`, `--border #E3E6EA`, `--muted #4B5563`.
+- Use red sparingly (Jay, Nov. 2): only the Request a Quote / Send request buttons, coupon amounts, the holiday bar and the Closed tag. Everything else that was red is blue.
+- The tire man (`assets/tireboy.svg`) is black line art with no fill, so he always sits on a white circle with a King blue ring (`assets/tireboy-badge.svg`, or a CSS circle around the SVG). Never put him straight onto blue or charcoal. The PNG and ICO icons are rendered from `assets/favicon.svg`.
+- Paul's logo fonts are French Script (bold) for the name, written "Fargo Tire Service Inc.", and Freestyle Script for "Boy! Have we got tires!" and the motto "After the sales, it's our service that counts." Their Office licenses don't cover the web, so the site uses free look-alikes, chosen by Jay on Nov. 2: Rouge Script and Dancing Script. The comparison is in `design/font-options.html`. Script is for those three lines only; everything else stays Barlow. He appears in the header (about 60px), the home hero (about 380px, to the left of the tagline so his arm points at it), the footer (about 96px), and as the favicon and app icons (`assets/favicon.*`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`).
+- Tagline "Boy! Have we got tires!" and Motto "After the sales, it's our service that counts." come from Business Info. The motto shows under the tagline on the home page and in the footer.
 - Phone layout changes from the mockup, which used placeholders here:
   1. Header nav becomes a Menu button that opens a full-width panel.
   2. The home specials strip becomes a horizontal scroll-snap row, so the hero isn't pushed 1,000px down.
@@ -227,8 +233,8 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 ## Open items (ask Jay)
 
 - Confirm the hours and holiday closures with Paul. They come from Goodyear's listing.
-- Is retreading still offered? Its Services row is hidden until confirmed.
-- Paul's exact brand colors (from the vinyl sample), plus logo files if he has any.
+- Still on the site from the old website but not in Paul's Nov. 2 list, so worth confirming: Extended Warranty Work, ASE-certified technicians, free road hazard coverage, service trucks with cranes, after-hours service, ABS and steering work, toll-free number and fax, the 1978/1979 history.
+- Logo files, if Paul has any.
 - Form Notice Email, public email, Google Business Profile URL, Facebook URL.
 - Photos (drone shots exist; ground shots coming) and dealer logo files.
 - GoDaddy (registrar/DNS) and current host access.
@@ -244,8 +250,8 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
    - test `update-site`
    - IndexNow on deploy, like dakotaskyhook.com (not built yet)
 5. Performance and accessibility pass on the deploy preview (Lighthouse mobile), Search Console prep. JSON-LD, sitemap, robots and headers are done.
-6. Real content:
-   - photos, logos, coupons, confirmed hours, the retreading decision
+6. Real content (Nov. 2: King blue, script fonts, motto and Paul's fact fixes done; retreading is offered and shown):
+   - photos, logos, coupons, confirmed hours
    - `docs/paul-claude-instructions.md`
    - the owner guide in README.md
    - an optional Airtable interface for Paul

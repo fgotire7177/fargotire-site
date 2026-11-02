@@ -9,6 +9,7 @@
         {"name": "Name", "type": "singleLineText", "description": "The business name exactly as it should appear everywhere: Fargo Tire Service. Keep it matching the Google Business Profile."},
         {"name": "Legal Name", "type": "singleLineText", "description": "Used only in the fine print and search-engine data. Fargo Tire Service, Inc."},
         {"name": "Tagline", "type": "singleLineText", "description": "The big line next to the tire man on the home page."},
+        {"name": "Motto", "type": "singleLineText", "description": "The smaller line under the tagline on the home page, also in the footer."},
         {"name": "Founded", "type": "number", "options": {"precision": 0}, "description": "Year the shop opened. Shows as Since 1950."},
         {"name": "Street", "type": "singleLineText"},
         {"name": "City", "type": "singleLineText"},

@@ -24,6 +24,9 @@ export default function (eleventyConfig) {
   for (const w of [600, 700, 800]) {
     eleventyConfig.addPassthroughCopy({ [`node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-${w}-normal.woff2`]: `fonts/barlow-condensed-${w}.woff2` });
   }
+  // Free stand-ins for Paul's logo fonts: French Script (name) and Freestyle Script (slogan, motto).
+  eleventyConfig.addPassthroughCopy({ "node_modules/@fontsource/rouge-script/files/rouge-script-latin-400-normal.woff2": "fonts/rouge-script-400.woff2" });
+  eleventyConfig.addPassthroughCopy({ "node_modules/@fontsource/dancing-script/files/dancing-script-latin-600-normal.woff2": "fonts/dancing-script-600.woff2" });
 
   eleventyConfig.addFilter("md", (s) => (s ? md.render(String(s)) : ""));
   eleventyConfig.addFilter("paras", (s) => String(s || "").split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean));

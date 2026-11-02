@@ -29,6 +29,9 @@ title: Tires in Fargo, ND
 <div class="hero-copy">
 <p class="eyebrow">{{ t.hero_eyebrow }}</p>
 <h1 id="hero-h">{{ biz.Tagline }}</h1>
+{%- if biz.Motto %}
+<p class="hero-motto">{{ biz.Motto }}</p>
+{%- endif %}
 <p class="hero-text">{{ t.hero_text }}</p>
 <div class="actions">
 <a class="btn btn-red" href="#quote">Request a Quote</a>
@@ -79,6 +82,9 @@ title: Tires in Fargo, ND
 {%- if b.link %}</a>{% else %}</div>{% endif %}
 {%- endfor %}
 </div>
+{%- if t.brands_text %}
+<p class="center" style="margin-top: 16px;">{{ t.brands_text }}</p>
+{%- endif %}
 </div>
 </section>
 {%- endif %}

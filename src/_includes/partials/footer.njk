@@ -3,8 +3,11 @@
 <div class="wrap footer-grid">
 <div class="footer-col footer-brand">
 <span class="badge"><img src="/assets/tireboy.svg" alt="" width="474" height="494" loading="lazy"></span>
-<span class="footer-name">{{ biz.Name }}</span>
+<span class="footer-name">{{ biz.Name }} Inc.</span>
 <span class="footer-since">Since {{ biz.Founded }}</span>
+{%- if biz.Motto %}
+<span class="footer-motto">{{ biz.Motto }}</span>
+{%- endif %}
 </div>
 <div class="footer-col">
 <h2>Visit</h2>

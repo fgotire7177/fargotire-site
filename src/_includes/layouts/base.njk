@@ -22,9 +22,13 @@
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#1D4F91">
+<meta name="theme-color" content="#152A78">
 <link rel="preload" href="/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/rouge-script-400.woff2" as="font" type="font/woff2" crossorigin>
+{%- if page.url == "/" %}
+<link rel="preload" href="/fonts/dancing-script-600.woff2" as="font" type="font/woff2" crossorigin>
+{%- endif %}
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="stylesheet" href="/css/site.css">
 <link rel="stylesheet" href="/css/print.css" media="print">

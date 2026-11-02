@@ -4,7 +4,8 @@
     {
       "Name": "Fargo Tire Service",
       "Legal Name": "Fargo Tire Service, Inc.",
-      "Tagline": "Boy, have we got tires!",
+      "Tagline": "Boy! Have we got tires!",
+      "Motto": "After the sales, it's our service that counts.",
       "Founded": 1950,
       "Street": "2020 Main Ave",
       "City": "Fargo",
@@ -206,10 +207,10 @@
       "Show": true
     },
     {
-      "Name": "ATV, Lawn & Garden and Trailer Tires",
-      "Slug": "atv-lawn-garden-trailer-tires",
+      "Name": "UTV, Lawn & Garden and Trailer Tires",
+      "Slug": "utv-lawn-garden-trailer-tires",
       "Category": "Tires",
-      "Summary": "Tires for ATVs, lawn and garden equipment, and boat and utility trailers.",
+      "Summary": "Tires for UTVs, lawn and garden equipment, and boat and utility trailers.",
       "Order": 50,
       "Show": true
     },
@@ -321,9 +322,9 @@
       "Name": "Tire Retreading",
       "Slug": "tire-retreading",
       "Category": "Commercial",
-      "Summary": "Retreads for light truck and truck tires. CONFIRM WITH PAUL BEFORE SHOWING: may be discontinued.",
+      "Summary": "Retreads for light truck and truck tires.",
       "Order": 190,
-      "Show": false
+      "Show": true
     }
   ],
   "Who We Serve": [
@@ -362,8 +363,8 @@
   ],
   "Why Us": [
     {
-      "Title": "Family owned since 1950",
-      "Text": "Locally owned and operated. The Anderson family has run the shop since 1972.",
+      "Title": "Locally owned since 1950",
+      "Text": "Family owned and operated since 1972, when Duane \"Andy\" Anderson bought the shop.",
       "Icon": "home",
       "Order": 10,
       "Show": true
@@ -391,7 +392,7 @@
     },
     {
       "Title": "Hard-to-find tires",
-      "Text": "Passenger, truck, farm, industrial, ATV, lawn and garden, and trailer tires.",
+      "Text": "Passenger, SUV, light truck, truck, farm, industrial, off-the-road, UTV, lawn and garden, and trailer tires.",
       "Icon": "tire",
       "Order": 50,
       "Show": true
@@ -412,23 +413,23 @@
     },
     {
       "Brand": "BFGoodrich",
-      "Order": 20,
-      "Show": true
-    },
-    {
-      "Brand": "Goodyear",
       "Order": 30,
       "Show": true
     },
     {
+      "Brand": "Goodyear",
+      "Order": 20,
+      "Show": true
+    },
+    {
       "Brand": "Uniroyal",
-      "Order": 40,
+      "Order": 50,
       "Show": true
     },
     {
       "Brand": "Dunlop",
-      "Order": 50,
-      "Show": true
+      "Order": 90,
+      "Show": false
     },
     {
       "Brand": "Hercules",
@@ -437,6 +438,11 @@
     },
     {
       "Brand": "Titan",
+      "Order": 40,
+      "Show": true
+    },
+    {
+      "Brand": "Toyo",
       "Order": 70,
       "Show": true
     }
@@ -513,7 +519,7 @@
     },
     {
       "Question": "What tire brands do you sell?",
-      "Answer": "Michelin, BFGoodrich, Goodyear, Uniroyal, Dunlop, Hercules and Titan, plus hard-to-find sizes.",
+      "Answer": "Michelin, Goodyear, BFGoodrich, Titan, Uniroyal, Hercules and Toyo, plus hard-to-find sizes. We can get any brand you want.",
       "Order": 40,
       "Show": true
     },
@@ -539,7 +545,7 @@
   "Site Text": [
     {
       "Name": "hero_eyebrow",
-      "Text": "Fargo's family tire shop since 1950"
+      "Text": "Locally owned and operated since 1950"
     },
     {
       "Name": "hero_text",
@@ -607,11 +613,15 @@
     },
     {
       "Name": "about_history",
-      "Text": "Fargo Tire Service has been locally owned and operated since it opened in 1950.\n\nDuane \"Andy\" Anderson bought the business in 1972. In 1978 the retread department added a new curing chamber, and in 1979 a new building doubled the alignment department to four bays with computerized alignment machines.\n\nAndy's sons, Paul and Roger, joined the business in 1988 and have led the team ever since."
+      "Text": "Fargo Tire Service has been locally owned and operated since it opened in 1950.\n\nDuane \"Andy\" Anderson bought the business in 1972, and it has been family owned and operated ever since. In 1978 the retread department added a new curing chamber, and in 1979 a new building doubled the alignment department to four bays with computerized alignment machines.\n\nAndy's sons joined the business, Paul in 1985 and Roger in 1986. Paul and Roger have managed the business since 1998."
     },
     {
       "Name": "footer_tagline",
       "Text": "Locally owned and operated since 1950"
+    },
+    {
+      "Name": "brands_text",
+      "Text": "We can get any brand you want."
     }
   ],
   "Site Images": [

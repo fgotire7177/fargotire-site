@@ -1,5 +1,6 @@
-/* Every color and font for the site lives here. Brand colors are stand-ins until Paul's
-   vinyl color codes arrive: change --blue and --red here and the whole site follows. */
+/* Every color and font for the site lives here. --blue is the shop's "king blue"
+   (Oracal 651 #049, sRGB 21, 42, 120). Red is a sparing accent: the main Request a Quote
+   button, coupon amounts, the holiday bar and the Closed tag. Everything else uses blue. */
 @font-face { font-family: "Barlow"; font-weight: 400; font-style: normal; font-display: swap; src: url("/fonts/barlow-400.woff2") format("woff2"); }
 @font-face { font-family: "Barlow"; font-weight: 500; font-style: normal; font-display: swap; src: url("/fonts/barlow-500.woff2") format("woff2"); }
 @font-face { font-family: "Barlow"; font-weight: 600; font-style: normal; font-display: swap; src: url("/fonts/barlow-600.woff2") format("woff2"); }
@@ -7,9 +8,13 @@
 @font-face { font-family: "Barlow Condensed"; font-weight: 600; font-style: normal; font-display: swap; src: url("/fonts/barlow-condensed-600.woff2") format("woff2"); }
 @font-face { font-family: "Barlow Condensed"; font-weight: 700; font-style: normal; font-display: swap; src: url("/fonts/barlow-condensed-700.woff2") format("woff2"); }
 @font-face { font-family: "Barlow Condensed"; font-weight: 800; font-style: normal; font-display: swap; src: url("/fonts/barlow-condensed-800.woff2") format("woff2"); }
+/* Logo scripts, only for the name, slogan and motto. Rouge Script has no bold, so font-weight 700
+   makes the browser thicken it, like Paul's bolded French Script. */
+@font-face { font-family: "Rouge Script"; font-weight: 400; font-style: normal; font-display: swap; src: url("/fonts/rouge-script-400.woff2") format("woff2"); }
+@font-face { font-family: "Dancing Script"; font-weight: 600; font-style: normal; font-display: swap; src: url("/fonts/dancing-script-600.woff2") format("woff2"); }
 
 :root {
-  --blue: #1D4F91;
+  --blue: #152A78;
   --red: #C62828;
   --ink: #24292E;
   --white: #FFFFFF;
@@ -24,10 +29,12 @@
   --on-blue-soft: #EEF4FB;
   --on-blue-eyebrow: #CFE0F5;
   --on-ink: #D7DCE1;
-  --on-ink-accent: #F2B8B5;
+  --on-ink-accent: #C9D8F2;
 
   --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-logo: "Rouge Script", "Segoe Script", cursive;
+  --font-slogan: "Dancing Script", "Segoe Script", cursive;
 
   --radius: 10px;
   --radius-sm: 6px;
