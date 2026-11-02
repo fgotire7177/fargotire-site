@@ -4,6 +4,9 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # The Airtable base ID names the base but grants no access (the token does), and CLAUDE.md
+  # records it, so leave it out of Netlify's secret scan. Every other variable is still scanned.
+  SECRETS_SCAN_OMIT_KEYS = "AIRTABLE_BASE_ID"
 
 [functions]
   directory = "netlify/functions"

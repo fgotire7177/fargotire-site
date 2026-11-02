@@ -216,6 +216,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
   - The shop's own Netlify account, not Jay's Dakota Skyhook team. Free plans have no team seats, and moving a project needs a shared member.
   - The Airtable base in the shop's workspace.
 - The `AIRTABLE_TOKEN` used by Netlify must be created by the shop's Airtable user. A token tied to Jay breaks the site the day he is removed.
+- Netlify scans the repo and build output for environment variable values and fails the deploy if it finds one. `netlify.toml` omits only `AIRTABLE_BASE_ID` (an ID, not a credential). Never write the token, `UPDATE_SITE_KEY` or the build hook URL into any file in the repo.
 - Never use Jay's Dakota Skyhook accounts for anything in this project. The Airtable and Netlify connectors in Jay's Claude are signed in to Dakota Skyhook, so don't use them here. Reach Airtable only with the shop's token in `.env`, and GitHub and Netlify only as the shop's accounts. Reading the `dakotaskyhook-site` code for patterns is fine.
 - DNS stays at the current registrar. Check MX records before touching anything, and change only the web records (A/CNAME) so the shop's email keeps working. As of Nov. 1, 2026: DNS is at GoDaddy (`ns09`/`ns10.domaincontrol.com`); email is Microsoft 365 (MX `fargotire-com.mail.protection.outlook.com`, SPF `include:spf.protection.outlook.com -all`, TXT `MS=ms82426383`). Leave all of those alone. Get into the existing Google Search Console property, or re-verify by DNS.
 - Before handoff:
