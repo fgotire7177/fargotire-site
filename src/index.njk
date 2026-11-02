@@ -89,6 +89,18 @@ title: Tires in Fargo, ND
 </section>
 {%- endif %}
 
+{#- Shows only once Business Info has a Google Review Link. Neutral wording on purpose: Google's rules
+    don't allow asking only happy customers for reviews. -#}
+{%- if biz["Google Review Link"] %}
+<section class="section-tight bg-gray" aria-labelledby="review-h">
+<div class="wrap review-ask">
+<h2 id="review-h" class="h2-sm">{{ t.review_heading or "How did we do?" }}</h2>
+<p class="lead">{{ t.review_text or "Tell other drivers about your visit on Google." }}</p>
+<a class="btn btn-blue" href="{{ biz['Google Review Link'] }}" target="_blank" rel="noopener">Leave a Google review</a>
+</div>
+</section>
+{%- endif %}
+
 {%- if t.season_title %}
 <section class="season bg-ink on-dark" aria-labelledby="season-h">
 <div class="wrap">
@@ -102,7 +114,7 @@ title: Tires in Fargo, ND
 </div>
 </div>
 <ul class="season-list">
-{%- for item in t.season_items | lines %}<li>{{ icon("check", 20, "#F2B8B5", 2.5) }}{{ item }}</li>{% endfor %}
+{%- for item in t.season_items | lines %}<li>{{ icon("check", 20, "currentColor", 2.5) }}{{ item }}</li>{% endfor %}
 </ul>
 </div>
 </section>

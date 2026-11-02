@@ -150,6 +150,7 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; text
 .why-item h3 { font-size: 24px; margin-bottom: 4px; }
 .why-item p { color: var(--muted); }
 .center { text-align: center; }
+.review-ask { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
 
 /* Brands */
 .brands-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); gap: 12px; }
@@ -164,6 +165,7 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; text
 .season-copy p { color: var(--on-ink); font-size: 18px; }
 .season-list { flex: 1 1 320px; list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .season-list li { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: rgba(255, 255, 255, 0.08); border-radius: 8px; font-weight: 600; }
+.season-list li svg { flex: 0 0 auto; color: var(--on-ink-accent); }
 
 /* Posts */
 .posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 22px; }

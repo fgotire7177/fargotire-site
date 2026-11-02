@@ -20,6 +20,7 @@
         {"name": "Fax", "type": "phoneNumber"},
         {"name": "Public Email", "type": "email", "description": "Shown on the Contact page. Leave blank to show no email."},
         {"name": "Form Notice Email", "type": "email", "description": "Where quote requests from the website get emailed. Not shown on the site."},
+        {"name": "Google Review Link", "type": "url", "description": "From Google Business Profile: Ask for reviews, then copy the link (it looks like https://g.page/r/.../review). While this is filled, the site shows a Leave a Google review button on the home page and in the footer."},
         {"name": "Google Business Profile", "type": "url", "description": "Link to the shop on Google Maps. Used for the Reviews link."},
         {"name": "Facebook", "type": "url"},
         {"name": "Service Area", "type": "multilineText", "description": "Where the service trucks go, in plain words. Shows on the On-Site Service page."},

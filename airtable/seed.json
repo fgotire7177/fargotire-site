@@ -626,6 +626,14 @@
     {
       "Name": "brands_text",
       "Text": "We can get any brand you want."
+    },
+    {
+      "Name": "review_heading",
+      "Text": "How did we do?"
+    },
+    {
+      "Name": "review_text",
+      "Text": "Tell other drivers about your visit on Google."
     }
   ],
   "Site Images": [

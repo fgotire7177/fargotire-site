@@ -32,6 +32,7 @@
 <div class="wrap">
 <span>© {{ site.year }} {{ biz["Legal Name"] or biz.Name }}</span>
 <span>
+{%- if biz["Google Review Link"] %}<a href="{{ biz['Google Review Link'] }}" target="_blank" rel="noopener">Leave a Google review</a> · {% endif -%}
 {%- if biz["Google Business Profile"] %}<a href="{{ biz['Google Business Profile'] }}">Google reviews</a> · {% endif -%}
 {%- if biz.Facebook %}<a href="{{ biz.Facebook }}">Facebook</a> · {% endif -%}
 <a href="/faq/">FAQ</a> · <a href="/contact-us/">Contact</a></span>
