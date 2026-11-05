@@ -177,7 +177,7 @@
       "Name": "Passenger & Light Truck Tires",
       "Slug": "passenger-light-truck-tires",
       "Category": "Tires",
-      "Summary": "Tires for cars, pickups and SUVs from Michelin, BFGoodrich, Goodyear, Uniroyal and more. Free road hazard coverage on passenger tires you buy here.",
+      "Summary": "Tires for cars, pickups and SUVs from Michelin, BFGoodrich, Goodyear, Uniroyal and more. Free road hazard coverage on passenger and light truck tires you buy here.",
       "Order": 10,
       "Show": true
     },
@@ -225,7 +225,7 @@
       "Name": "On-Site & Roadside Tire Service",
       "Slug": "on-site-roadside-tire-service",
       "Category": "On-Site",
-      "Summary": "Fully equipped service trucks, some with cranes, come to your job site. Any tire, any size, any time. After-hours rates may apply.",
+      "Summary": "Fully equipped service trucks, with cranes, come to your job site. Any tire, any size, any time. After-hours rates will apply.",
       "Order": 70,
       "Show": true
     },
@@ -233,7 +233,7 @@
       "Name": "Wheel Alignment",
       "Slug": "wheel-alignment",
       "Category": "Service & Repair",
-      "Summary": "Computerized four-wheel alignment for cars and pickups, domestic or foreign, plus truck alignment.",
+      "Summary": "Computerized four-wheel alignment for cars and pickups, domestic or foreign, plus 3-axle computerized truck alignment.",
       "Order": 80,
       "Show": true
     },
@@ -353,7 +353,7 @@
     },
     {
       "Title": "On-Site & Roadside",
-      "Summary": "Service trucks, some with cranes, come to your job site or field. After-hours service available.",
+      "Summary": "Service trucks, with cranes, come to your job site or field. After-hours service available.",
       "Photo Alt": "Service crane truck on a job",
       "Link": "/services/on-site-roadside-tire-service/",
       "Order": 40,
@@ -384,7 +384,7 @@
     },
     {
       "Title": "We come to you",
-      "Text": "Fully equipped service trucks, some with cranes, for jobs at your site or in the field.",
+      "Text": "Fully equipped service trucks, with cranes, for jobs at your site or in the field.",
       "Icon": "truck",
       "Order": 40,
       "Show": true
@@ -398,7 +398,7 @@
     },
     {
       "Title": "Free road hazard coverage",
-      "Text": "On passenger tires you buy here, plus free rotation, air check and inspection.",
+      "Text": "On passenger and light truck tires you buy here, plus free rotation, air check and inspection.",
       "Icon": "shield",
       "Order": 60,
       "Show": true
