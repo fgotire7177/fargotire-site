@@ -194,7 +194,7 @@
       "Name": "Semi & Commercial Truck Tires",
       "Slug": "semi-commercial-truck-tires",
       "Category": "Commercial",
-      "Summary": "Medium truck tires, computer balancing and truck alignment to keep your trucks working.",
+      "Summary": "Medium truck tires, computer balancing and truck alignment to keep your trucks rolling down the road.",
       "Order": 20,
       "Show": true
     },
@@ -226,7 +226,7 @@
       "Name": "Hard-to-Find Tires",
       "Slug": "hard-to-find-tires",
       "Category": "Tires",
-      "Summary": "Odd size or hard to track down? Finding hard-to-find tires is one of our specialties.",
+      "Summary": "Do you have an odd size or hard-to-find tire? We can find it for you!",
       "Order": 60,
       "Show": true
     },
@@ -259,7 +259,7 @@
       "Name": "Tire Repair & Rotation",
       "Slug": "tire-repair-rotation",
       "Category": "Service & Repair",
-      "Summary": "Flat repair and rotation. Free rotation, air pressure check and inspection with tire purchase.",
+      "Summary": "Flat repair and rotation. Free rotation, air pressure check and inspection when the tires are purchased from us.",
       "Order": 100,
       "Show": true
     },
@@ -334,7 +334,7 @@
       "Name": "Tire Retreading",
       "Slug": "tire-retreading",
       "Category": "Commercial",
-      "Summary": "Retreads for light truck and truck tires.",
+      "Summary": "Retreads for truck tires.",
       "Order": 190,
       "Show": true
     }
@@ -357,7 +357,7 @@
       "Show": true
     },
     {
-      "Title": "Farm & Ag",
+      "Title": "Farm and Off-the-road",
       "Summary": "Tractor, implement and industrial tires, plus foam fill so they never go flat.",
       "Photo Alt": "Tractor tires in stock",
       "Link": "/services/farm-ag-tires/",
@@ -383,7 +383,7 @@
     },
     {
       "Title": "Walk-ins welcome",
-      "Text": "No appointment needed for tire work. Stop in and we'll take care of you.",
+      "Text": "No appointment needed for tire work. Stop in and we'll take care of your tire needs.",
       "Icon": "door",
       "Order": 20,
       "Show": true
@@ -591,7 +591,7 @@
     },
     {
       "Name": "serve_text",
-      "Text": "From the family pickup to the combine, we sell, install and service tires for it."
+      "Text": "From the smallest tire to the biggest tire, we sell, install and service all of them."
     },
     {
       "Name": "difference_heading",
