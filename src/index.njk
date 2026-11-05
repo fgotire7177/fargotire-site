@@ -24,13 +24,15 @@ title: Tires in Fargo, ND
 <section class="hero bg-blue on-dark" aria-labelledby="hero-h">
 <div class="wrap">
 <div class="hero-art">
-<div class="art-card hero-card">{{ tireman("hero", "Cartoon of the " ~ biz.Name ~ " tire man in a blue jacket and red bow tie, standing on a stack of tires", "(max-width: 520px) 66vw, 340px", "high") }}</div>
+{#- The drawing's speech bubble carries the tagline, so the alt text says it and the copy doesn't repeat it. -#}
+<div class="art-card hero-card">{{ tireman("hero", "Cartoon of the " ~ biz.Name ~ " tire man in a blue jacket and red bow tie, standing on a stack of tires" ~ ((" and saying \"" ~ biz.Tagline ~ "\"") if biz.Tagline else ""), "(max-width: 520px) 66vw, 340px", "high") }}</div>
 </div>
 <div class="hero-copy">
 <p class="eyebrow">{{ t.hero_eyebrow }}</p>
-<h1 id="hero-h">{{ biz.Tagline }}</h1>
 {%- if biz.Motto %}
-<p class="hero-motto">{{ biz.Motto }}</p>
+<h1 id="hero-h" class="hero-motto">{{ biz.Motto }}</h1>
+{%- else %}
+<h1 id="hero-h" class="visually-hidden">{{ biz.Name }}</h1>
 {%- endif %}
 <p class="hero-text">{{ t.hero_text }}</p>
 <div class="actions">

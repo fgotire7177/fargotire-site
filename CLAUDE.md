@@ -36,7 +36,7 @@ Since then (Nov. 2, 2026):
 
 - The Netlify project `fargotire-site` (shop's team) deploys `main` to https://fargotire-site.netlify.app. Production visitor access must stay public; protect previews only. Tested Nov. 2: pages, redirects and headers; a quote with a photo landed in Leads with the photo attached; the Update website link started a hook deploy.
 
-Image pipeline (Nov. 5, 2026): all 7 shown Brands rows have a PNG in Logo (from Jay; the Toyo file arrived white on transparent and was made black so it shows on the white tiles). A local build from Airtable downloaded and resized them. No Netlify build has used real attachments yet. SVGs or larger PNGs would look sharper on high-res phones.
+Image pipeline (Nov. 5, 2026): all 7 shown Brands rows have a PNG in Logo (from Jay; the Toyo file arrived white on transparent and was made black so it shows on the white tiles). A local build from Airtable downloaded and resized them, and the Nov. 5 Netlify deploy did the same. SVGs or larger PNGs would look sharper on high-res phones.
 
 Continue Milestone 4 (Airtable buttons, IndexNow) in the list at the bottom.
 
@@ -103,7 +103,7 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
 - The name is **Fargo Tire Service**, written exactly that way in page text. The logo name in the header and footer is "Fargo Tire Service Inc." (Paul's own lockup, no comma). "Fargo Tire Service, Inc." appears only in the footer copyright and JSON-LD `legalName`.
 - Fonts, all self-hosted from `@fontsource`:
   - Rouge Script, bolded, for the logo name.
-  - Dancing Script 600 for the tagline (the home page h1) and the motto.
+  - Dancing Script 600 for the motto (the home page h1).
   - Barlow Condensed 600/700/800 for headings and buttons (uppercase); Barlow 400 to 700 for body.
   - Preload Barlow 400, Barlow Condensed 800 and Rouge Script on every page, plus Dancing Script on the home page.
 - Every color lives in `tokens.css`. Paul's colors are king blue and white: `--blue #152A78` is Oracal 651 #049 King blue (sRGB 21, 42, 120), chosen Nov. 2, 2026. Others: `--red #C62828`, `--ink #24292E`, `--white #FFFFFF`, `--gray-50 #F3F4F6`, `--gray-200 #D9DDE2`, `--border #E3E6EA`, `--muted #4B5563`.
@@ -114,9 +114,9 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
   - `bust` (`tireman-bust-*`): head and bow tie, square, in the round badges in the header (58px) and footer (96px).
   - `favicon.ico`, `icon-192.png`, `icon-512.png` (JSON-LD logo, default share image) and `apple-touch-icon.png` are the bust in a King blue ring.
   - The old black line art (`tireboy.svg`, `favicon.svg`) stays only because `design/mockup/` uses it.
-- Paul's logo fonts are French Script (bold) for the name, written "Fargo Tire Service Inc.", and Freestyle Script for "Boy! Have we got tires!" and the motto "After the sales, it's our service that counts." Their Office licenses don't cover the web, so the site uses free look-alikes, chosen by Jay on Nov. 2: Rouge Script and Dancing Script. Jay plans to buy web licenses for the real fonts from Monotype. When the WOFF2 files arrive: add them to the repo, point the two `@font-face` rules and `--font-logo` / `--font-slogan` in `tokens.css` at them, update the preloads in `base.njk`, then remove `@fontsource/rouge-script` and `@fontsource/dancing-script`. The comparison is in `design/font-options.html`. Script is for those three lines only; everything else stays Barlow.
+- Paul's logo fonts are French Script (bold) for the name, written "Fargo Tire Service Inc.", and Freestyle Script for "Boy! Have we got tires!" and the motto "After the sales, it's our service that counts." Their Office licenses don't cover the web, so the site uses free look-alikes, chosen by Jay on Nov. 2: Rouge Script and Dancing Script. Jay plans to buy web licenses for the real fonts from Monotype. When the WOFF2 files arrive: add them to the repo, point the two `@font-face` rules and `--font-logo` / `--font-slogan` in `tokens.css` at them, update the preloads in `base.njk`, then remove `@fontsource/rouge-script` and `@fontsource/dancing-script`. The comparison is in `design/font-options.html`. On the site, script is for the logo name and the motto only; everything else stays Barlow.
 - Home "This season" box (Site Text `season_title`, `season_text`, `season_items`): each line of `season_items` is `Label | /link/`, and each box links to that page. Lines without ` | ` show as plain boxes. Since Nov. 4, 2026 the 5 winter boxes link to Winter Tire Changeover (a new Services row), Tire Siping, Nitrogen Inflation, Batteries & Wiper Blades and Wheel Alignment. Each of those pages now has in-depth Body text. Per Jay, the shop stores customers' off-season tires (no price given).
-- Tagline "Boy! Have we got tires!" and Motto "After the sales, it's our service that counts." come from Business Info. The motto shows under the tagline on the home page and in the footer.
+- Tagline "Boy! Have we got tires!" and Motto "After the sales, it's our service that counts." come from Business Info. Since Nov. 5, 2026 (Jay) the tagline is no longer text on the home page, because the tire man's speech bubble already says it: it stays in the hero image's alt text and the JSON-LD `slogan`. The motto is the home page h1 and also shows in the footer.
 - Phone layout changes from the mockup, which used placeholders here:
   1. Header nav becomes a Menu button that opens a full-width panel. The full desktop menu (6 links: Tires and Services, Specials, Hours, Blog, About, FAQ, at 17px with 14px gaps; since Nov. 4, 2026 one "Tires and Services" link to /services/ replaces Tires, Services and Commercial & Farm) needs about 1070px, so the Menu button takes over below 1100px. Adding a link means re-measuring that fit.
   2. The home specials strip becomes a horizontal scroll-snap row, so the hero isn't pushed 1,000px down.
