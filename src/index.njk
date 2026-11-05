@@ -113,8 +113,13 @@ title: Tires in Fargo, ND
 <a class="btn btn-outline-white" href="/coupons/">See specials</a>
 </div>
 </div>
+{#- Site Text season_items: one per line, "Label | /link/". Lines without a link show as plain boxes. -#}
 <ul class="season-list">
-{%- for item in t.season_items | lines %}<li>{{ icon("check", 20, "currentColor", 2.5) }}{{ item }}</li>{% endfor %}
+{%- for line in t.season_items | lines %}
+{%- set parts = line.split(" | ") %}
+{%- if parts[1] %}<li><a href="{{ parts[1] | trim }}">{{ icon("check", 20, "currentColor", 2.5) }}<span>{{ parts[0] | trim }}</span>{{ icon("chevron", 20, "currentColor", 2.5) }}</a></li>
+{%- else %}<li class="season-plain">{{ icon("check", 20, "currentColor", 2.5) }}{{ line }}</li>{% endif %}
+{%- endfor %}
 </ul>
 </div>
 </section>

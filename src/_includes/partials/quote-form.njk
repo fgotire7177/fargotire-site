@@ -14,20 +14,21 @@
 <input type="hidden" name="page" value="">
 <p class="bot-field"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 <p class="quote-coupon" hidden>Asking about: <span></span></p>
-<div class="field"><label for="q-name">Name</label><input id="q-name" name="name" type="text" autocomplete="name" required></div>
-<div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel"></div>
-<div class="field"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email"></div>
+<p class="field-wide form-note">Fields marked * are required.</p>
+<div class="field"><label for="q-name">Name *</label><input id="q-name" name="name" type="text" autocomplete="name" required></div>
+{#- Phone or email: at least one. site.js enforces it with the browser's own validation. -#}
+<div class="field"><label for="q-phone">Phone *</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" aria-describedby="q-reach-hint"></div>
+<div class="field"><label for="q-email">Email *</label><input id="q-email" name="email" type="email" autocomplete="email" aria-describedby="q-reach-hint"><span class="field-hint" id="q-reach-hint">Phone or email: one is enough.</span></div>
 <div class="field"><label for="q-need">What do you need?</label>
 <select id="q-need" name="need">
 <option>Passenger or light truck tires</option>
 <option>Semi or commercial tires</option>
-<option>Farm or ag tires</option>
+<option>Farm tires</option>
 <option>Service or repair</option>
-<option>On-site service</option>
 <option>Just a question</option>
 </select></div>
-<div class="field"><label for="q-vehicle">Vehicle or equipment</label><input id="q-vehicle" name="vehicle" type="text" placeholder="2019 Ford F-150, JD 8R, etc."></div>
-<div class="field"><label for="q-size">Tire size (optional)</label><input id="q-size" name="tire_size" type="text" aria-describedby="q-size-hint"><span class="field-hint" id="q-size-hint">It's printed on the tire's sidewall.</span></div>
+<div class="field"><label for="q-vehicle">Vehicle or equipment *</label><input id="q-vehicle" name="vehicle" type="text" placeholder="2019 Ford F-150, JD 8R, etc." required></div>
+<div class="field"><label for="q-size">Tire size *</label><input id="q-size" name="tire_size" type="text" aria-describedby="q-size-hint" required><span class="field-hint" id="q-size-hint">It's printed on the tire's sidewall or on a factory sticker inside the driver's side door jamb.</span></div>
 <div class="field"><label for="q-qty">How many?</label><input id="q-qty" name="quantity" type="number" min="1" inputmode="numeric"></div>
 <div class="field"><label for="q-photo">Sidewall photo (optional)</label><input id="q-photo" name="photo" type="file" accept="image/*"></div>
 <div class="field field-wide"><label for="q-msg">Anything else?</label><textarea id="q-msg" name="message" rows="4"></textarea></div>

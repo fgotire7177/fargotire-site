@@ -176,7 +176,7 @@
         {"name": "Phone", "type": "phoneNumber"},
         {"name": "Email", "type": "email"},
         {"name": "Contact Pref", "type": "singleSelect", "options": {"choices": [{"name": "Call"}, {"name": "Text"}, {"name": "Email"}]}},
-        {"name": "Need", "type": "singleSelect", "options": {"choices": [{"name": "Passenger or light truck tires"}, {"name": "Semi or commercial tires"}, {"name": "Farm or ag tires"}, {"name": "Service or repair"}, {"name": "On-site service"}, {"name": "Just a question"}]}},
+        {"name": "Need", "type": "singleSelect", "options": {"choices": [{"name": "Passenger or light truck tires"}, {"name": "Semi or commercial tires"}, {"name": "Farm tires"}, {"name": "Service or repair"}, {"name": "Just a question"}]}},
         {"name": "Vehicle or Equipment", "type": "singleLineText"},
         {"name": "Tire Size", "type": "singleLineText"},
         {"name": "Quantity", "type": "number", "options": {"precision": 0}},

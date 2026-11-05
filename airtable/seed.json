@@ -182,6 +182,15 @@
       "Show": true
     },
     {
+      "Name": "Winter Tire Changeover",
+      "Slug": "winter-tire-changeover",
+      "Category": "Tires",
+      "Order": 15,
+      "Show": true,
+      "Summary": "We swap your tires for winter tires before the snow and back again in the spring, and we can store your off-season set.",
+      "Body": "Winter tires grip better than all-season tires once it gets cold. Their rubber stays soft in freezing weather, and their tread is cut to bite into snow and slush. Most tire makers suggest switching when the temperature stays below about 45 degrees.\n\n## When to switch\n\nPlan your changeover before the first real snow, which in Fargo often comes in October or early November. Tire shops get busy once the first storm hits, so earlier is easier. Switch back in the spring, since winter tires wear faster on warm, dry roads.\n\n## What we do\n\n- Swap your tires, or mount and balance them on your wheels\n- Check the air pressure and tread on every tire\n- Store your off-season tires here at the shop, so you don't have to haul them home\n- Help you pick a new set of winter tires if yours are worn\n\nWalk-ins are welcome for tire work. Want more grip on ice? Ask about [tire siping](/services/tire-siping/)."
+    },
+    {
       "Name": "Semi & Commercial Truck Tires",
       "Slug": "semi-commercial-truck-tires",
       "Category": "Commercial",
@@ -235,7 +244,8 @@
       "Category": "Service & Repair",
       "Summary": "Computerized four-wheel alignment for cars and pickups, domestic or foreign, plus 3-axle computerized truck alignment.",
       "Order": 80,
-      "Show": true
+      "Show": true,
+      "Body": "Potholes, frost heaves and curbs can knock your wheels out of line, and our roads have plenty of all three by spring. Wheels that are out of line wear tires unevenly and can make your vehicle pull to one side.\n\n## Signs you need an alignment\n\n- Your vehicle pulls left or right on a straight road\n- The steering wheel is off center when you drive straight\n- Your tires wear faster on the inside or outside edges\n- You just bought new tires or hit a big pothole\n\n## What we align\n\n- Cars and pickups, domestic or foreign, with computerized four-wheel alignment\n- Trucks, with 3-axle computerized truck alignment\n\nOur ASE-certified technicians check and adjust your alignment so your tires last longer and your vehicle drives straight."
     },
     {
       "Name": "Tire Balancing",
@@ -259,7 +269,8 @@
       "Category": "Service & Repair",
       "Summary": "Nitrogen tire inflation is available. Ask us whether it's right for your vehicle.",
       "Order": 110,
-      "Show": true
+      "Show": true,
+      "Body": "We fill tires with nitrogen instead of regular air. Nitrogen leaks out of a tire more slowly than air and stays dry inside it, so your tires hold the right pressure longer.\n\n## What it does in the cold\n\nCold weather still lowers tire pressure, about 1 psi for every 10 degrees, with nitrogen or with air. Nitrogen helps by keeping the rest of the loss small, so your tires spend fewer days running low.\n\n## Who it helps most\n\n- Pickups, trailers and equipment that sit between uses\n- Farm and commercial tires that carry heavy loads\n- Anyone who doesn't check their tire pressure often\n\nRead more in our post, [Nitrogen in your tires: why it helps in a North Dakota and Minnesota winter](/blog/nitrogen-tire-inflation/)."
     },
     {
       "Name": "Tire Siping",
@@ -267,7 +278,8 @@
       "Category": "Service & Repair",
       "Summary": "Siping cuts thin slits across the tread for extra traction on ice and snow.",
       "Order": 120,
-      "Show": true
+      "Show": true,
+      "Body": "Siping cuts many thin slits across a tire's tread. As the tire rolls, each slit opens a little and adds a biting edge, so the tire grips better on ice, packed snow and wet roads.\n\n## Who it helps\n\n- Drivers who want more winter grip without studded tires\n- Cars, pickups and SUVs that see a lot of ice and packed snow\n- Work trucks and fleets that run in every kind of weather\n\n## Good to know\n\n- Siping works best on new tires or tires with plenty of tread left.\n- Not every tire is a good fit, so ask us about yours.\n- It pairs well with a [winter tire changeover](/services/winter-tire-changeover/) before the snow flies."
     },
     {
       "Name": "Tire Foam Fill",
@@ -307,7 +319,8 @@
       "Category": "Service & Repair",
       "Summary": "Vehicle batteries and Michelin wiper blades, sold and installed.",
       "Order": 170,
-      "Show": true
+      "Show": true,
+      "Body": "Cold is hard on batteries. On a below-zero morning a battery has much less starting power, so one that worked fine in October may not start your vehicle in January.\n\n## Battery check and replacement\n\n- We'll check your battery before the cold sets in.\n- If it's weak, we'll replace it with the right battery for your vehicle and install it for you.\n\n## Wiper blades\n\nIce, salt and slush wear wiper blades out fast. We sell and install Michelin wiper blades, so you can see clearly through the next storm.\n\nCall or stop in before the first cold snap."
     },
     {
       "Name": "Extended Warranty Work",
@@ -590,7 +603,7 @@
     },
     {
       "Name": "season_title",
-      "Text": "Get ready for a Fargo winter"
+      "Text": "Get ready for a northern winter"
     },
     {
       "Name": "season_text",
@@ -598,7 +611,7 @@
     },
     {
       "Name": "season_items",
-      "Text": "Winter tire changeover\nTire siping for ice and snow\nNitrogen inflation\nBattery check and replacement\nAlignment check"
+      "Text": "Winter tire changeover | /services/winter-tire-changeover/\nTire siping for additional traction on ice and snow | /services/tire-siping/\nNitrogen inflation | /services/nitrogen-inflation/\nBattery check and replacement | /services/batteries-wipers/\nAlignment check | /services/wheel-alignment/"
     },
     {
       "Name": "blog_heading",

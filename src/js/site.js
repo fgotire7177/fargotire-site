@@ -154,6 +154,17 @@
   document.querySelectorAll("form[name='quote']").forEach(function (form) {
     var page = form.querySelector("input[name='page']");
     if (page) page.value = window.location.pathname;
+    // Phone or email: at least one. A custom message on Phone makes the browser stop the send and say so.
+    var phone = form.querySelector("input[name='phone']");
+    var email = form.querySelector("input[name='email']");
+    if (phone && email) {
+      var syncReach = function () {
+        phone.setCustomValidity(phone.value.trim() || email.value.trim() ? "" : "Please enter a phone number or an email.");
+      };
+      phone.addEventListener("input", syncReach);
+      email.addEventListener("input", syncReach);
+      syncReach();
+    }
     if (coupon) {
       var input = form.querySelector("input[name='coupon']");
       if (input) input.value = coupon.slice(0, 120);

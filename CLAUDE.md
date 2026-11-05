@@ -111,6 +111,7 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
 - Use red sparingly (Jay, Nov. 2): only the Request a Quote / Send request buttons, coupon amounts, the holiday bar and the Closed tag. Everything else that was red is blue.
 - The tire man (`assets/tireboy.svg`) is black line art with no fill, so he always sits on a white circle with a King blue ring (`assets/tireboy-badge.svg`, or a CSS circle around the SVG). Never put him straight onto blue or charcoal. The PNG and ICO icons are rendered from `assets/favicon.svg`.
 - Paul's logo fonts are French Script (bold) for the name, written "Fargo Tire Service Inc.", and Freestyle Script for "Boy! Have we got tires!" and the motto "After the sales, it's our service that counts." Their Office licenses don't cover the web, so the site uses free look-alikes, chosen by Jay on Nov. 2: Rouge Script and Dancing Script. Jay plans to buy web licenses for the real fonts from Monotype. When the WOFF2 files arrive: add them to the repo, point the two `@font-face` rules and `--font-logo` / `--font-slogan` in `tokens.css` at them, update the preloads in `base.njk`, then remove `@fontsource/rouge-script` and `@fontsource/dancing-script`. The comparison is in `design/font-options.html`. Script is for those three lines only; everything else stays Barlow. He appears in the header (about 60px), the home hero (about 380px, to the left of the tagline so his arm points at it), the footer (about 96px), and as the favicon and app icons (`assets/favicon.*`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`).
+- Home "This season" box (Site Text `season_title`, `season_text`, `season_items`): each line of `season_items` is `Label | /link/`, and each box links to that page. Lines without ` | ` show as plain boxes. Since Nov. 4, 2026 the 5 winter boxes link to Winter Tire Changeover (a new Services row), Tire Siping, Nitrogen Inflation, Batteries & Wiper Blades and Wheel Alignment. Each of those pages now has in-depth Body text. Per Jay, the shop stores customers' off-season tires (no price given).
 - Tagline "Boy! Have we got tires!" and Motto "After the sales, it's our service that counts." come from Business Info. The motto shows under the tagline on the home page and in the footer.
 - Phone layout changes from the mockup, which used placeholders here:
   1. Header nav becomes a Menu button that opens a full-width panel. The full desktop menu (8 links: Tires, Services, Commercial & Farm, Specials, Hours, Blog, About, FAQ, at 17px with 14px gaps) needs 1220px, so the Menu button takes over below that. Adding a link means re-measuring that fit.
@@ -160,11 +161,12 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
 - Fields, matching the Leads table:
   - Name, Phone, Email
   - Contact Pref (Call/Text/Email)
-  - Need (select)
+  - Need (select): Passenger or light truck tires, Semi or commercial tires, Farm tires, Service or repair, Just a question. Since Nov. 4, 2026; the old Leads choices "Farm or ag tires" and "On-site service" can be deleted in Airtable.
   - Vehicle or Equipment, Tire Size, Quantity
   - Photo (one image, optional)
   - Message
   - Coupon (hidden), Page (hidden)
+- Required (Jay, Nov. 4, 2026): Name, Vehicle or Equipment and Tire Size use `required`. Phone or Email needs at least one, enforced in `site.js` with `setCustomValidity` on Phone. Labels mark them with *.
 - Netlify only captures fields present in the built HTML, so no JS-added fields.
 - `submission-created` creates a Leads record: Received = now, Status = New, Page and Coupon filled. If the photo can't be attached cleanly, store its link in Message instead.
 - Email notices come from an Airtable automation in the website base, "Email new quote requests": when a Leads record is created, a Microsoft Outlook "Send email" step sends the lead's fields and record link from web@fargotire.com to itself. Netlify's own form email notices need its Pro plan, so they aren't used. No email code. Tested end to end Nov. 2, 2026. It uses Airtable automation runs (100 a month on Free).
