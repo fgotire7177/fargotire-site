@@ -113,7 +113,7 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
 - Paul's logo fonts are French Script (bold) for the name, written "Fargo Tire Service Inc.", and Freestyle Script for "Boy! Have we got tires!" and the motto "After the sales, it's our service that counts." Their Office licenses don't cover the web, so the site uses free look-alikes, chosen by Jay on Nov. 2: Rouge Script and Dancing Script. Jay plans to buy web licenses for the real fonts from Monotype. When the WOFF2 files arrive: add them to the repo, point the two `@font-face` rules and `--font-logo` / `--font-slogan` in `tokens.css` at them, update the preloads in `base.njk`, then remove `@fontsource/rouge-script` and `@fontsource/dancing-script`. The comparison is in `design/font-options.html`. Script is for those three lines only; everything else stays Barlow. He appears in the header (about 60px), the home hero (about 380px, to the left of the tagline so his arm points at it), the footer (about 96px), and as the favicon and app icons (`assets/favicon.*`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`).
 - Tagline "Boy! Have we got tires!" and Motto "After the sales, it's our service that counts." come from Business Info. The motto shows under the tagline on the home page and in the footer.
 - Phone layout changes from the mockup, which used placeholders here:
-  1. Header nav becomes a Menu button that opens a full-width panel.
+  1. Header nav becomes a Menu button that opens a full-width panel. The full desktop menu (8 links: Tires, Services, Commercial & Farm, Specials, Hours, Blog, About, FAQ, at 17px with 14px gaps) needs 1220px, so the Menu button takes over below that. Adding a link means re-measuring that fit.
   2. The home specials strip becomes a horizontal scroll-snap row, so the hero isn't pushed 1,000px down.
   3. A sticky bottom bar with Call and Request a Quote, with page padding so it never covers content.
 - Accessibility: text contrast at least 4.5:1, never disable zoom, touch targets at least 44px, visible focus styles, real buttons and labels, alt text on every image.
@@ -234,7 +234,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 
 ## Open items (ask Jay)
 
-- Confirm the hours and holiday closures with Paul. They come from Goodyear's listing.
+- Confirm the regular hours with Paul. They come from Goodyear's listing. Holiday closures were confirmed by Jay on Nov. 4, 2026: New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day, Christmas Day (Site Text `holiday_closures`, listed on /hours/). The dated Special Hours rows that drive the holiday bar are still hidden samples. The after-hours note under Regular hours was removed Nov. 4 by emptying Business Info's After Hours Note.
 - Logo files, if Paul has any.
 - Public email, Google Business Profile URL, Facebook URL. (Quote emails go to web@fargotire.com; see Quote form.)
 - The shop's Airtable Team trial ends about Nov. 16, 2026. Afterwards, send one test quote to confirm the Outlook email automation still runs on Free.

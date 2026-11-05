@@ -14,7 +14,6 @@
       "Phone": "(701) 232-7177",
       "Toll Free": "800-365-2161",
       "Fax": "(701) 232-2939",
-      "After Hours Note": "Our service trucks take after-hours calls for trucks, farms and job sites. After-hours rates may apply.",
       "Time Zone": "America/Chicago"
     }
   ],
@@ -511,13 +510,13 @@
     },
     {
       "Question": "Do you come to job sites and farms?",
-      "Answer": "Yes. Our fully equipped service trucks, some with cranes, handle tire work at your site. Call (701) 232-7177.",
+      "Answer": "Yes. Our fully equipped service trucks, with cranes, handle tire work at your site. Call (701) 232-7177.",
       "Order": 20,
       "Show": true
     },
     {
       "Question": "Do you take after-hours calls?",
-      "Answer": "Yes. After-hours service is available. After-hours rates may apply.",
+      "Answer": "Yes. After-hours service is available. After-hours rates will apply.",
       "Order": 30,
       "Show": true
     },
@@ -529,13 +528,19 @@
     },
     {
       "Question": "Does road hazard coverage come with new tires?",
-      "Answer": "Free road hazard coverage comes with passenger tires you buy here.",
+      "Answer": "Free road hazard coverage comes with passenger and light truck tires you buy here.",
       "Order": 50,
       "Show": true
     },
     {
-      "Question": "Do you align trucks?",
-      "Answer": "Yes. We do computerized four-wheel alignment for cars and pickups, plus truck alignment.",
+      "Question": "Do I have to replace all 4 tires on an all-wheel-drive vehicle?",
+      "Answer": "Usually, yes. On most all-wheel-drive vehicles, all 4 tires need to be close to the same size and tread depth. A new tire next to worn ones turns at a different speed, and that can strain and damage the drivetrain. Many automakers say to replace all 4 at once, or to keep the tread depths within a small amount of each other, so check your owner's manual. Stop in and we'll measure your tread and tell you what your vehicle needs.",
+      "Order": 55,
+      "Show": true
+    },
+    {
+      "Question": "Do you align vehicles?",
+      "Answer": "Yes. We do computerized four-wheel alignment for cars and pickups, plus 3-axle computerized truck alignment.",
       "Order": 60,
       "Show": true
     },
@@ -553,7 +558,7 @@
     },
     {
       "Name": "hero_text",
-      "Text": "Passenger, light truck, semi, farm and industrial, plus the hard-to-find sizes. Walk-ins welcome, and our service trucks come to you."
+      "Text": "Passenger, light truck, semi truck, farm, off-the-road and industrial, plus the hard-to-find sizes. Walk-ins welcome."
     },
     {
       "Name": "specials_heading",
@@ -617,7 +622,7 @@
     },
     {
       "Name": "about_history",
-      "Text": "Fargo Tire Service has been locally owned and operated since it opened in 1950.\n\nDuane \"Andy\" Anderson bought the business in 1972, and it has been family owned and operated ever since. In 1978 the retread department added a new curing chamber, and in 1979 a new building doubled the alignment department to four bays with computerized alignment machines.\n\nAndy's sons joined the business, Paul in 1985 and Roger in 1986. Paul and Roger have managed the business since 1998."
+      "Text": "Fargo Tire Service has been locally owned and operated since it opened in 1950.\n\nDuane \"Andy\" Anderson bought the business in 1972, and it has been family owned and operated ever since. In 1979 a new building addition doubled the alignment department, and computerized alignment was added.\n\nAndy's sons joined the business, Paul in 1985 and Roger in 1986. Paul and Roger have managed the business since 1998."
     },
     {
       "Name": "footer_tagline",
@@ -634,6 +639,10 @@
     {
       "Name": "review_text",
       "Text": "Tell other drivers about your visit on Google."
+    },
+    {
+      "Name": "holiday_closures",
+      "Text": "New Year's Day\nMemorial Day\nIndependence Day\nLabor Day\nThanksgiving Day\nChristmas Day"
     }
   ],
   "Site Images": [

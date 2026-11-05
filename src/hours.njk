@@ -27,8 +27,17 @@ eleventyComputed:
 {%- if biz["After Hours Note"] %}<p style="margin-top: 16px; color: var(--muted);">{{ biz["After Hours Note"] }} Call <a class="link-strong" href="tel:{{ biz.Phone | tel }}">{{ biz.Phone }}</a>.</p>{% endif %}
 </div>
 <div id="holidays">
-<h2 class="h2-sm" style="margin-bottom: 14px;">Upcoming holiday hours</h2>
+<h2 class="h2-sm" style="margin-bottom: 14px;">Holiday hours</h2>
+{#- The holidays the shop always closes: Site Text holiday_closures, one per line. -#}
+{%- set closures = airtable.text.holiday_closures | lines %}
+{%- if closures.length %}
+<p style="margin-bottom: 10px;">We're closed on these holidays:</p>
+<ul class="closed-days">
+{%- for c in closures %}<li>{{ c }}</li>{% endfor %}
+</ul>
+{%- endif %}
 {%- if airtable.special.length %}
+<h3 class="holiday-coming">Coming up</h3>
 <ul class="holiday-list">
 {%- for s in airtable.special %}
 <li data-end="{{ s.end }}">
@@ -41,7 +50,7 @@ eleventyComputed:
 </li>
 {%- endfor %}
 </ul>
-{%- else %}
+{%- elif not closures.length %}
 <p class="lead">No holiday changes coming up. We're open our regular hours.</p>
 {%- endif %}
 </div>
