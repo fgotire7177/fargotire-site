@@ -170,6 +170,7 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
 - Required (Jay, Nov. 4, 2026): Name, Vehicle or Equipment and Tire Size use `required`. Phone or Email needs at least one, enforced in `site.js` with `setCustomValidity` on Phone. Labels mark them with *.
 - Netlify only captures fields present in the built HTML, so no JS-added fields.
 - `submission-created` creates a Leads record: Received = now, Status = New, Page and Coupon filled. If the photo can't be attached cleanly, store its link in Message instead.
+- Leads Status stages (Nov. 4, 2026): New, Contacted, In Process, Completed, Canceled (default New). Quoted, Won and Lost were renamed to the last 3, and Spam was removed. The Airtable interface "Quote Requests" (published, built by hand in the UI; the API can't create interfaces) has one Kanban page on Leads, stacked by Status, newest Received first. Cards show Name, Need, Phone, Vehicle or Equipment, Tire Size and Received. Dragging a card changes Status, and clicking one opens every field, editable. Nobody has been invited to it yet: Paul needs to be a base collaborator or an interface-only user (an editor seat, 5 on Free).
 - Email notices come from an Airtable automation in the website base, "Email new quote requests": when a Leads record is created, a Microsoft Outlook "Send email" step sends the lead's fields and record link from web@fargotire.com to itself. Netlify's own form email notices need its Pro plan, so they aren't used. No email code. Tested end to end Nov. 2, 2026. It uses Airtable automation runs (100 a month on Free).
 - After sending, show the Site Text `quote_thanks` message.
 - Add reCAPTCHA only if spam shows up.
@@ -265,5 +266,5 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
    - photos, logos, coupons, confirmed hours
    - `docs/paul-claude-instructions.md`
    - the owner guide in README.md
-   - an optional Airtable interface for Paul
+   - ~~an optional Airtable interface for Paul~~ done Nov. 4: "Quote Requests", a Kanban board of Leads (see Quote form)
 7. Launch: DNS cutover, Search Console, Google Business Profile check, a week of watching, then handoff. Before launch, check that every coupon with Show ticked is meant for the public (the "4 Free Tires for Jay Manley" coupon added Nov. 2 is shown). After fargotire.com is the primary domain in Netlify, trigger one deploy: that removes the pre-launch noindex, switches canonical URLs and the sitemap to fargotire.com, and runs IndexNow for the first time (check the function log for 200 or 202).

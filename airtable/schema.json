@@ -186,7 +186,7 @@
         {"name": "Coupon", "type": "singleLineText", "description": "Filled when someone used Request this special on a coupon."},
         {"name": "Page", "type": "singleLineText", "description": "The page the form was sent from."},
         {"name": "Received", "type": "dateTime", "options": {"dateFormat": {"name": "us"}, "timeFormat": {"name": "12hour"}, "timeZone": "America/Chicago"}},
-        {"name": "Status", "type": "singleSelect", "options": {"choices": [{"name": "New"}, {"name": "Contacted"}, {"name": "Quoted"}, {"name": "Won"}, {"name": "Lost"}, {"name": "Spam"}]}}
+        {"name": "Status", "type": "singleSelect", "options": {"choices": [{"name": "New"}, {"name": "Contacted"}, {"name": "In Process"}, {"name": "Completed"}, {"name": "Canceled"}]}, "description": "Where the request stands. Drag cards between these on the Quote Requests interface."}
       ]
     }
   ]
