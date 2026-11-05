@@ -60,7 +60,7 @@
       "description": "Specials and coupons. Featured ones show in the strip at the top of the home page; all of them show on the Specials page. Expired coupons hide themselves on the website the day after Expires.",
       "fields": [
         {"name": "Title", "type": "singleLineText", "description": "Short name for your own use, like Alignment $20 off Nov 2026."},
-        {"name": "Offer Type", "type": "singleSelect", "options": {"choices": [{"name": "Dollars Off"}, {"name": "Percent Off"}, {"name": "Special Price"}, {"name": "Free"}]}, "description": "Picks how the big number reads: $20 OFF, 10% OFF, $49.95, or FREE."},
+        {"name": "Offer Type", "type": "singleSelect", "options": {"choices": [{"name": "Dollars Off"}, {"name": "Percent Off"}, {"name": "Special Price"}, {"name": "Free"}, {"name": "Rebate"}]}, "description": "Picks how the big number reads: $20 OFF, 10% OFF, $49.95, FREE, or $100 REBATE (for manufacturer rebates)."},
         {"name": "Amount", "type": "number", "options": {"precision": 2}, "description": "The number only. 20 for $20 off, 10 for 10% off, 49.95 for a special price. Blank for Free."},
         {"name": "Applies To", "type": "singleLineText", "description": "What the deal is on, like 4-wheel alignment. This is the coupon's headline."},
         {"name": "Details", "type": "multilineText", "description": "One short line under the headline, like Cars and pickups."},

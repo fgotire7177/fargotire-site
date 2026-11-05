@@ -97,6 +97,7 @@ function bigLine(c) {
     case "Percent Off": return n != null ? `${money(n)}% OFF` : "SPECIAL";
     case "Special Price": return n != null ? `$${money(n)}` : "SPECIAL";
     case "Free": return "FREE";
+    case "Rebate": return n != null ? `$${money(n)} REBATE` : "REBATE";
     default: return "SPECIAL";
   }
 }
