@@ -45,8 +45,11 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; text
 .site-header { background: var(--white); border-bottom: 1px solid var(--border); position: relative; z-index: 20; }
 .site-header .wrap { padding-block: 12px; display: flex; align-items: center; gap: 12px 28px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; flex: 0 1 auto; }
-.badge { border-radius: 50%; background: var(--white); border: 3px solid var(--blue); display: grid; place-items: center; overflow: hidden; flex: 0 0 auto; }
-.badge img { width: 80%; }
+/* The tire man always sits on white with a King blue edge: a round badge (the bust) or a card (the full drawing). */
+.badge { border-radius: 50%; background: var(--white); border: 3px solid var(--blue); display: grid; overflow: hidden; flex: 0 0 auto; }
+.badge picture, .badge img { width: 100%; height: 100%; }
+.art-card { display: block; background: var(--white); border-radius: 20px; padding: 10px; }
+.art-card img { width: 100%; }
 .brand .badge { width: 58px; height: 58px; }
 @media (max-width: 480px) {
   .brand-sub { letter-spacing: 0.09em; }
@@ -129,8 +132,9 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; text
 /* Hero */
 .hero .wrap { padding-block: clamp(40px, 6vw, 72px); display: flex; flex-wrap: wrap; align-items: center; gap: 40px 56px; }
 .hero-art { flex: 1 1 300px; display: flex; justify-content: center; }
-.hero-badge { width: min(72vw, 380px); aspect-ratio: 1 / 1; border: 12px solid var(--blue); outline: 6px solid var(--white); }
-.hero-badge img { width: 74%; margin-top: 6%; }
+/* On the blue hero the blue border reads as a gap between the white outline and the white card, like the old round badge. */
+.hero-card { width: min(66vw, 340px); border: 10px solid var(--blue); outline: 5px solid var(--white); }
+.about-card { width: min(80vw, 360px); border: 3px solid var(--blue); }
 .hero-copy { flex: 1.3 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
 .hero .eyebrow { color: var(--on-blue-eyebrow); font-size: 15px; }
 .hero h1 { color: var(--white); font-family: var(--font-slogan); font-weight: 600; text-transform: none; font-size: clamp(48px, 6.4vw, 86px); line-height: 1.05; text-wrap: balance; }
@@ -158,10 +162,13 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; text
 .center { text-align: center; }
 .review-ask { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
 
-/* Brands */
-.brands-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); gap: 12px; }
-.brand-cell { border: 1px solid var(--border); border-radius: 8px; min-height: 76px; display: grid; place-items: center; padding: 10px; font-family: var(--font-display); font-weight: 700; font-size: 22px; color: #374151; text-decoration: none; }
-.brand-cell img { max-height: 48px; width: auto; }
+/* Brands: 2, 3 or 4 tiles a row, the last row centered. Logos (Brands > Logo in Airtable) fit a 200x56 box,
+   so wide and tall ones come out about the same size. A brand with no logo shows its name. */
+.brands-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.brand-cell { flex: 0 0 calc((100% - 12px) / 2); border: 1px solid var(--border); border-radius: 8px; min-height: 88px; display: grid; place-items: center; padding: 14px 16px; font-family: var(--font-display); font-weight: 700; font-size: 22px; color: #374151; text-decoration: none; }
+@media (min-width: 640px) { .brand-cell { flex-basis: calc((100% - 24px) / 3); } }
+@media (min-width: 960px) { .brand-cell { flex-basis: calc((100% - 36px) / 4); min-height: 96px; } }
+.brand-cell img { max-width: min(100%, 200px); max-height: 56px; width: auto; }
 
 /* Season */
 .season .wrap { padding-block: clamp(48px, 6vw, 72px); display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: center; }
@@ -269,7 +276,6 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .footer-col h2 { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
 .footer-brand { gap: 12px; align-items: flex-start; }
 .footer-brand .badge { width: 96px; height: 96px; border-width: 4px; }
-.footer-brand .badge img { width: 76%; }
 .footer-name { font-family: var(--font-logo); font-weight: 700; font-size: 32px; color: var(--white); line-height: 1.05; }
 .footer-motto { font-family: var(--font-slogan); font-weight: 600; font-size: 21px; line-height: 1.3; color: var(--white); }
 .footer-since { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }

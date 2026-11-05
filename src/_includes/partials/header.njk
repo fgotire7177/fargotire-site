@@ -1,4 +1,4 @@
-{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/icons.njk" import icon, tireman -%}
 {%- set biz = airtable.biz -%}
 {%- set navItems = [
   { label: "Tires and Services", url: "/services/", match: "/services/" },
@@ -11,7 +11,7 @@
 <header class="site-header">
 <div class="wrap">
 <a class="brand" href="/">
-<span class="badge"><img src="/assets/tireboy.svg" alt="" width="474" height="494"></span>
+<span class="badge">{{ tireman("bust", "", "58px", "eager") }}</span>
 <span class="brand-text"><span class="brand-name">{{ biz.Name }} Inc.</span><span class="brand-sub">Locally owned since {{ biz.Founded }}</span></span>
 </a>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">{{ icon("menu", 22) }}Menu</button>

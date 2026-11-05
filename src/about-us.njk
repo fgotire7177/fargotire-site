@@ -4,7 +4,7 @@ title: About Us
 eleventyComputed:
   description: "{{ airtable.biz.Name }} has been locally owned and operated in {{ airtable.biz.City }}, {{ airtable.biz.State }} since {{ airtable.biz.Founded }}."
 ---
-{%- from "partials/icons.njk" import icon, picture -%}
+{%- from "partials/icons.njk" import icon, picture, tireman -%}
 {%- set biz = airtable.biz -%}
 {%- set photo = airtable.images.about_photo -%}
 <section class="page-hero bg-blue on-dark">
@@ -23,7 +23,7 @@ eleventyComputed:
 {%- if photo and photo.img %}
 <div style="border-radius: var(--radius); overflow: hidden;">{{ picture(photo.img, photo.alt, "(max-width: 900px) 100vw, 560px") }}</div>
 {%- else %}
-<span class="badge hero-badge" style="width: min(100%, 320px);"><img src="/assets/tireboy.svg" alt="The {{ biz.Name }} tire man, leaning on a stack of tires" width="474" height="494" loading="lazy"></span>
+<div class="art-card about-card">{{ tireman("figure", "Cartoon of the " ~ biz.Name ~ " tire man standing on a stack of tires", "(max-width: 520px) 80vw, 360px") }}</div>
 {%- endif %}
 </div>
 </div>

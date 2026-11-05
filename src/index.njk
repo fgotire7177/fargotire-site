@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 title: Tires in Fargo, ND
 ---
-{%- from "partials/icons.njk" import icon, picture -%}
+{%- from "partials/icons.njk" import icon, picture, tireman -%}
 {%- from "partials/coupons.njk" import couponCard -%}
 {%- set biz = airtable.biz -%}
 {%- set t = airtable.text -%}
@@ -24,7 +24,7 @@ title: Tires in Fargo, ND
 <section class="hero bg-blue on-dark" aria-labelledby="hero-h">
 <div class="wrap">
 <div class="hero-art">
-<span class="badge hero-badge"><img src="/assets/tireboy.svg" alt="The {{ biz.Name }} tire man, leaning on a stack of tires" width="474" height="494" fetchpriority="high"></span>
+<div class="art-card hero-card">{{ tireman("hero", "Cartoon of the " ~ biz.Name ~ " tire man in a blue jacket and red bow tie, standing on a stack of tires", "(max-width: 520px) 66vw, 340px", "high") }}</div>
 </div>
 <div class="hero-copy">
 <p class="eyebrow">{{ t.hero_eyebrow }}</p>

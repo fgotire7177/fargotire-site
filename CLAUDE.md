@@ -36,8 +36,7 @@ Since then (Nov. 2, 2026):
 
 - The Netlify project `fargotire-site` (shop's team) deploys `main` to https://fargotire-site.netlify.app. Production visitor access must stay public; protect previews only. Tested Nov. 2: pages, redirects and headers; a quote with a photo landed in Leads with the photo attached; the Update website link started a hook deploy.
 
-Not yet run against real services:
-- No real attachments have gone through the image pipeline.
+Image pipeline (Nov. 5, 2026): all 7 shown Brands rows have a PNG in Logo (from Jay; the Toyo file arrived white on transparent and was made black so it shows on the white tiles). A local build from Airtable downloaded and resized them. No Netlify build has used real attachments yet. SVGs or larger PNGs would look sharper on high-res phones.
 
 Continue Milestone 4 (Airtable buttons, IndexNow) in the list at the bottom.
 
@@ -79,7 +78,7 @@ Local commands:
 
 Environment variables (document in `.env.example`, never commit values): `AIRTABLE_TOKEN`, `AIRTABLE_BASE_ID`, `AIRTABLE_WORKSPACE_ID` (setup script only), `NETLIFY_BUILD_HOOK_URL`, `UPDATE_SITE_KEY`, and the local-only `SHOW_SAMPLES`, `PREVIEW_DATE`, `PREVIEW_TIME`.
 
-The tire man is a repo asset (`assets/tireboy.svg`), not an Airtable image, so it can't be deleted by accident.
+The tire man art is repo assets (`assets/tireman-*`), not Airtable images, so it can't be deleted by accident.
 
 ## Pages and URLs
 
@@ -109,8 +108,13 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
   - Preload Barlow 400, Barlow Condensed 800 and Rouge Script on every page, plus Dancing Script on the home page.
 - Every color lives in `tokens.css`. Paul's colors are king blue and white: `--blue #152A78` is Oracal 651 #049 King blue (sRGB 21, 42, 120), chosen Nov. 2, 2026. Others: `--red #C62828`, `--ink #24292E`, `--white #FFFFFF`, `--gray-50 #F3F4F6`, `--gray-200 #D9DDE2`, `--border #E3E6EA`, `--muted #4B5563`.
 - Use red sparingly (Jay, Nov. 2): only the Request a Quote / Send request buttons, coupon amounts, the holiday bar and the Closed tag. Everything else that was red is blue.
-- The tire man (`assets/tireboy.svg`) is black line art with no fill, so he always sits on a white circle with a King blue ring (`assets/tireboy-badge.svg`, or a CSS circle around the SVG). Never put him straight onto blue or charcoal. The PNG and ICO icons are rendered from `assets/favicon.svg`.
-- Paul's logo fonts are French Script (bold) for the name, written "Fargo Tire Service Inc.", and Freestyle Script for "Boy! Have we got tires!" and the motto "After the sales, it's our service that counts." Their Office licenses don't cover the web, so the site uses free look-alikes, chosen by Jay on Nov. 2: Rouge Script and Dancing Script. Jay plans to buy web licenses for the real fonts from Monotype. When the WOFF2 files arrive: add them to the repo, point the two `@font-face` rules and `--font-logo` / `--font-slogan` in `tokens.css` at them, update the preloads in `base.njk`, then remove `@fontsource/rouge-script` and `@fontsource/dancing-script`. The comparison is in `design/font-options.html`. Script is for those three lines only; everything else stays Barlow. He appears in the header (about 60px), the home hero (about 380px, to the left of the tagline so his arm points at it), the footer (about 96px), and as the favicon and app icons (`assets/favicon.*`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`).
+- The tire man (since Nov. 5, 2026): Paul's color drawings, made into web files in `assets/` by a one-off script from his originals ("2024 tire man with saying.tif" and "tm.jpg", in Jay's OneDrive under !FargoTire\Tire Man). Paul: the speech-bubble one is the main one, the other is for everywhere else. All are on white, so he always sits on a white card or circle with a King blue edge, never straight on blue or charcoal. Use the `tireman(kind, alt, sizes, load)` macro in `partials/icons.njk`:
+  - `hero` (`tireman-hero-*`): the "BOY! Have we got TIRES" speech-bubble drawing, in the home hero card, about 340px wide.
+  - `figure` (`tireman-*`): the other scan, with its loose lettering removed, on About when no `about_photo` is set.
+  - `bust` (`tireman-bust-*`): head and bow tie, square, in the round badges in the header (58px) and footer (96px).
+  - `favicon.ico`, `icon-192.png`, `icon-512.png` (JSON-LD logo, default share image) and `apple-touch-icon.png` are the bust in a King blue ring.
+  - The old black line art (`tireboy.svg`, `favicon.svg`) stays only because `design/mockup/` uses it.
+- Paul's logo fonts are French Script (bold) for the name, written "Fargo Tire Service Inc.", and Freestyle Script for "Boy! Have we got tires!" and the motto "After the sales, it's our service that counts." Their Office licenses don't cover the web, so the site uses free look-alikes, chosen by Jay on Nov. 2: Rouge Script and Dancing Script. Jay plans to buy web licenses for the real fonts from Monotype. When the WOFF2 files arrive: add them to the repo, point the two `@font-face` rules and `--font-logo` / `--font-slogan` in `tokens.css` at them, update the preloads in `base.njk`, then remove `@fontsource/rouge-script` and `@fontsource/dancing-script`. The comparison is in `design/font-options.html`. Script is for those three lines only; everything else stays Barlow.
 - Home "This season" box (Site Text `season_title`, `season_text`, `season_items`): each line of `season_items` is `Label | /link/`, and each box links to that page. Lines without ` | ` show as plain boxes. Since Nov. 4, 2026 the 5 winter boxes link to Winter Tire Changeover (a new Services row), Tire Siping, Nitrogen Inflation, Batteries & Wiper Blades and Wheel Alignment. Each of those pages now has in-depth Body text. Per Jay, the shop stores customers' off-season tires (no price given).
 - Tagline "Boy! Have we got tires!" and Motto "After the sales, it's our service that counts." come from Business Info. The motto shows under the tagline on the home page and in the footer.
 - Phone layout changes from the mockup, which used placeholders here:
@@ -243,7 +247,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 - Public email, Google Business Profile URL, Facebook URL. (Quote emails go to web@fargotire.com; see Quote form.)
 - The shop's Airtable Team trial ends about Nov. 16, 2026. Afterwards, send one test quote to confirm the Outlook email automation still runs on Free.
 - Which Netlify plan the shop's team ended up on (Free: 300 credits; Personal: $9 a month, 1,000 credits). Update Limits to match.
-- Photos (drone shots exist; ground shots coming) and dealer logo files.
+- Photos (drone shots exist; ground shots coming). Brand logos are in Airtable since Nov. 5.
 - GoDaddy (registrar/DNS) and current host access.
 
 ## Milestones
