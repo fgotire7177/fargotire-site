@@ -10,10 +10,14 @@
 {%- if c.expires %}<p class="coupon-valid">Valid through {{ c.expires | apDate }}</p>{% else %}<p class="coupon-valid">Ongoing</p>{% endif %}
 <div class="coupon-actions">
 {%- if variant == "card" %}
-<a class="btn btn-blue btn-small" href="/coupons/#{{ c.id }}-dashed">Show coupon</a>
+<a class="btn btn-blue btn-small" href="/coupons/#{{ c.id }}-{{ 'special' if c.special else 'dashed' }}">{{ "See details" if c.special else "Show coupon" }}</a>
 {%- else %}
 <a class="btn btn-blue btn-small" href="/contact-us/?coupon={{ c.requestLabel | urlencode }}#quote">Request this special</a>
+{%- if c.special %}
+<a class="btn btn-outline-blue btn-small" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a>
+{%- else %}
 <button class="btn btn-outline-blue btn-small" type="button" data-print-coupon="{{ c.id }}-{{ variant }}">Print coupon</button>
+{%- endif %}
 {%- endif %}
 </div>
 </article>
@@ -34,7 +38,7 @@
 <div class="actions coupon-actions">
 <a class="btn btn-blue btn-small" href="/contact-us/?coupon={{ c.requestLabel | urlencode }}#quote">Request this special</a>
 <a class="btn btn-outline-blue btn-small" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a>
-<button class="btn btn-outline-blue btn-small" type="button" data-print-coupon="{{ c.id }}-featured">Print coupon</button>
+{%- if not c.special %}<button class="btn btn-outline-blue btn-small" type="button" data-print-coupon="{{ c.id }}-featured">Print coupon</button>{% endif %}
 </div>
 </div>
 </article>

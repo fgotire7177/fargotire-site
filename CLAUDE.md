@@ -114,7 +114,7 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
 - Home "This season" box (Site Text `season_title`, `season_text`, `season_items`): each line of `season_items` is `Label | /link/`, and each box links to that page. Lines without ` | ` show as plain boxes. Since Nov. 4, 2026 the 5 winter boxes link to Winter Tire Changeover (a new Services row), Tire Siping, Nitrogen Inflation, Batteries & Wiper Blades and Wheel Alignment. Each of those pages now has in-depth Body text. Per Jay, the shop stores customers' off-season tires (no price given).
 - Tagline "Boy! Have we got tires!" and Motto "After the sales, it's our service that counts." come from Business Info. The motto shows under the tagline on the home page and in the footer.
 - Phone layout changes from the mockup, which used placeholders here:
-  1. Header nav becomes a Menu button that opens a full-width panel. The full desktop menu (8 links: Tires, Services, Commercial & Farm, Specials, Hours, Blog, About, FAQ, at 17px with 14px gaps) needs 1220px, so the Menu button takes over below that. Adding a link means re-measuring that fit.
+  1. Header nav becomes a Menu button that opens a full-width panel. The full desktop menu (6 links: Tires and Services, Specials, Hours, Blog, About, FAQ, at 17px with 14px gaps; since Nov. 4, 2026 one "Tires and Services" link to /services/ replaces Tires, Services and Commercial & Farm) needs about 1070px, so the Menu button takes over below 1100px. Adding a link means re-measuring that fit.
   2. The home specials strip becomes a horizontal scroll-snap row, so the hero isn't pushed 1,000px down.
   3. A sticky bottom bar with Call and Request a Quote, with page padding so it never covers content.
 - Accessibility: text contrast at least 4.5:1, never disable zoom, touch targets at least 44px, visible focus styles, real buttons and labels, alt text on every image.
@@ -150,9 +150,10 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
 - Card: big line, Applies To as the headline, Details, Fine Print (small), `Valid through Nov. 30, 2026`.
 - Visible when Show is ticked and Starts (if set) is on or before today, and today is on or before Expires, in Chicago. Render `data-starts` and `data-expires` so JS hides expired and not-yet-started coupons without a rebuild.
 - Home strip: Featured coupons, up to 3, by Order then Expires.
-- `/coupons/`: the first Featured coupon as the large featured card, then a grid of all visible coupons with dashed borders.
+- Kind (Coupons field, added Nov. 4, 2026): Coupon or Special. A Special (like the Goodyear rebate) is something to ask about, not a printable coupon. A blank Kind means Special for Offer Type Rebate and Coupon for everything else.
+- `/coupons/`: the first Featured row as the large featured card, then "Specials and rebates" (solid cards with Request this special and Call, no Print), then "Coupons" (a grid with dashed borders). Each heading hides when it has nothing visible. The Site Text `specials_footer` line sits at the bottom.
 - When nothing is visible: "No specials posted right now. Call (701) 232-7177 for today's deals."
-- Each coupon gets "Print coupon" (a print stylesheet that prints only that coupon) and "Request this special" (links to `/contact-us/?coupon=<title>#quote`, which fills the hidden Coupon field).
+- Each coupon gets "Print coupon" (a print stylesheet that prints only that coupon; Specials get Call instead) and "Request this special" (links to `/contact-us/?coupon=<title>#quote`, which fills the hidden Coupon field).
 - Production never shows "Sample" badges. Sample rows in the seed have Show unticked.
 
 ### Quote form

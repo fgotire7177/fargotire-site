@@ -73,8 +73,8 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; text
 .menu-btn { display: none; margin-left: auto; align-items: center; gap: 8px; min-height: 44px; padding: 8px 14px; border: 2px solid var(--ink); border-radius: var(--radius-sm); background: var(--white); color: var(--ink); font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; }
 
 .nav .nav-quote { display: none; }
-/* Below 1220px the full menu no longer fits beside the logo, so it becomes the Menu button. */
-@media (max-width: 1219px) {
+/* The 6-link menu needs about 1070px beside the logo and Request a Quote, so below 1100px it becomes the Menu button. */
+@media (max-width: 1099px) {
   .menu-btn { display: inline-flex; }
   .header-quote { display: none; }
   .nav { position: absolute; left: 0; right: 0; top: 100%; background: var(--white); border-bottom: 1px solid var(--border); box-shadow: 0 8px 16px rgba(16, 24, 40, 0.12); display: none; }
@@ -103,7 +103,7 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; text
 /* Coupons */
 .coupon-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px; }
 .coupon { background: var(--white); border-radius: var(--radius); padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 6px; }
-.coupon--card { border-top: 6px solid var(--blue); box-shadow: var(--shadow); }
+.coupon--card, .coupon--special { border-top: 6px solid var(--blue); box-shadow: var(--shadow); }
 .coupon--dashed { border: 2px dashed var(--field-border); }
 .coupon-big { margin-top: 4px; font-family: var(--font-display); font-weight: 800; font-size: 46px; line-height: 1; color: var(--red); }
 .coupon h3 { font-family: var(--font-display); font-weight: 700; font-size: 24px; text-transform: none; }
@@ -111,7 +111,8 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; text
 .coupon-fine { color: var(--muted); font-size: 13px; }
 .coupon-valid { margin: 8px 0 12px; font-weight: 700; font-size: 15px; color: var(--ink); }
 .coupon-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px; }
-.no-coupons { color: var(--muted); }
+.no-coupons { color: var(--muted); margin-bottom: 12px; }
+.specials-end { padding-top: 0; }
 @media (max-width: 720px) {
   .coupon-row--strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; padding-bottom: 8px; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
   .coupon-row--strip > .coupon { flex: 0 0 82%; scroll-snap-align: start; }

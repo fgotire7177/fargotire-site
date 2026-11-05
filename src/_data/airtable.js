@@ -225,6 +225,9 @@ export default async function () {
       starts: c.Starts || "",
       expires: c.Expires || "",
       featured: Boolean(c.Featured),
+      // A special (like a manufacturer rebate) is something to ask about, not a printable coupon.
+      // Kind wins when set; a blank Kind means Special for Rebates and Coupon for everything else.
+      special: c.Kind === "Special" || (!c.Kind && c["Offer Type"] === "Rebate"),
       sample: c.Show !== true,
       requestLabel: `${bigLine(c)} ${c["Applies To"] || c.Title || ""}`.trim()
     }));
@@ -321,7 +324,8 @@ export default async function () {
     hoursLines: hoursLines(hours),
     special,
     holidayLive: special.some((s) => s.live),
-    coupons,
+    coupons: coupons.filter((c) => !c.special),
+    specials: coupons.filter((c) => c.special),
     featured: coupons.filter((c) => c.featured),
     services,
     serviceGroups,

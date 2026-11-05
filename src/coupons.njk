@@ -25,14 +25,32 @@ eleventyComputed:
 </section>
 {%- endif %}
 
-<section class="section-tight" aria-labelledby="all-h">
+{%- if airtable.specials.length %}
+<section class="section-tight" aria-labelledby="specials-h" data-hide-when-empty>
 <div class="wrap">
-<h2 id="all-h" class="h2-sm" style="margin-bottom: 16px;">All coupons</h2>
+<h2 id="specials-h" class="h2-sm" style="margin-bottom: 16px;">Specials and rebates</h2>
+<div class="coupon-row" data-coupons>
+{%- for c in airtable.specials %}{{ couponCard(c, "special", biz, site.today) }}{% endfor %}
+</div>
+</div>
+</section>
+{%- endif %}
+
+{%- if airtable.coupons.length %}
+<section class="section-tight" aria-labelledby="all-h" data-hide-when-empty>
+<div class="wrap">
+<h2 id="all-h" class="h2-sm" style="margin-bottom: 16px;">Coupons</h2>
 <div class="coupon-row" data-coupons>
 {%- for c in airtable.coupons %}{{ couponCard(c, "dashed", biz, site.today) }}{% endfor %}
 </div>
-<p class="no-coupons"{% if airtable.coupons.length %} hidden{% endif %}>No specials posted right now. Call <a class="link-strong" href="tel:{{ biz.Phone | tel }}">{{ biz.Phone }}</a> for today's deals.</p>
-{%- if t.specials_footer %}<p class="lead" style="margin-top: 22px; font-size: 16px;">{{ t.specials_footer }}</p>{% endif %}
+</div>
+</section>
+{%- endif %}
+
+<section class="section-tight specials-end">
+<div class="wrap">
+<p class="no-coupons"{% if airtable.coupons.length or airtable.specials.length %} hidden{% endif %}>No specials posted right now. Call <a class="link-strong" href="tel:{{ biz.Phone | tel }}">{{ biz.Phone }}</a> for today's deals.</p>
+{%- if t.specials_footer %}<p class="lead" style="font-size: 16px;">{{ t.specials_footer }}</p>{% endif %}
 </div>
 </section>
 

@@ -67,6 +67,7 @@
         {"name": "Fine Print", "type": "multilineText", "description": "Limits, like One coupon per visit."},
         {"name": "Starts", "type": "date", "options": {"dateFormat": {"name": "us"}}, "description": "Optional. The coupon stays hidden until this date."},
         {"name": "Expires", "type": "date", "options": {"dateFormat": {"name": "us"}}, "description": "Last day it's good. Shows as Valid through."},
+        {"name": "Kind", "type": "singleSelect", "options": {"choices": [{"name": "Coupon"}, {"name": "Special"}]}, "description": "Coupon: a printable coupon, listed under Coupons. Special: something to ask about, like a manufacturer rebate, listed under Specials and rebates with no Print button. Blank means Coupon, except Rebates, which count as Specials."},
         {"name": "Featured", "type": "checkbox", "options": {"color": "yellowBright", "icon": "star"}, "description": "Tick to show it in the home page specials strip. Up to 3 show there."},
         {"name": "Order", "type": "number", "options": {"precision": 0}, "description": "Lower numbers show first. Use 10, 20, 30 to leave room."},
         {"name": "Show", "type": "checkbox", "options": {"color": "greenBright", "icon": "check"}, "description": "Tick to put it on the website. Untick to take it down early."}

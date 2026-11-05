@@ -116,7 +116,8 @@
       "Expires": "2026-11-30",
       "Featured": true,
       "Order": 10,
-      "Show": false
+      "Show": false,
+      "Kind": "Coupon"
     },
     {
       "Title": "SAMPLE Set of 4 tires 10% off",
@@ -127,7 +128,8 @@
       "Expires": "2026-12-31",
       "Featured": true,
       "Order": 20,
-      "Show": false
+      "Show": false,
+      "Kind": "Coupon"
     },
     {
       "Title": "SAMPLE Free siping with winter tires",
@@ -137,7 +139,8 @@
       "Expires": "2026-12-31",
       "Featured": true,
       "Order": 30,
-      "Show": false
+      "Show": false,
+      "Kind": "Coupon"
     },
     {
       "Title": "SAMPLE Oil change $10 off",
@@ -148,7 +151,8 @@
       "Expires": "2026-11-30",
       "Featured": false,
       "Order": 40,
-      "Show": false
+      "Show": false,
+      "Kind": "Coupon"
     },
     {
       "Title": "SAMPLE Brakes $25 off",
@@ -159,7 +163,8 @@
       "Expires": "2026-12-31",
       "Featured": false,
       "Order": 50,
-      "Show": false
+      "Show": false,
+      "Kind": "Coupon"
     },
     {
       "Title": "SAMPLE Free nitrogen with 4 tires",
@@ -169,7 +174,8 @@
       "Expires": "2026-12-31",
       "Featured": false,
       "Order": 60,
-      "Show": false
+      "Show": false,
+      "Kind": "Coupon"
     }
   ],
   "Services": [
@@ -583,7 +589,7 @@
     },
     {
       "Name": "specials_footer",
-      "Text": "Specials change often. Call (701) 232-7177 to check today's deals, or ask about current manufacturer rebates."
+      "Text": "Specials and rebates change often. Call (701) 232-7177 to check today's deals."
     },
     {
       "Name": "serve_heading",

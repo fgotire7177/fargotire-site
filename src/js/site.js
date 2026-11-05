@@ -97,6 +97,7 @@
   });
 
   // ---- Coupons: hide expired or not-yet-started; respect data-limit on a container ----
+  var anyCoupon = false;
   document.querySelectorAll("[data-coupons]").forEach(function (box) {
     var limit = Number(box.getAttribute("data-limit") || 0), visible = 0;
     box.querySelectorAll("[data-expires]").forEach(function (c) {
@@ -104,11 +105,11 @@
       var live = (!starts || starts <= today) && (!expires || today <= expires);
       if (live && (!limit || visible < limit)) { c.hidden = false; visible++; } else { c.hidden = true; }
     });
-    var empty = box.parentElement.querySelector(".no-coupons");
-    if (empty) empty.hidden = visible > 0;
+    if (visible) anyCoupon = true;
     var hideWhenEmpty = box.closest("[data-hide-when-empty]");
     if (hideWhenEmpty) hideWhenEmpty.hidden = visible === 0;
   });
+  document.querySelectorAll(".no-coupons").forEach(function (p) { p.hidden = anyCoupon; });
 
   // ---- Print one coupon ----
   document.addEventListener("click", function (e) {
