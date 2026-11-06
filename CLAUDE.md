@@ -86,7 +86,7 @@ Local commands:
 - Airtable Free allows 1,000 API calls per month per workspace. A build costs one call per table (12 today) plus pagination. Never fetch per page, never poll.
 - `npm run dev` and `npm run samples` rebuild on every save, so while serving or watching, `airtable.js` reuses its last read from `.cache/airtable.json` for 30 minutes. Delete that file to read again. Plain builds, including Netlify's, always read fresh.
 
-- Seed rows marked SAMPLE (Coupons, Special Hours) and the planned Blog Posts have Show unticked. The nitrogen post (`nitrogen-tire-inflation`) is written and shown. With `SHOW_SAMPLES=1`, local builds treat hidden rows in those three tables as shown, so layouts can be checked. Never set it on Netlify.
+- Seed rows marked SAMPLE (Coupons, Special Hours) and the planned Blog Posts have Show unticked. The nitrogen post (`nitrogen-tire-inflation`) is written and shown. So is the winter tires post (`when-to-switch-to-winter-tires-fargo`, Nov. 5, 2026), which uses only facts from the Winter Tire Changeover page plus general tire advice. Paul should read it. With `SHOW_SAMPLES=1`, local builds treat hidden rows in those three tables as shown, so layouts can be checked. Never set it on Netlify.
 
 Environment variables (document in `.env.example`, never commit values): `AIRTABLE_TOKEN`, `AIRTABLE_BASE_ID`, `AIRTABLE_WORKSPACE_ID` (setup script only), `NETLIFY_BUILD_HOOK_URL`, `UPDATE_SITE_KEY`, and the local-only `SHOW_SAMPLES`, `PREVIEW_DATE`, `PREVIEW_TIME`.
 
@@ -106,6 +106,7 @@ Keep the old WordPress slugs where they exist.
 | `/contact-us/` | Quote form, map, phones, address |
 | `/blog/` and `/blog/<Address>/` | Blog list and posts |
 | `/faq/` | FAQ |
+| `/waiting-room/` | Waiting room photos (new, Nov. 5, 2026), linked from the FAQ answer "Do you have a waiting room?" |
 
 Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; `/wp-admin/*`, `/wp-login.php`, `/wp-content/*`, `/feed/*` to `/`; hidden blog posts to `/blog/`; hidden services to `/services/`.
 
@@ -132,7 +133,17 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
 - Home page edits from Paul (Nov. 5, 2026):
   - The hero has only the Call button, because the header's Request a Quote button sits right above it.
   - The brands heading is Site Text `brands_heading` ("Brands we have in stock"), and `brands_text` under the tiles is bold at 21px (`.brands-note`).
-- Service pages in the On-Site category show Call only, with no Request a Quote button (`callOnly` in `services/service.njk`).
+- Service pages (every `/services/<Slug>/`) show only a Call button in the page body, with no Request a Quote button (Jay, Nov. 5, 2026). The header and the phone bar still have Request a Quote.
+- Waiting room (Nov. 5, 2026):
+  - The FAQ "Do you have a waiting room?" sits right after "Do I need an appointment?". Its answer links to `/waiting-room/` with markdown; FAQ structured data strips links to plain text.
+  - The page text is Site Text `waiting_room_text`.
+  - The photos are Site Images rows named `waiting_room_1`, `waiting_room_2` and so on, in name order. Add a row to add a photo. They are the waiting room and the front counter.
+- Holiday bar preview without touching Airtable:
+  - Run a `--watch` build so `.cache/airtable.json` is written.
+  - In that file, set `Show: true` on the Special Hours row you want.
+  - Build again with `--watch` and `PREVIEW_DATE`/`PREVIEW_TIME` within 30 minutes.
+  - Delete `.cache/airtable.json` afterwards.
+  - Chrome's command-line screenshots can't go narrower than about 500px, so take phone screenshots in the browser pane.
 - The Tires group on /services/ ends with a "Tire Services" row (Nov. 5, 2026): flat repairs, computerized balancing and installation. Paul asked for a box called "Services"; it's named Tire Services so its page title and breadcrumb read clearly. After it comes "Wheels" (Order 67, Paul's wording: "Aftermarket wheels by various manufacturers are available by order."), with the XD wheel display board photo ("rim options 1").
 - Phone layout changes from the mockup, which used placeholders here:
   1. Header nav becomes a Menu button that opens a full-width panel. The full desktop menu (6 links: Tires and Services, Specials, Hours, Blog, About, FAQ, at 17px with 14px gaps; since Nov. 4, 2026 one "Tires and Services" link to /services/ replaces Tires, Services and Commercial & Farm) needs about 1070px, so the Menu button takes over below 1100px. Adding a link means re-measuring that fit.

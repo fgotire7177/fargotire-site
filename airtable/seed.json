@@ -488,8 +488,12 @@
       "Title": "When should you switch to winter tires in Fargo?",
       "Address": "when-to-switch-to-winter-tires-fargo",
       "Category": "Winter driving",
-      "Summary": "How to time the changeover before the first snow.",
-      "Show": false
+      "Summary": "Switch before the first real snow, once it stays below about 45 degrees. Here's how to time it and what to check.",
+      "Show": true,
+      "Date": "2026-11-05",
+      "Search Title": "When to Switch to Winter Tires in Fargo, ND | Fargo Tire Service",
+      "Search Description": "Most tire makers say to switch when it stays below about 45 degrees. Here's how to time your winter tire changeover in Fargo, and what to check first.",
+      "Text": "The first real snow in Fargo often comes in October or early November, and tire shops get busy as soon as it hits. Here's how to time your winter tire changeover so you're ready before then.\n\n## The 45-degree rule\n\nMost tire makers suggest switching to winter tires when the temperature stays below about 45 degrees. That's not about snow. It's about rubber.\n\nAll-season tires are made for a wide range of weather, and their rubber stiffens as it gets cold. Stiff rubber doesn't grip as well, even on dry pavement. Winter tires use a softer rubber that stays flexible in freezing weather, and their tread has deeper grooves and more edges to bite into snow and slush.\n\nSo the best time to switch is when the cold settles in, not after the first storm. In Fargo, that usually means sometime in October.\n\n## Signs it's time\n\n- Mornings are below freezing most days.\n- Daytime highs are staying in the 40s or lower.\n- The forecast calls for the first snow.\n- Your tire pressure light came on during a cold morning. [Cold lowers tire pressure](/blog/nitrogen-tire-inflation/), so it's a good reminder to check your tires anyway.\n\n## Check your winter tires before they go back on\n\nIf you stored winter tires from last year, look them over first.\n\n- **Tread.** Winter tires lose snow grip as they wear. For a quick check, put a quarter upside down in the tread. If you can see the top of Washington's head, the tread is down to about 4/32 of an inch, and it's time for a new set.\n- **Damage.** Look for cracks, bulges or cuts in the sidewall.\n- **Age.** Rubber hardens over time, even on tires that sat in storage. The last 4 digits of the DOT code on the sidewall show the week and year the tire was made.\n\nNot sure about yours? We check the air pressure and tread on every tire when we do a changeover.\n\n## Put winter tires on all 4 wheels\n\nWinter tires on only the front or only the back leave the other end of the vehicle with less grip. That can make it slide or spin out when you brake or turn on snow. Put them on all 4 wheels.\n\n## A second set of wheels saves time\n\nIf your winter tires are mounted on their own wheels, each changeover is a quick swap instead of taking tires off and on the rims twice a year. If your vehicle has tire pressure sensors, the second set of wheels needs sensors too, or the pressure light may stay on all winter. We can order [aftermarket wheels](/services/wheels/) if you need a set.\n\n## When to switch back\n\nOnce the temperature stays above about 45 degrees in the spring, switch back to your all-season or summer tires. Winter tires wear faster on warm, dry roads, so taking them off on time helps them last more winters.\n\n## Winter tire changeover at Fargo Tire Service\n\n- We swap your tires, or mount and balance them on your wheels.\n- We check the air pressure and tread on every tire.\n- We can store your off-season tires here at the shop, so you don't have to haul them home.\n- We can help you pick a new set of winter tires if yours are worn.\n\nNo appointment needed for tire work. Stop in at 2020 Main Ave in Fargo, call (701) 232-7177, or read more about our [winter tire changeover](/services/winter-tire-changeover/). Want even more grip on ice? Ask about [tire siping](/services/tire-siping/)."
     },
     {
       "Title": "Why your tire pressure drops when it gets cold",
@@ -543,6 +547,12 @@
       "Question": "Do I need an appointment?",
       "Answer": "No. Walk-ins are welcome for tire work.",
       "Order": 10,
+      "Show": true
+    },
+    {
+      "Question": "Do you have a waiting room?",
+      "Answer": "Yes. Our [waiting room](/waiting-room/) has free WiFi, a TV and a restroom.",
+      "Order": 15,
       "Show": true
     },
     {
@@ -684,6 +694,10 @@
     {
       "Name": "holiday_closures",
       "Text": "New Year's Day\nMemorial Day\nIndependence Day\nLabor Day\nThanksgiving Day\nChristmas Day"
+    },
+    {
+      "Name": "waiting_room_text",
+      "Text": "Free WiFi, a TV and a restroom while you wait."
     }
   ],
   "Site Images": [
@@ -698,6 +712,14 @@
     {
       "Name": "share_image",
       "Alt Text": "The Fargo Tire Service sign with the tire man"
+    },
+    {
+      "Name": "waiting_room_1",
+      "Alt Text": "The waiting room, with chairs along the windows and the restroom door"
+    },
+    {
+      "Name": "waiting_room_2",
+      "Alt Text": "The front counter, seen from the front door"
     }
   ]
 }

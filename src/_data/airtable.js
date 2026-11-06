@@ -313,7 +313,9 @@ export default async function () {
       return { "@type": "OpeningHoursSpecification", validFrom: s.date, validThrough: s.end, opens, closes };
     })
   };
-  const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
+  // Answers are markdown on the page; structured data gets plain text ("[waiting room](/waiting-room/)" becomes "waiting room").
+  const plain = (s) => s.replace(/\[([^\]]+)\]\([^)]*\)/g, "$1").replace(/\*\*([^*]+)\*\*/g, "$1");
+  const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: plain(f.a) } })) };
 
   return {
     source,

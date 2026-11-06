@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+title: Waiting Room
+eleventyComputed:
+  description: "{{ airtable.text.waiting_room_text or 'Free WiFi, a TV and a restroom while you wait.' }} {{ airtable.biz.Name }}, {{ airtable.biz.Street }}, {{ airtable.biz.City }}, {{ airtable.biz.State }}."
+---
+{%- from "partials/icons.njk" import picture -%}
+{%- set biz = airtable.biz -%}
+<section class="page-hero bg-blue on-dark">
+<div class="wrap"><div>
+<h1>Our waiting room</h1>
+<p>{{ airtable.text.waiting_room_text or "Free WiFi, a TV and a restroom while you wait." }}</p>
+</div></div>
+</section>
+
+{#- Photos are Site Images rows named waiting_room_1, waiting_room_2 and so on, shown in name order.
+    Add a row with the next number to add a photo. Linked from the FAQ answer about the waiting room. -#}
+<section class="section">
+<div class="wrap two-col">
+{%- for name, im in airtable.images | dictsort %}
+{%- if name.startsWith("waiting_room") and im.img %}
+<div style="border-radius: var(--radius); overflow: hidden;">{{ picture(im.img, im.alt, "(max-width: 900px) 100vw, 560px") }}</div>
+{%- endif %}
+{%- endfor %}
+</div>
+</section>
+
+<section class="cta-band bg-gray">
+<div class="wrap">
+<div><h2>Stop in or give us a call</h2><p>{{ biz.Street }}, {{ biz.City }}. No appointment needed for tire work.</p></div>
+<div class="actions"><a class="btn btn-blue" href="/hours/">Hours and directions</a><a class="btn btn-outline-blue" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a></div>
+</div>
+</section>
