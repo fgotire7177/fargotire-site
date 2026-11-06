@@ -45,7 +45,7 @@ Shop photos (Nov. 5, 2026): Jay said to place them where they fit best, and he a
 - Blog covers: nitrogen (shown), plus winter timing and foam-filled (hidden).
 - Privacy: "shop area" was cropped to leave out a car with a readable plate. The nitrogen crop leaves out writing scratched on a post. Skipped: "customer stored tires 4" (customer names on tags) and IMG_9337.
 - No photo yet for:
-  - Farm & Ag, Hard-to-Find, Siping, Brakes, Steering, Oil and Warranty
+  - Farm & Ag, Hard-to-Find, Oil and Warranty (Brakes, Steering and Siping got shop photos from Pictures 4)
   - a current daylight storefront
 - Five web-sized 2021 files may have come from the old site or Google; confirm the shop owns them. Of those, `middle door 7`, `alignment machine` and `tires upstairs` are in use; `retread.jpeg` and `store front.jpeg` are not.
 
@@ -55,6 +55,13 @@ Pictures 2 (Nov. 6, 2026), in !FargoTire\Pictures 2, placed the same way:
 - `nitrogen.jpg` (a cleaner, wider shot of the Branick machine): replaced the old close-up on the Nitrogen page and the nitrogen post cover. The phone was tilted and pointed down, so at Jay's request it was straightened: the 4 corners of the machine's lime panel were mapped to a true rectangle, then it was cropped to 4:3. The crop again leaves out the scratched post.
 - The 4 rebate flyers became Specials (see Coupons).
 - Not used: `brakes.jpg` is tagged Getty Images and `oil change.jpeg` is tagged Adobe Stock, so both need a paid license. `strut.webp`, `tire siping.webp` and `hard to find tires.jpg` are web graphics with no source. `Dyna_TorqII350pGS.jpg` (a Goodyear farm tire product shot) is only 200px wide. `tire man.tif` is the video's first frame.
+
+Pictures 4 (Nov. 6, 2026), in !FargoTire\Pictures 4 (Pictures 3 holds the same 6 files), placed the same way. The files carry no camera data.
+- `brakes.jpg` (a new shop photo, not the Getty one): Brakes & ABS, cropped to 1.15:1 so the whole rotor fits.
+- `Struts.jpg` (a very tall photo): Steering, Suspension, Shocks & Struts, cropped to 4:5 portrait to keep the whole spring and both control arms.
+- `Tire siping.jpg` (a tire in the shop's siping machine): Tire Siping, 4:3.
+- `Battery.jpg` (an ACDelco battery): Batteries & Wiper Blades, beside the wiper photo (Jay chose both). Since then a service page shows up to 2 photos side by side, both cropped to 4:3 on the page (`.svc-photos`). Their order is the Photo field's order, and Photo Alt holds one description per photo, split by ` | `.
+- Not used: `Hard to find tires.jpg` is a phone photo of a printed BFGoodrich vintage tire catalog page, so the artwork isn't the shop's (Jay: skip it). `Farm tire.jpg` is a Goodyear product shot only 174px wide.
 
 Continue Milestone 4 (Airtable buttons, IndexNow) in the list at the bottom.
 
@@ -289,7 +296,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 - Public email, Google Business Profile URL, Facebook URL. (Quote emails go to web@fargotire.com; see Quote form.)
 - The shop's Airtable Team trial ends about Nov. 16, 2026. Afterwards, send one test quote to confirm the Outlook email automation still runs on Free.
 - Which Netlify plan the shop's team ended up on (Free: 300 credits; Personal: $9 a month, 1,000 credits). Update Limits to match.
-- Photos: shop photos placed Nov. 5 and 6 (see Status), for Jay and Paul to adjust. Still needed: farm tires, a daylight storefront, and shop photos (or licenses) for Brakes, Oil, Steering, Siping and Hard-to-Find. Drone shots exist. Brand logos are in Airtable since Nov. 5.
+- Photos: shop photos placed Nov. 5 and 6 (see Status), for Jay and Paul to adjust. Still needed: farm tires (a shop photo, or a Goodyear product shot at least 1,200px wide), a daylight storefront, and shop photos (or licenses) for Oil, Warranty and Hard-to-Find (odd-size tires on the rack would suit it). Drone shots exist. Brand logos are in Airtable since Nov. 5.
 - GoDaddy (registrar/DNS) and current host access.
 
 ## Milestones

@@ -234,6 +234,13 @@ export default async function () {
 
   const services = [];
   for (const r of shown("Services").filter((s) => s.Slug)) {
+    // Up to 2 photos, shown side by side in the field's order. Photo Alt holds one description per photo, split by " | ".
+    const photos = [];
+    for (const att of (r.Photo || []).slice(0, 2)) {
+      const img = await image(att);
+      if (img) photos.push(img);
+    }
+    const alts = (r["Photo Alt"] || "").split(" | ").map((a) => a.trim());
     services.push({
       name: r.Name,
       slug: r.Slug,
@@ -241,8 +248,9 @@ export default async function () {
       category: r.Category || "Service & Repair",
       summary: r.Summary || "",
       body: (r.Body || "").trim(),
-      photo: await image(first(r.Photo)),
-      photoAlt: r["Photo Alt"] || "",
+      photo: photos[0] || null,
+      photoAlt: alts[0],
+      photos: photos.map((img, i) => ({ img, alt: alts[i] || alts[0] })),
       searchTitle: r["Search Title"] || "",
       searchDescription: r["Search Description"] || ""
     });

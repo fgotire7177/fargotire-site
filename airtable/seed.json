@@ -388,7 +388,8 @@
       "Summary": "Siping cuts thin slits across the tread for extra traction on ice and snow.",
       "Order": 120,
       "Show": true,
-      "Body": "Siping cuts many thin slits across a tire's tread. As the tire rolls, each slit opens a little and adds a biting edge, so the tire grips better on ice, packed snow and wet roads.\n\n## Who it helps\n\n- Drivers who want more winter grip without studded tires\n- Cars, pickups and SUVs that see a lot of ice and packed snow\n- Work trucks and fleets that run in every kind of weather\n\n## Good to know\n\n- Siping works best on new tires or tires with plenty of tread left.\n- Not every tire is a good fit, so ask us about yours.\n- It pairs well with a [winter tire changeover](/services/winter-tire-changeover/) before the snow flies."
+      "Body": "Siping cuts many thin slits across a tire's tread. As the tire rolls, each slit opens a little and adds a biting edge, so the tire grips better on ice, packed snow and wet roads.\n\n## Who it helps\n\n- Drivers who want more winter grip without studded tires\n- Cars, pickups and SUVs that see a lot of ice and packed snow\n- Work trucks and fleets that run in every kind of weather\n\n## Good to know\n\n- Siping works best on new tires or tires with plenty of tread left.\n- Not every tire is a good fit, so ask us about yours.\n- It pairs well with a [winter tire changeover](/services/winter-tire-changeover/) before the snow flies.",
+      "Photo Alt": "A tire in the shop's siping machine, with the cutter over the tread"
     },
     {
       "Name": "Tire Foam Fill",
@@ -404,7 +405,8 @@
       "Category": "Service & Repair",
       "Summary": "Complete brake and ABS service by ASE-certified technicians.",
       "Order": 140,
-      "Show": true
+      "Show": true,
+      "Photo Alt": "A brake rotor and caliper, with the wheel off, in the shop"
     },
     {
       "Name": "Steering, Suspension, Shocks & Struts",
@@ -412,7 +414,8 @@
       "Category": "Service & Repair",
       "Summary": "Complete steering and suspension service, including shocks and struts.",
       "Order": 150,
-      "Show": true
+      "Show": true,
+      "Photo Alt": "A strut, coil spring and control arms, seen from under a vehicle in the shop"
     },
     {
       "Name": "Oil, Lube & Filter",
@@ -430,7 +433,7 @@
       "Order": 170,
       "Show": true,
       "Body": "Cold is hard on batteries. On a below-zero morning a battery has much less starting power, so one that worked fine in October may not start your vehicle in January.\n\n## Battery check and replacement\n\n- We'll check your battery before the cold sets in.\n- If it's weak, we'll replace it with the right battery for your vehicle and install it for you.\n\n## Wiper blades\n\nIce, salt and slush wear wiper blades out fast. We sell and install Michelin wiper blades, so you can see clearly through the next storm.\n\nCall or stop in before the first cold snap.",
-      "Photo Alt": "Michelin wiper blades on a display rack at the shop"
+      "Photo Alt": "An ACDelco battery at the shop | Michelin wiper blades on a display rack at the shop"
     },
     {
       "Name": "Extended Warranty Work",
