@@ -194,4 +194,125 @@
   }
   if (document.readyState === "complete") addMaps();
   else window.addEventListener("load", addMaps);
+
+  // ---- Tire man (home hero): hovering plays the video. He hops onto the tires, and as the bubble opens
+  // the clip says "Boy! Have they got tires!" once. He holds the bubble for a second, then hops again,
+  // until the cursor leaves. Phones and keyboards use the play button (or a tap on the drawing).
+  // Browsers only allow sound after a click or tap on the page, so until then a hover runs silently.
+  // It plays even with reduced motion set, since it is small and only moves while someone points at it
+  // (Jay asked for hover). ----
+  var tm = document.querySelector("[data-tireman]");
+  var tmVideo = tm && tm.querySelector("video");
+  var tmAudio = tm && tm.querySelector("audio");
+  if (tm && tmVideo && tmAudio && tmVideo.play) {
+    var active = false, unlocked = false, hold = null;
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "tireman-btn";
+    btn.setAttribute("aria-label", "Play the tire man, with sound");
+    btn.setAttribute("aria-pressed", "false");
+    btn.innerHTML = '<svg class="icon-play" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5v15l12-7.5z" fill="currentColor"/></svg>' +
+      '<svg class="icon-stop" viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="4" width="12" height="12" rx="1.5" fill="currentColor"/></svg>';
+    tm.appendChild(btn);
+    tm.classList.add("is-ready");
+
+    // The bubble starts to open 2.8 seconds into the video, and the voice starts 0.08 seconds into the clip.
+    var SAY_AT = 2.72, HOLD_MS = 1000;
+    var said = false, watching = false, waitForClip = false;
+    var say = function () {
+      try { tmAudio.currentTime = 0; } catch (e) {}
+      var p = tmAudio.play();
+      if (p && p.catch) p.catch(function () {}); // no sound yet: the cycle carries on silently
+    };
+    // Checks the video's clock every frame, so the clip starts within a frame of the bubble.
+    var watch = function () {
+      if (!active || said) { watching = false; return; }
+      if (tmVideo.currentTime >= SAY_AT) { said = true; watching = false; say(); return; }
+      requestAnimationFrame(watch);
+    };
+    var hop = function () {
+      if (!active) return;
+      clearTimeout(hold);
+      said = false;
+      waitForClip = false;
+      try { tmVideo.currentTime = 0; } catch (e) {}
+      var p = tmVideo.play();
+      if (p && p.catch) p.catch(function () { stop(); });
+    };
+    // pressed: started by a tap or the keyboard, so the button shows Stop. A hover keeps showing Play,
+    // since clicking it then means "again, with sound", not "stop".
+    var start = function (pressed) {
+      if (active) return;
+      active = true;
+      btn.setAttribute("aria-pressed", pressed ? "true" : "false");
+      tmAudio.preload = "auto";
+      hop();
+    };
+    var stop = function () {
+      active = false;
+      waitForClip = false;
+      clearTimeout(hold);
+      tm.classList.remove("is-playing");
+      btn.setAttribute("aria-pressed", "false");
+      tmVideo.pause();
+      tmAudio.pause();
+      try { tmVideo.currentTime = 0; tmAudio.currentTime = 0; } catch (e) {}
+    };
+    // Starting the clip inside a click or tap lets it play later on (Safari needs this).
+    var unlock = function () {
+      if (unlocked) return;
+      unlocked = true;
+      if (!tmAudio.paused) return;
+      var p = tmAudio.play();
+      tmAudio.pause();
+      if (p && p.catch) p.catch(function () {});
+    };
+    tmVideo.addEventListener("playing", function () {
+      if (!active) return;
+      tm.classList.add("is-playing");
+      if (!said && !watching) { watching = true; requestAnimationFrame(watch); }
+    });
+    // After the last frame, hold the bubble, and let the clip finish before he hops again.
+    tmVideo.addEventListener("ended", function () {
+      if (!active) return;
+      hold = setTimeout(function () {
+        if (!active) return;
+        if (!tmAudio.paused && !tmAudio.ended) waitForClip = true;
+        else hop();
+      }, HOLD_MS);
+    });
+    tmAudio.addEventListener("ended", function () { if (waitForClip) hop(); });
+
+    var lastPointer = "";
+    tm.addEventListener("pointerdown", function (e) { lastPointer = e.pointerType; });
+    tm.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") start(false); });
+    tm.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") stop(); });
+    // A tap or the keyboard starts and stops it. A mouse click never stops it (moving off does): it
+    // turns the sound on and starts the hop over, unless he's talking right now.
+    tm.addEventListener("click", function () {
+      var mouse = lastPointer === "mouse";
+      lastPointer = "";
+      if (mouse) {
+        unlock();
+        if (!active) start(false);
+        else if (tmAudio.paused) hop();
+        return;
+      }
+      if (active) { stop(); return; }
+      unlock();
+      start(true);
+    });
+    // Load the video ahead of a hover, only for visitors with a mouse.
+    window.addEventListener("pointermove", function warm(e) {
+      if (e.pointerType !== "mouse") return;
+      window.removeEventListener("pointermove", warm);
+      tmVideo.preload = "auto";
+    });
+    document.addEventListener("visibilitychange", function () { if (document.hidden) stop(); });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return !e.isIntersecting; })) stop();
+      }, { threshold: 0.25 }).observe(tm);
+    }
+  }
 })();

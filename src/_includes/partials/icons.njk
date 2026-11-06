@@ -28,9 +28,11 @@
 
 {#- Paul's tire man, as files in assets/ (made Nov. 5, 2026 from his originals; not Airtable images, so they can't be deleted by accident).
     "hero": the main one, with the "Boy! Have we got tires" speech bubble. "figure": the same man without the words.
-    "bust": head and shoulders, square, for the round badges. load: "lazy" (default), "eager", or "high" for the page's main image. -#}
+    "bust": head and shoulders, square, for the round badges. "anim": the last frame of tireman-anim.mp4 (Nov. 6, 2026),
+    the still for the home hero's hover animation. load: "lazy" (default), "eager", or "high" for the page's main image. -#}
 {%- macro tireman(kind, alt="", sizes="100vw", load="lazy") -%}
 {%- set sets = {
+  anim: { name: "tireman-anim", widths: [480, 720, 1080], w: 1080, h: 1214 },
   hero: { name: "tireman-hero", widths: [480, 720, 960], w: 960, h: 1428 },
   figure: { name: "tireman", widths: [480, 720, 960], w: 960, h: 1192 },
   bust: { name: "tireman-bust", widths: [200, 400], w: 400, h: 400 }

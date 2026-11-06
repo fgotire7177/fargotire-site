@@ -115,10 +115,9 @@
       "Details": "Cars and pickups.",
       "Fine Print": "One coupon per visit.",
       "Expires": "2026-11-30",
+      "Kind": "Coupon",
       "Featured": true,
-      "Order": 10,
-      "Show": false,
-      "Kind": "Coupon"
+      "Order": 10
     },
     {
       "Title": "SAMPLE Set of 4 tires 10% off",
@@ -127,10 +126,9 @@
       "Applies To": "A set of 4 tires",
       "Details": "Passenger and light truck tires, mounted and balanced.",
       "Expires": "2026-12-31",
+      "Kind": "Coupon",
       "Featured": true,
-      "Order": 20,
-      "Show": false,
-      "Kind": "Coupon"
+      "Order": 20
     },
     {
       "Title": "SAMPLE Free siping with winter tires",
@@ -138,10 +136,9 @@
       "Applies To": "Tire siping",
       "Details": "With the purchase of 4 winter tires.",
       "Expires": "2026-12-31",
+      "Kind": "Coupon",
       "Featured": true,
-      "Order": 30,
-      "Show": false,
-      "Kind": "Coupon"
+      "Order": 30
     },
     {
       "Title": "SAMPLE Oil change $10 off",
@@ -150,10 +147,8 @@
       "Applies To": "Oil, lube and filter",
       "Details": "Most cars and pickups. Synthetic extra.",
       "Expires": "2026-11-30",
-      "Featured": false,
-      "Order": 40,
-      "Show": false,
-      "Kind": "Coupon"
+      "Kind": "Coupon",
+      "Order": 40
     },
     {
       "Title": "SAMPLE Brakes $25 off",
@@ -162,10 +157,8 @@
       "Applies To": "Brake service",
       "Details": "Per axle, pads or shoes. Cars and pickups.",
       "Expires": "2026-12-31",
-      "Featured": false,
-      "Order": 50,
-      "Show": false,
-      "Kind": "Coupon"
+      "Kind": "Coupon",
+      "Order": 50
     },
     {
       "Title": "SAMPLE Free nitrogen with 4 tires",
@@ -173,10 +166,100 @@
       "Applies To": "Nitrogen fill",
       "Details": "With any set of 4 tires.",
       "Expires": "2026-12-31",
-      "Featured": false,
-      "Order": 60,
-      "Show": false,
-      "Kind": "Coupon"
+      "Kind": "Coupon",
+      "Order": 60
+    },
+    {
+      "Title": "Goodyear $100 rebate on 4 select tires",
+      "Offer Type": "Rebate",
+      "Amount": 100,
+      "Applies To": "4 select Goodyear tires",
+      "Details": "Get up to $100 back by online or mail-in rebate when you buy a set of 4 qualifying Goodyear tires.",
+      "Fine Print": "Rebate from Goodyear. Ask us for details.",
+      "Starts": "2026-09-01",
+      "Expires": "2026-11-30",
+      "Kind": "Special",
+      "Order": 70,
+      "Show": true
+    },
+    {
+      "Title": "BFGoodrich $80 rebate on 4 tires",
+      "Offer Type": "Rebate",
+      "Amount": 80,
+      "Applies To": "4 BFGoodrich tires",
+      "Details": "Get $80 on a Visa Reward Card or Visa Virtual Account when you buy 4 new BFGoodrich passenger or light truck tires.",
+      "Fine Print": "Rebate from BFGoodrich. Buy by Nov. 30, 2026, then submit online at BFGoodrich.tirerewardcenter.com by Dec. 31, 2026. Not valid with any other offer.",
+      "Starts": "2026-09-03",
+      "Expires": "2026-11-30",
+      "Kind": "Special",
+      "Order": 72,
+      "Show": true
+    },
+    {
+      "Title": "Michelin $80 rebate on 4 tires",
+      "Offer Type": "Rebate",
+      "Amount": 80,
+      "Applies To": "4 Michelin tires",
+      "Details": "Get $80 on a Visa Reward Card or Visa Virtual Account when you buy 4 new Michelin passenger or light truck tires.",
+      "Fine Print": "Rebate from Michelin. Buy by Nov. 30, 2026, then submit online at Michelin.tirerewardcenter.com by Dec. 31, 2026. Not valid with any other offer.",
+      "Starts": "2026-09-03",
+      "Expires": "2026-11-30",
+      "Kind": "Special",
+      "Order": 74,
+      "Show": true
+    },
+    {
+      "Title": "Cooper rebate, up to $140 on 4 select tires",
+      "Offer Type": "Rebate",
+      "Amount": 70,
+      "Applies To": "4 select Cooper tires",
+      "Details": "Get $70 back on a set of 4 select Cooper tires, paid by prepaid card. Pay with the Goodyear Credit Card and get up to $140 back, depending on the tire line.",
+      "Fine Print": "Rebate from Cooper. Buy by Nov. 30, 2026, then submit the online or mail-in rebate by Dec. 31, 2026. Ask us which tire lines qualify.",
+      "Starts": "2026-09-01",
+      "Expires": "2026-11-30",
+      "Kind": "Special",
+      "Order": 76,
+      "Show": true
+    },
+    {
+      "Title": "50% off nitrogen fill",
+      "Offer Type": "Percent Off",
+      "Amount": 50,
+      "Applies To": "Nitrogen fill",
+      "Details": "For passenger and light truck tires.",
+      "Fine Print": "Limit 4 tires per coupon and visit.",
+      "Kind": "Coupon",
+      "Order": 80,
+      "Show": true
+    },
+    {
+      "Title": "50% off balance and rotation",
+      "Offer Type": "Percent Off",
+      "Amount": 50,
+      "Applies To": "Balance and rotation",
+      "Fine Print": "Vehicles requiring dismounting and mounting for directional tires not included.",
+      "Kind": "Coupon",
+      "Order": 90,
+      "Show": true
+    },
+    {
+      "Title": "$10 off alignment",
+      "Offer Type": "Dollars Off",
+      "Amount": 10,
+      "Applies To": "Alignment",
+      "Kind": "Coupon",
+      "Order": 100,
+      "Show": true
+    },
+    {
+      "Title": "$5 off oil change",
+      "Offer Type": "Dollars Off",
+      "Amount": 5,
+      "Applies To": "Oil change",
+      "Details": "Oil, lube and filter, up to 8 quarts.",
+      "Kind": "Coupon",
+      "Order": 110,
+      "Show": true
     }
   ],
   "Services": [
@@ -260,7 +343,8 @@
       "Category": "On-Site",
       "Summary": "Fully equipped service trucks, with cranes, come to your job site. Any tire, any size, any time. We offer after hours service, after-hour rates will apply.",
       "Order": 70,
-      "Show": true
+      "Show": true,
+      "Photo Alt": "The Fargo Tire Service truck, with a crane on the back, parked in the shop"
     },
     {
       "Name": "Wheel Alignment",
@@ -294,7 +378,8 @@
       "Summary": "Nitrogen tire inflation is available. Ask us whether it's right for your vehicle.",
       "Order": 110,
       "Show": true,
-      "Body": "We fill tires with nitrogen instead of regular air. Nitrogen leaks out of a tire more slowly than air and stays dry inside it, so your tires hold the right pressure longer.\n\n## What it does in the cold\n\nCold weather still lowers tire pressure, about 1 psi for every 10 degrees, with nitrogen or with air. Nitrogen helps by keeping the rest of the loss small, so your tires spend fewer days running low.\n\n## Who it helps most\n\n- Pickups, trailers and equipment that sit between uses\n- Farm and commercial tires that carry heavy loads\n- Anyone who doesn't check their tire pressure often\n\nRead more in our post, [Nitrogen in your tires: why it helps in a North Dakota and Minnesota winter](/blog/nitrogen-tire-inflation/)."
+      "Body": "We fill tires with nitrogen instead of regular air. Nitrogen leaks out of a tire more slowly than air and stays dry inside it, so your tires hold the right pressure longer.\n\n## What it does in the cold\n\nCold weather still lowers tire pressure, about 1 psi for every 10 degrees, with nitrogen or with air. Nitrogen helps by keeping the rest of the loss small, so your tires spend fewer days running low.\n\n## Who it helps most\n\n- Pickups, trailers and equipment that sit between uses\n- Farm and commercial tires that carry heavy loads\n- Anyone who doesn't check their tire pressure often\n\nRead more in our post, [Nitrogen in your tires: why it helps in a North Dakota and Minnesota winter](/blog/nitrogen-tire-inflation/).",
+      "Photo Alt": "Branick nitrogen tire inflation machine at the shop"
     },
     {
       "Name": "Tire Siping",
@@ -344,7 +429,8 @@
       "Summary": "Vehicle batteries and Michelin wiper blades, sold and installed.",
       "Order": 170,
       "Show": true,
-      "Body": "Cold is hard on batteries. On a below-zero morning a battery has much less starting power, so one that worked fine in October may not start your vehicle in January.\n\n## Battery check and replacement\n\n- We'll check your battery before the cold sets in.\n- If it's weak, we'll replace it with the right battery for your vehicle and install it for you.\n\n## Wiper blades\n\nIce, salt and slush wear wiper blades out fast. We sell and install Michelin wiper blades, so you can see clearly through the next storm.\n\nCall or stop in before the first cold snap."
+      "Body": "Cold is hard on batteries. On a below-zero morning a battery has much less starting power, so one that worked fine in October may not start your vehicle in January.\n\n## Battery check and replacement\n\n- We'll check your battery before the cold sets in.\n- If it's weak, we'll replace it with the right battery for your vehicle and install it for you.\n\n## Wiper blades\n\nIce, salt and slush wear wiper blades out fast. We sell and install Michelin wiper blades, so you can see clearly through the next storm.\n\nCall or stop in before the first cold snap.",
+      "Photo Alt": "Michelin wiper blades on a display rack at the shop"
     },
     {
       "Name": "Extended Warranty Work",
@@ -391,7 +477,7 @@
     {
       "Title": "On-Site & Roadside",
       "Summary": "Service trucks, with cranes, come to your job site or field. After-hours service available.",
-      "Photo Alt": "Service crane truck on a job",
+      "Photo Alt": "The Fargo Tire Service truck, with a crane on the back, parked in the shop",
       "Link": "/services/on-site-roadside-tire-service/",
       "Order": 40,
       "Show": true
@@ -518,7 +604,8 @@
       "Date": "2026-11-02",
       "Search Title": "Nitrogen Tire Inflation for Cold Weather | Fargo Tire Service",
       "Search Description": "Nitrogen helps tires hold pressure longer and keeps them dry inside. Here's what that means in a North Dakota and Minnesota winter.",
-      "Text": "The first real cold snap of the fall turns on a lot of tire pressure lights in Fargo and Moorhead. Nitrogen won't stop that, but it does help your tires hold their pressure better the rest of the winter. Here's what it does, and what it doesn't.\n\n## What a nitrogen fill is\n\nThe air in your tires is already about 78% nitrogen. The rest is mostly oxygen, plus a little water vapor. A nitrogen fill replaces most of that oxygen and moisture with more nitrogen.\n\n## Why it helps tires hold pressure\n\nEvery tire slowly loses pressure through the rubber, and oxygen works its way out faster than nitrogen does. In a year-long test by Consumer Reports, tires filled with nitrogen lost about a third less pressure than tires filled with air.\n\nNitrogen is also dry. Air from a compressor carries some moisture, and that water stays inside the tire. A dry fill means less moisture to rust steel wheels or corrode valve stems over time, and less oxygen working on the rubber from the inside.\n\n## What it means in a North Dakota and Minnesota winter\n\nCold lowers tire pressure by about 1 psi for every 10 degrees the temperature drops. That's true for nitrogen and air alike. A tire set to 35 psi in a 70-degree shop will read close to 26 psi on a 20-below morning.\n\nNitrogen helps with the part you can control. Your tires start the winter at the right pressure and lose less on top of what the cold takes, so they spend fewer days running low. Low tires wear faster on the edges, use more fuel and don't grip as well on snow and ice.\n\nA few habits matter more than what's in the tire:\n\n- Check your pressure once a month and after a big temperature drop.\n- Check it cold, before you drive, and use the numbers on the sticker in the driver's door jamb, not the number on the tire.\n- If the pressure light comes on during the first cold morning, it's usually the cold, not a leak. Fill the tires to the door-sticker pressure. If the light keeps coming back, stop in and we'll check for a leak.\n- Topping off with regular air is fine. It just dilutes the nitrogen a little.\n\n## Who gets the most from nitrogen\n\n- Pickups, trailers and equipment that sit for weeks between uses.\n- Farm and commercial tires that carry heavy loads, where steady pressure helps them wear evenly.\n- Anyone who doesn't check their pressure often. Nitrogen gives you more room for error.\n\nIf you check your pressure every month, the difference is smaller. Nitrogen isn't magic, but in a place where winter already pulls pressure down, keeping the rest of the loss low is worth it.\n\n## Nitrogen at Fargo Tire Service\n\nWe fill tires with nitrogen at the shop at 2020 Main Ave in Fargo. No appointment needed for tire work. Ask about it when you buy tires, or read more about [nitrogen inflation](/services/nitrogen-inflation/)."
+      "Text": "The first real cold snap of the fall turns on a lot of tire pressure lights in Fargo and Moorhead. Nitrogen won't stop that, but it does help your tires hold their pressure better the rest of the winter. Here's what it does, and what it doesn't.\n\n## What a nitrogen fill is\n\nThe air in your tires is already about 78% nitrogen. The rest is mostly oxygen, plus a little water vapor. A nitrogen fill replaces most of that oxygen and moisture with more nitrogen.\n\n## Why it helps tires hold pressure\n\nEvery tire slowly loses pressure through the rubber, and oxygen works its way out faster than nitrogen does. In a year-long test by Consumer Reports, tires filled with nitrogen lost about a third less pressure than tires filled with air.\n\nNitrogen is also dry. Air from a compressor carries some moisture, and that water stays inside the tire. A dry fill means less moisture to rust steel wheels or corrode valve stems over time, and less oxygen working on the rubber from the inside.\n\n## What it means in a North Dakota and Minnesota winter\n\nCold lowers tire pressure by about 1 psi for every 10 degrees the temperature drops. That's true for nitrogen and air alike. A tire set to 35 psi in a 70-degree shop will read close to 26 psi on a 20-below morning.\n\nNitrogen helps with the part you can control. Your tires start the winter at the right pressure and lose less on top of what the cold takes, so they spend fewer days running low. Low tires wear faster on the edges, use more fuel and don't grip as well on snow and ice.\n\nA few habits matter more than what's in the tire:\n\n- Check your pressure once a month and after a big temperature drop.\n- Check it cold, before you drive, and use the numbers on the sticker in the driver's door jamb, not the number on the tire.\n- If the pressure light comes on during the first cold morning, it's usually the cold, not a leak. Fill the tires to the door-sticker pressure. If the light keeps coming back, stop in and we'll check for a leak.\n- Topping off with regular air is fine. It just dilutes the nitrogen a little.\n\n## Who gets the most from nitrogen\n\n- Pickups, trailers and equipment that sit for weeks between uses.\n- Farm and commercial tires that carry heavy loads, where steady pressure helps them wear evenly.\n- Anyone who doesn't check their pressure often. Nitrogen gives you more room for error.\n\nIf you check your pressure every month, the difference is smaller. Nitrogen isn't magic, but in a place where winter already pulls pressure down, keeping the rest of the loss low is worth it.\n\n## Nitrogen at Fargo Tire Service\n\nWe fill tires with nitrogen at the shop at 2020 Main Ave in Fargo. No appointment needed for tire work. Ask about it when you buy tires, or read more about [nitrogen inflation](/services/nitrogen-inflation/).",
+      "Cover Photo Alt": "Branick nitrogen tire inflation machine at the shop"
     },
     {
       "Title": "Foam-filled tires for farm and industrial equipment",

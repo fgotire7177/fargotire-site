@@ -38,17 +38,23 @@ Since then (Nov. 2, 2026):
 
 Image pipeline (Nov. 5, 2026): all 7 shown Brands rows have a PNG in Logo (from Jay; the Toyo file arrived white on transparent and was made black so it shows on the white tiles). A local build from Airtable downloaded and resized them, and the Nov. 5 Netlify deploy did the same. SVGs or larger PNGs would look sharper on high-res phones.
 
-Shop photos (Nov. 5, 2026): Jay said to place them where they fit best, and he and Paul will adjust. The originals are in Jay's OneDrive, !FargoTire\Pictures. A one-off script made upright copies with metadata stripped, cropped to 16:10 for the home tiles and about 4:3 landscape for service pages, since service pages and blog covers show a photo at its own shape. 20 files went into Airtable, each with alt text:
+Shop photos (Nov. 5, 2026): Jay said to place them where they fit best, and he and Paul will adjust. The originals are in Jay's OneDrive, !FargoTire\Pictures 1 (renamed from Pictures by Nov. 6). A one-off script made upright copies with metadata stripped, cropped to 16:10 for the home tiles and about 4:3 landscape for service pages, since service pages and blog covers show a photo at its own shape. 20 files went into Airtable, each with alt text:
 - Home tiles: Cars, Semi, Farm and Off-the-road.
 - Services: Passenger & LT, Winter Changeover, Tire Services, UTV/Trailer, Semi, Industrial & OTR, Retreading, Foam Fill, Alignment, Balancing, Repair & Rotation, Nitrogen.
 - Site Images: `about_photo` is the pylon sign, so it replaces the tire man figure on About; `share_image` is the sign panel.
 - Blog covers: nitrogen (shown), plus winter timing and foam-filled (hidden).
 - Privacy: "shop area" was cropped to leave out a car with a readable plate. The nitrogen crop leaves out writing scratched on a post. Skipped: "customer stored tires 4" (customer names on tags) and IMG_9337.
 - No photo yet for:
-  - the On-Site & Roadside tile and page (needs a service truck photo)
-  - Farm & Ag, Hard-to-Find, Siping, Brakes, Steering, Oil, Batteries and Warranty
+  - Farm & Ag, Hard-to-Find, Siping, Brakes, Steering, Oil and Warranty
   - a current daylight storefront
 - Five web-sized 2021 files may have come from the old site or Google; confirm the shop owns them. Of those, `middle door 7`, `alignment machine` and `tires upstairs` are in use; `retread.jpeg` and `store front.jpeg` are not.
+
+Pictures 2 (Nov. 6, 2026), in !FargoTire\Pictures 2, placed the same way:
+- `Service truck.JPG` (the shop's crane truck, no plate showing): the On-Site & Roadside home tile and service page.
+- `wipers.jpg` (the Michelin wiper display): Batteries & Wiper Blades.
+- `nitrogen.jpg` (a cleaner, wider shot of the Branick machine): replaced the old close-up on the Nitrogen page and the nitrogen post cover. The phone was tilted and pointed down, so at Jay's request it was straightened: the 4 corners of the machine's lime panel were mapped to a true rectangle, then it was cropped to 4:3. The crop again leaves out the scratched post.
+- The 4 rebate flyers became Specials (see Coupons).
+- Not used: `brakes.jpg` is tagged Getty Images and `oil change.jpeg` is tagged Adobe Stock, so both need a paid license. `strut.webp`, `tire siping.webp` and `hard to find tires.jpg` are web graphics with no source. `Dyna_TorqII350pGS.jpg` (a Goodyear farm tire product shot) is only 200px wide. `tire man.tif` is the video's first frame.
 
 Continue Milestone 4 (Airtable buttons, IndexNow) in the list at the bottom.
 
@@ -122,7 +128,13 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
 - Every color lives in `tokens.css`. Paul's colors are king blue and white: `--blue #152A78` is Oracal 651 #049 King blue (sRGB 21, 42, 120), chosen Nov. 2, 2026. Others: `--red #C62828`, `--ink #24292E`, `--white #FFFFFF`, `--gray-50 #F3F4F6`, `--gray-200 #D9DDE2`, `--border #E3E6EA`, `--muted #4B5563`.
 - Use red sparingly (Jay, Nov. 2): only the Request a Quote / Send request buttons, coupon amounts, the holiday bar and the Closed tag. Everything else that was red is blue.
 - The tire man (since Nov. 5, 2026): Paul's color drawings, made into web files in `assets/` by a one-off script from his originals ("2024 tire man with saying.tif" and "tm.jpg", in Jay's OneDrive under !FargoTire\Tire Man). Paul: the speech-bubble one is the main one, the other is for everywhere else. All are on white, so he always sits on a white card or circle with a King blue edge, never straight on blue or charcoal. Use the `tireman(kind, alt, sizes, load)` macro in `partials/icons.njk`:
-  - `hero` (`tireman-hero-*`): the "BOY! Have we got TIRES" speech-bubble drawing, in the home hero card, about 340px wide.
+  - `anim` (`tireman-anim-*`, since Nov. 6, 2026): the last frame of `assets/tireman-anim.mp4` (Jay's `tire_guy.mp4`, 1080x1214, 6 seconds, no sound track), with him on the tires and a typed "BOY! Have we got TIRES!" bubble. It's the still in the home hero card, about 340px wide. The video sits over it (`.tireman-stage`). Behavior is in `site.js` under "Tire man":
+    - Hovering plays it: he hops onto the tires, and as the bubble opens (2.8 seconds in) `assets/tireman-saying.mp3` says "BOY! HAVE THEY GOT TIRES!" once. The video ends at 6 seconds and holds the bubble for 1 second, then he hops again, until the cursor leaves. Leaving stops it and shows the still again. The timing is `SAY_AT` (2.72, because the voice starts 0.08 seconds into the clip) and `HOLD_MS` in `site.js`.
+    - The clip is the first of the 5 takes in Dave's 15-second "BOY! HAVE THEY GOT TIRES! from dave.mp3" (Pictures 2): 0.7 to 2.95 seconds, cut on MP3 frame boundaries, 2.25 seconds and 90KB. Another take would be a new cut of that file.
+    - Browsers allow sound only after a click or tap on the page, so until then a hover is silent. With a mouse, a click never stops it: it turns the sound on and starts the hop over, unless he's talking.
+    - A round play button (added by JS, 48px) and a tap on the drawing start and stop it on phones and with the keyboard. It also stops when the tab is hidden or the card scrolls mostly out of view.
+    - It plays even with reduced motion set (Jay asked for hover, and it only moves while pointed at). The video starts loading on the first mouse movement, so phones never download it unless tapped.
+  - `hero` (`tireman-hero-*`): Paul's hand-lettered "BOY! Have we got TIRES" speech-bubble drawing. It was in the home hero card until Nov. 6, 2026, when `anim` replaced it. The files stay so it can go back.
   - `figure` (`tireman-*`): the other scan, with its loose lettering removed, on About when no `about_photo` is set (since Nov. 5, 2026 it is set to the pylon sign photo, so the figure isn't showing).
   - `bust` (`tireman-bust-*`): head and bow tie, square, in the round badges in the header (58px) and footer (96px).
   - `favicon.ico`, `icon-192.png`, `icon-512.png` (JSON-LD logo, default share image) and `apple-touch-icon.png` are the bust in a King blue ring.
@@ -183,6 +195,8 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
 - Visible when Show is ticked and Starts (if set) is on or before today, and today is on or before Expires, in Chicago. Render `data-starts` and `data-expires` so JS hides expired and not-yet-started coupons without a rebuild.
 - Home strip: Featured coupons, up to 3, by Order then Expires.
 - Kind (Coupons field, added Nov. 4, 2026): Coupon or Special. A Special (like the Goodyear rebate) is something to ask about, not a printable coupon. A blank Kind means Special for Offer Type Rebate and Coupon for everything else.
+- Manufacturer rebates (Nov. 6, 2026, from the flyers in Pictures 2): Goodyear up to $100 (Paul's row; dates and details added), BFGoodrich $80, Michelin $80, and Cooper $70, or up to $140 with the Goodyear Credit Card. The Cooper big line shows the $70 every tire line gets, and Details explain the "up to". All 4 hide after Nov. 30, 2026. The flyer images aren't on the site: the Goodyear graphic is 255px wide and repeats the card text, and the other 3 are photos of paper forms.
+- `airtable/seed.json` Coupons matches Airtable as of Nov. 6, 2026, except the hidden "4 Free Tires for Jay Manley" test row.
 - `/coupons/`: the first Featured row as the large featured card, then "Specials and rebates" (solid cards with Request this special and Call, no Print), then "Coupons" (a grid with dashed borders). Each heading hides when it has nothing visible. The Site Text `specials_footer` line sits at the bottom.
 - When nothing is visible: "No specials posted right now. Call (701) 232-7177 for today's deals."
 - Each coupon gets "Print coupon" (a print stylesheet that prints only that coupon; Specials get Call instead) and "Request this special" (links to `/contact-us/?coupon=<title>#quote`, which fills the hidden Coupon field).
@@ -275,7 +289,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 - Public email, Google Business Profile URL, Facebook URL. (Quote emails go to web@fargotire.com; see Quote form.)
 - The shop's Airtable Team trial ends about Nov. 16, 2026. Afterwards, send one test quote to confirm the Outlook email automation still runs on Free.
 - Which Netlify plan the shop's team ended up on (Free: 300 credits; Personal: $9 a month, 1,000 credits). Update Limits to match.
-- Photos: shop photos placed Nov. 5 (see Status), for Jay and Paul to adjust. Still needed: a service truck, farm tires, a daylight storefront. Drone shots exist. Brand logos are in Airtable since Nov. 5.
+- Photos: shop photos placed Nov. 5 and 6 (see Status), for Jay and Paul to adjust. Still needed: farm tires, a daylight storefront, and shop photos (or licenses) for Brakes, Oil, Steering, Siping and Hard-to-Find. Drone shots exist. Brand logos are in Airtable since Nov. 5.
 - GoDaddy (registrar/DNS) and current host access.
 
 ## Milestones
@@ -299,4 +313,4 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
    - `docs/paul-claude-instructions.md`
    - the owner guide in README.md
    - ~~an optional Airtable interface for Paul~~ done Nov. 4: "Quote Requests", a Kanban board of Leads (see Quote form)
-7. Launch: DNS cutover, Search Console, Google Business Profile check, a week of watching, then handoff. Before launch, check that every coupon with Show ticked is meant for the public (the "4 Free Tires for Jay Manley" coupon added Nov. 2 is shown). After fargotire.com is the primary domain in Netlify, trigger one deploy: that removes the pre-launch noindex, switches canonical URLs and the sitemap to fargotire.com, and runs IndexNow for the first time (check the function log for 200 or 202).
+7. Launch: DNS cutover, Search Console, Google Business Profile check, a week of watching, then handoff. Before launch, check that every coupon with Show ticked is meant for the public (the "4 Free Tires for Jay Manley" test coupon added Nov. 2 had Show unticked as of Nov. 6; delete it before launch). After fargotire.com is the primary domain in Netlify, trigger one deploy: that removes the pre-launch noindex, switches canonical URLs and the sitemap to fargotire.com, and runs IndexNow for the first time (check the function log for 200 or 202).
