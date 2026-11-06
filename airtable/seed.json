@@ -14,7 +14,8 @@
       "Phone": "(701) 232-7177",
       "Toll Free": "800-365-2161",
       "Fax": "(701) 232-2939",
-      "Time Zone": "America/Chicago"
+      "Time Zone": "America/Chicago",
+      "Form Notice Email": "web@fargotire.com"
     }
   ],
   "Hours": [
@@ -237,10 +238,19 @@
       "Show": true
     },
     {
+      "Name": "Tire Services",
+      "Slug": "tire-services",
+      "Category": "Tires",
+      "Summary": "Flat repairs, computerized balancing and installation.",
+      "Body": "Along with the tires, we handle the work that goes with them:\n\n- Installation\n- Computerized balancing for passenger, light truck and truck tires ([more about balancing](/services/tire-balancing/))\n- Flat repairs ([more about tire repair and rotation](/services/tire-repair-rotation/))\n\nNo appointment needed for tire work. Walk-ins welcome.",
+      "Order": 65,
+      "Show": true
+    },
+    {
       "Name": "On-Site & Roadside Tire Service",
       "Slug": "on-site-roadside-tire-service",
       "Category": "On-Site",
-      "Summary": "Fully equipped service trucks, with cranes, come to your job site. Any tire, any size, any time. After-hours rates will apply.",
+      "Summary": "Fully equipped service trucks, with cranes, come to your job site. Any tire, any size, any time. We offer after hours service, after-hour rates will apply.",
       "Order": 70,
       "Show": true
     },
@@ -348,7 +358,7 @@
   "Who We Serve": [
     {
       "Title": "Cars, Pickups & SUVs",
-      "Summary": "Passenger and light truck tires, alignment, brakes, batteries and oil changes.",
+      "Summary": "Passenger and light truck tires, balancing, flat repair, rotation, alignment, brakes, batteries and oil changes.",
       "Photo Alt": "Pickup in the service bay",
       "Link": "/services/passenger-light-truck-tires/",
       "Order": 10,
@@ -356,7 +366,7 @@
     },
     {
       "Title": "Semi & Commercial",
-      "Summary": "Medium truck tires, truck alignment, and tire programs for fleets.",
+      "Summary": "Medium truck tires, balancing, flat repair, truck alignment and tire programs for fleets.",
       "Photo Alt": "Semi truck at the shop",
       "Link": "/services/semi-commercial-truck-tires/",
       "Order": 20,
@@ -535,7 +545,7 @@
     },
     {
       "Question": "Do you take after-hours calls?",
-      "Answer": "Yes. After-hours service is available. After-hours rates will apply.",
+      "Answer": "Yes. We offer after hours service, after-hour rates will apply.",
       "Order": 30,
       "Show": true
     },
@@ -629,7 +639,7 @@
     },
     {
       "Name": "quote_text",
-      "Text": "Tell us what you're driving or running and what you need. We'll get back to you with a price or an answer."
+      "Text": "Let us know how we can help you. We'll get back to you with a price or an answer."
     },
     {
       "Name": "quote_thanks",
@@ -646,6 +656,10 @@
     {
       "Name": "footer_tagline",
       "Text": "Locally owned and operated since 1950"
+    },
+    {
+      "Name": "brands_heading",
+      "Text": "Brands we have in stock"
     },
     {
       "Name": "brands_text",

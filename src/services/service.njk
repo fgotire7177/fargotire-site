@@ -14,6 +14,8 @@ eleventyComputed:
 ---
 {%- from "partials/icons.njk" import picture -%}
 {%- set biz = airtable.biz -%}
+{#- On-site and roadside work is urgent, so those pages offer Call only, no Request a Quote (Jay, Nov. 5, 2026). -#}
+{%- set callOnly = svc.category == "On-Site" -%}
 <section class="page-hero bg-blue on-dark">
 <div class="wrap"><div>
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/services/">Services</a> / {{ svc.category }}</nav>
@@ -29,9 +31,9 @@ eleventyComputed:
 {%- if svc.body %}
 <div class="prose">{{ svc.body | md | safe }}</div>
 {%- else %}
-<div class="prose"><p>{{ svc.summary }}</p><p>Call <a href="tel:{{ biz.Phone | tel }}">{{ biz.Phone }}</a> or send a quick request and we'll get back to you.</p></div>
+<div class="prose"><p>{{ svc.summary }}</p><p>Call <a href="tel:{{ biz.Phone | tel }}">{{ biz.Phone }}</a>{% if not callOnly %} or send a quick request and we'll get back to you{% endif %}.</p></div>
 {%- endif %}
-<p class="actions" style="margin-top: 24px;"><a class="btn btn-red" href="/contact-us/#quote">Request a Quote</a><a class="btn btn-outline-blue" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a></p>
+<p class="actions" style="margin-top: 24px;">{% if not callOnly %}<a class="btn btn-red" href="/contact-us/#quote">Request a Quote</a>{% endif %}<a class="btn btn-outline-blue" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a></p>
 </div>
 <div>
 {%- set related = airtable.services | whereEq("category", svc.category) %}

@@ -35,8 +35,8 @@ title: Tires in Fargo, ND
 <h1 id="hero-h" class="visually-hidden">{{ biz.Name }}</h1>
 {%- endif %}
 <p class="hero-text">{{ t.hero_text }}</p>
+{#- Only Call here: the header's Request a Quote button sits right above. -#}
 <div class="actions">
-<a class="btn btn-red" href="#quote">Request a Quote</a>
 <a class="btn btn-outline-white" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a>
 </div>
 </div>
@@ -76,7 +76,7 @@ title: Tires in Fargo, ND
 {%- if airtable.brands.length %}
 <section class="section-tight" aria-labelledby="brands-h">
 <div class="wrap">
-<h2 id="brands-h" class="h2-sm center" style="margin-bottom: 20px;">Brands we sell</h2>
+<h2 id="brands-h" class="h2-sm center" style="margin-bottom: 20px;">{{ t.brands_heading or "Brands we have in stock" }}</h2>
 <div class="brands-grid">
 {%- for b in airtable.brands %}
 {%- if b.link %}<a class="brand-cell" href="{{ b.link }}">{% else %}<div class="brand-cell">{% endif -%}
@@ -85,7 +85,7 @@ title: Tires in Fargo, ND
 {%- endfor %}
 </div>
 {%- if t.brands_text %}
-<p class="center" style="margin-top: 16px;">{{ t.brands_text }}</p>
+<p class="brands-note">{{ t.brands_text }}</p>
 {%- endif %}
 </div>
 </section>
