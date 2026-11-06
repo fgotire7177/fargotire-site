@@ -38,6 +38,18 @@ Since then (Nov. 2, 2026):
 
 Image pipeline (Nov. 5, 2026): all 7 shown Brands rows have a PNG in Logo (from Jay; the Toyo file arrived white on transparent and was made black so it shows on the white tiles). A local build from Airtable downloaded and resized them, and the Nov. 5 Netlify deploy did the same. SVGs or larger PNGs would look sharper on high-res phones.
 
+Shop photos (Nov. 5, 2026): Jay said to place them where they fit best, and he and Paul will adjust. The originals are in Jay's OneDrive, !FargoTire\Pictures. A one-off script made upright copies with metadata stripped, cropped to 16:10 for the home tiles and about 4:3 landscape for service pages, since service pages and blog covers show a photo at its own shape. 20 files went into Airtable, each with alt text:
+- Home tiles: Cars, Semi, Farm and Off-the-road.
+- Services: Passenger & LT, Winter Changeover, Tire Services, UTV/Trailer, Semi, Industrial & OTR, Retreading, Foam Fill, Alignment, Balancing, Repair & Rotation, Nitrogen.
+- Site Images: `about_photo` is the pylon sign, so it replaces the tire man figure on About; `share_image` is the sign panel.
+- Blog covers: nitrogen (shown), plus winter timing and foam-filled (hidden).
+- Privacy: "shop area" was cropped to leave out a car with a readable plate. The nitrogen crop leaves out writing scratched on a post. Skipped: "customer stored tires 4" (customer names on tags) and IMG_9337.
+- No photo yet for:
+  - the On-Site & Roadside tile and page (needs a service truck photo)
+  - Farm & Ag, Hard-to-Find, Siping, Brakes, Steering, Oil, Batteries and Warranty
+  - a current daylight storefront
+- Five web-sized 2021 files may have come from the old site or Google; confirm the shop owns them. Of those, `middle door 7`, `alignment machine` and `tires upstairs` are in use; `retread.jpeg` and `store front.jpeg` are not.
+
 Continue Milestone 4 (Airtable buttons, IndexNow) in the list at the bottom.
 
 ## Repo layout (as built)
@@ -110,18 +122,18 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
 - Use red sparingly (Jay, Nov. 2): only the Request a Quote / Send request buttons, coupon amounts, the holiday bar and the Closed tag. Everything else that was red is blue.
 - The tire man (since Nov. 5, 2026): Paul's color drawings, made into web files in `assets/` by a one-off script from his originals ("2024 tire man with saying.tif" and "tm.jpg", in Jay's OneDrive under !FargoTire\Tire Man). Paul: the speech-bubble one is the main one, the other is for everywhere else. All are on white, so he always sits on a white card or circle with a King blue edge, never straight on blue or charcoal. Use the `tireman(kind, alt, sizes, load)` macro in `partials/icons.njk`:
   - `hero` (`tireman-hero-*`): the "BOY! Have we got TIRES" speech-bubble drawing, in the home hero card, about 340px wide.
-  - `figure` (`tireman-*`): the other scan, with its loose lettering removed, on About when no `about_photo` is set.
+  - `figure` (`tireman-*`): the other scan, with its loose lettering removed, on About when no `about_photo` is set (since Nov. 5, 2026 it is set to the pylon sign photo, so the figure isn't showing).
   - `bust` (`tireman-bust-*`): head and bow tie, square, in the round badges in the header (58px) and footer (96px).
   - `favicon.ico`, `icon-192.png`, `icon-512.png` (JSON-LD logo, default share image) and `apple-touch-icon.png` are the bust in a King blue ring.
   - The old black line art (`tireboy.svg`, `favicon.svg`) stays only because `design/mockup/` uses it.
-- Paul's logo fonts are French Script (bold) for the name, written "Fargo Tire Service Inc.", and Freestyle Script for "Boy! Have we got tires!" and the motto "After the sales, it's our service that counts." Their Office licenses don't cover the web, so the site uses free look-alikes, chosen by Jay on Nov. 2: Rouge Script and Dancing Script. Jay plans to buy web licenses for the real fonts from Monotype. When the WOFF2 files arrive: add them to the repo, point the two `@font-face` rules and `--font-logo` / `--font-slogan` in `tokens.css` at them, update the preloads in `base.njk`, then remove `@fontsource/rouge-script` and `@fontsource/dancing-script`. The comparison is in `design/font-options.html`. On the site, script is for the logo name and the motto only; everything else stays Barlow.
+- Paul's logo fonts are French Script (bold) for the name, written "Fargo Tire Service Inc.", and Freestyle Script for "Boy! Have we got tires!" and the motto "After the sale, it's our service that counts." Their Office licenses don't cover the web, so the site uses free look-alikes, chosen by Jay on Nov. 2: Rouge Script and Dancing Script. Jay plans to buy web licenses for the real fonts from Monotype. When the WOFF2 files arrive: add them to the repo, point the two `@font-face` rules and `--font-logo` / `--font-slogan` in `tokens.css` at them, update the preloads in `base.njk`, then remove `@fontsource/rouge-script` and `@fontsource/dancing-script`. The comparison is in `design/font-options.html`. On the site, script is for the logo name and the motto only; everything else stays Barlow.
 - Home "This season" box (Site Text `season_title`, `season_text`, `season_items`): each line of `season_items` is `Label | /link/`, and each box links to that page. Lines without ` | ` show as plain boxes. Since Nov. 4, 2026 the 5 winter boxes link to Winter Tire Changeover (a new Services row), Tire Siping, Nitrogen Inflation, Batteries & Wiper Blades and Wheel Alignment. Each of those pages now has in-depth Body text. Per Jay, the shop stores customers' off-season tires (no price given).
-- Tagline "Boy! Have we got tires!" and Motto "After the sales, it's our service that counts." come from Business Info. Since Nov. 5, 2026 (Jay) the tagline is no longer text on the home page, because the tire man's speech bubble already says it: it stays in the hero image's alt text and the JSON-LD `slogan`. The motto is the home page h1 and also shows in the footer.
+- Tagline "Boy! Have we got tires!" and Motto "After the sale, it's our service that counts." (wording confirmed by Jay, Nov. 5, 2026; the pylon sign says "After the sale, it's the service that counts!") come from Business Info. Since Nov. 5, 2026 (Jay) the tagline is no longer text on the home page, because the tire man's speech bubble already says it: it stays in the hero image's alt text and the JSON-LD `slogan`. The motto is the home page h1 and also shows in the footer.
 - Home page edits from Paul (Nov. 5, 2026):
   - The hero has only the Call button, because the header's Request a Quote button sits right above it.
   - The brands heading is Site Text `brands_heading` ("Brands we have in stock"), and `brands_text` under the tiles is bold at 21px (`.brands-note`).
 - Service pages in the On-Site category show Call only, with no Request a Quote button (`callOnly` in `services/service.njk`).
-- The Tires group on /services/ ends with a "Tire Services" row (Nov. 5, 2026): flat repairs, computerized balancing and installation. Paul asked for a box called "Services"; it's named Tire Services so its page title and breadcrumb read clearly.
+- The Tires group on /services/ ends with a "Tire Services" row (Nov. 5, 2026): flat repairs, computerized balancing and installation. Paul asked for a box called "Services"; it's named Tire Services so its page title and breadcrumb read clearly. After it comes "Wheels" (Order 67, Paul's wording: "Aftermarket wheels by various manufacturers are available by order."), with the XD wheel display board photo ("rim options 1").
 - Phone layout changes from the mockup, which used placeholders here:
   1. Header nav becomes a Menu button that opens a full-width panel. The full desktop menu (6 links: Tires and Services, Specials, Hours, Blog, About, FAQ, at 17px with 14px gaps; since Nov. 4, 2026 one "Tires and Services" link to /services/ replaces Tires, Services and Commercial & Farm) needs about 1070px, so the Menu button takes over below 1100px. Adding a link means re-measuring that fit.
   2. The home specials strip becomes a horizontal scroll-snap row, so the hero isn't pushed 1,000px down.
@@ -180,7 +192,7 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
 - Netlify only captures fields present in the built HTML, so no JS-added fields.
 - `submission-created` creates a Leads record: Received = now, Status = New, Page and Coupon filled. If the photo can't be attached cleanly, store its link in Message instead.
 - Leads Status stages (Nov. 4, 2026): New, Contacted, In Process, Completed, Canceled (default New). Quoted, Won and Lost were renamed to the last 3, and Spam was removed. The Airtable interface "Quote Requests" (published, built by hand in the UI; the API can't create interfaces) has one Kanban page on Leads, stacked by Status, newest Received first. Cards show Name, Need, Phone, Vehicle or Equipment, Tire Size and Received. Dragging a card changes Status, and clicking one opens every field, editable. Nobody has been invited to it yet: Paul needs to be a base collaborator or an interface-only user (an editor seat, 5 on Free).
-- Email notices come from an Airtable automation in the website base, "Email new quote requests": when a Leads record is created, a "Find records" step reads Business Info (Grid view, 1 record), then a Microsoft Outlook "Send email" step sends the lead's fields from web@fargotire.com to Business Info's **Form Notice Email** (since Nov. 5, 2026; web@fargotire.com for now, likely info@fargotire.com after launch). To change who gets quote emails, edit that field; no automation change needed. The email's "Open in Airtable" link is typed-in text pointing at one old test lead (`rec9BqVVahRuMwrqS`), not the new lead; it should be the trigger's "Airtable record URL" value. Netlify's own form email notices need its Pro plan, so they aren't used. No email code. Tested end to end Nov. 2, 2026. It uses Airtable automation runs (100 a month on Free).
+- Email notices come from an Airtable automation in the website base, "Email new quote requests": when a Leads record is created, a "Find records" step reads Business Info (Grid view, 1 record), then a Microsoft Outlook "Send email" step sends the lead's fields from web@fargotire.com to Business Info's **Form Notice Email** (since Nov. 5, 2026; web@fargotire.com for now, likely info@fargotire.com after launch). To change who gets quote emails, edit that field; no automation change needed. The email's "Open in Airtable" link is the trigger's Base record URL (fixed Nov. 5, 2026; before that it was typed-in text pointing at one old test lead). Netlify's own form email notices need its Pro plan, so they aren't used. No email code. Tested end to end Nov. 2, 2026. It uses Airtable automation runs (100 a month on Free).
 - After sending, show the Site Text `quote_thanks` message.
 - Add reCAPTCHA only if spam shows up.
 
@@ -252,7 +264,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 - Public email, Google Business Profile URL, Facebook URL. (Quote emails go to web@fargotire.com; see Quote form.)
 - The shop's Airtable Team trial ends about Nov. 16, 2026. Afterwards, send one test quote to confirm the Outlook email automation still runs on Free.
 - Which Netlify plan the shop's team ended up on (Free: 300 credits; Personal: $9 a month, 1,000 credits). Update Limits to match.
-- Photos (drone shots exist; ground shots coming). Brand logos are in Airtable since Nov. 5.
+- Photos: shop photos placed Nov. 5 (see Status), for Jay and Paul to adjust. Still needed: a service truck, farm tires, a daylight storefront. Drone shots exist. Brand logos are in Airtable since Nov. 5.
 - GoDaddy (registrar/DNS) and current host access.
 
 ## Milestones

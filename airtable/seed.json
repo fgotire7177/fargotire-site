@@ -5,7 +5,7 @@
       "Name": "Fargo Tire Service",
       "Legal Name": "Fargo Tire Service, Inc.",
       "Tagline": "Boy! Have we got tires!",
-      "Motto": "After the sales, it's our service that counts.",
+      "Motto": "After the sale, it's our service that counts.",
       "Founded": 1950,
       "Street": "2020 Main Ave",
       "City": "Fargo",
@@ -247,6 +247,14 @@
       "Show": true
     },
     {
+      "Name": "Wheels",
+      "Slug": "wheels",
+      "Category": "Tires",
+      "Summary": "Aftermarket wheels by various manufacturers are available by order.",
+      "Order": 67,
+      "Show": true
+    },
+    {
       "Name": "On-Site & Roadside Tire Service",
       "Slug": "on-site-roadside-tire-service",
       "Category": "On-Site",
@@ -359,7 +367,7 @@
     {
       "Title": "Cars, Pickups & SUVs",
       "Summary": "Passenger and light truck tires, balancing, flat repair, rotation, alignment, brakes, batteries and oil changes.",
-      "Photo Alt": "Pickup in the service bay",
+      "Photo Alt": "Stacks of new passenger and light truck tires at the shop",
       "Link": "/services/passenger-light-truck-tires/",
       "Order": 10,
       "Show": true
@@ -367,7 +375,7 @@
     {
       "Title": "Semi & Commercial",
       "Summary": "Medium truck tires, balancing, flat repair, truck alignment and tire programs for fleets.",
-      "Photo Alt": "Semi truck at the shop",
+      "Photo Alt": "New semi truck tires lined up at the shop",
       "Link": "/services/semi-commercial-truck-tires/",
       "Order": 20,
       "Show": true
@@ -375,7 +383,7 @@
     {
       "Title": "Farm and Off-the-road",
       "Summary": "Tractor, implement and industrial tires, plus foam fill so they never go flat.",
-      "Photo Alt": "Tractor tires in stock",
+      "Photo Alt": "Large off-the-road tires standing in a row at the shop",
       "Link": "/services/farm-ag-tires/",
       "Order": 30,
       "Show": true
@@ -685,11 +693,11 @@
     },
     {
       "Name": "about_photo",
-      "Alt Text": ""
+      "Alt Text": "The Fargo Tire Service sign with the tire man, between the Michelin, BFGoodrich and Uniroyal signs"
     },
     {
       "Name": "share_image",
-      "Alt Text": "Fargo Tire Service, 2020 Main Ave, Fargo"
+      "Alt Text": "The Fargo Tire Service sign with the tire man"
     }
   ]
 }
