@@ -438,7 +438,8 @@
       "Category": "Service & Repair",
       "Summary": "Oil, lube and filter service.",
       "Order": 160,
-      "Show": true
+      "Show": true,
+      "Photo Alt": "A car up on a lift in the shop, with an oil drain funnel under the engine"
     },
     {
       "Name": "Batteries & Wiper Blades",
@@ -456,7 +457,8 @@
       "Category": "Service & Repair",
       "Summary": "We handle extended warranty work.",
       "Order": 180,
-      "Show": true
+      "Show": true,
+      "Photo Alt": "Illustration of a warranty form on a clipboard with a check-mark seal, a tire and a wrench"
     },
     {
       "Name": "Tire Retreading",

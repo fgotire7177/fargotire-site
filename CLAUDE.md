@@ -50,8 +50,11 @@ Shop photos (Nov. 5, 2026): Jay said to place them where they fit best, and he a
 - Site Images: `about_photo` is the pylon sign, so it replaces the tire man figure on About; `share_image` is the sign panel.
 - Blog covers: nitrogen (shown), plus winter timing and foam-filled (hidden).
 - Privacy: "shop area" was cropped to leave out a car with a readable plate. The nitrogen crop leaves out writing scratched on a post. Skipped: "customer stored tires 4" (customer names on tags) and IMG_9337.
-- No photo yet for:
-  - Oil and Warranty (Brakes, Steering and Siping got shop photos from Pictures 4; Farm Tires and Hard-to-Find got pictures from Pictures 5)
+- Every shown service has a photo since Nov. 7, 2026:
+  - Brakes, Steering and Siping got shop photos from Pictures 4, and Farm Tires and Hard-to-Find got pictures from Pictures 5.
+  - Extended Warranty Work has an illustration (see below).
+  - Oil, Lube & Filter has a shop photo Jay pasted into chat: a car on the lift with the oil drain funnel under it, uncropped 3:4.
+- Still wanted:
   - a current daylight storefront (the 2021 `store front.jpeg` is on About since Nov. 7)
 - Five web-sized 2021 files may have come from the old site or Google; confirm the shop owns them. Of those, `middle door 7`, `alignment machine` and `tires upstairs` are in use, and so is `store front.jpeg` since Nov. 7 (Jay asked for it on About; its EXIF names Google, so it may be a Google Maps photo); `retread.jpeg` is not.
 
@@ -80,6 +83,11 @@ Pictures 4 (Nov. 6, 2026), in !FargoTire\Pictures 4 (Pictures 3 holds the same 6
 Pictures 5 (Nov. 7, 2026) holds those same 2 files, and Jay asked for them on their pages:
 - The catalog page is on Hard-to-Find Tires, uncropped (it's already about 4:3).
 - The Goodyear farm tire is on Farm Tires at its own 174x230 size. A service photo under 480px wide shows centered at its own size (`.svc-photo--small`) instead of stretched. A product shot at least 1,200px wide, or a shop photo, would fill the column.
+
+Extended Warranty Work (Nov. 7, 2026): Jay asked for a made-up picture, so it has a drawn illustration rather than a photo:
+- It shows a warranty form on a clipboard with a check-mark seal, a tire and a wrench.
+- It's in King blue and grays, with no red and no words.
+- The source is `design/illustrations/extended-warranty.svg`. It was rendered to a 1600x1200 JPEG with sharp and uploaded to the row's Photo field.
 
 Continue Milestone 4 (Airtable buttons, IndexNow) in the list at the bottom.
 
@@ -316,7 +324,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 - Public email, Google Business Profile URL, Facebook URL. (Quote emails go to web@fargotire.com; see Quote form.)
 - The shop's Airtable Team trial ends about Nov. 16, 2026. Afterwards, send one test quote to confirm the Outlook email automation still runs on Free.
 - Which Netlify plan the shop's team ended up on (Free: 300 credits; Personal: $9 a month, 1,000 credits). Update Limits to match.
-- Photos: shop photos placed Nov. 5 and 6 (see Status), for Jay and Paul to adjust. Still needed: a bigger farm tire picture (a shop photo, or a Goodyear product shot at least 1,200px wide; the one on Farm Tires is 174px), a current daylight storefront at least 1,600px wide (the one on About is 1,024px), and shop photos (or licenses) for Oil and Warranty. Drone shots exist. Brand logos are in Airtable since Nov. 5.
+- Photos: shop photos placed Nov. 5 and 6 (see Status), for Jay and Paul to adjust. Still needed: a bigger farm tire picture (a shop photo, or a Goodyear product shot at least 1,200px wide; the one on Farm Tires is 174px), a current daylight storefront at least 1,600px wide (the one on About is 1,024px), and a shop photo for Extended Warranty Work if one would suit better than the illustration. Drone shots exist. Brand logos are in Airtable since Nov. 5.
 - GoDaddy access: in hand (the web records were changed Nov. 7). The old WordPress host isn't needed anymore (Jay: only its DNS settings mattered).
 - In Airtable, delete the unused Category choices "Farm & Ag" (Services) and "Farm & ag" (Blog Posts). Every row moved to "Farm" on Nov. 7, but the API can't remove choices. A row set to the old Services choice would drop out of the /services/ groups.
 

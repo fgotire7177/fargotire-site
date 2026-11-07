@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+  <!-- Extended Warranty Work illustration (Nov. 7, 2026). Colors: King blue #152A78 and its tints, ink #24292E, grays. No red, no words. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F1F4FB"/>
+      <stop offset="1" stop-color="#DDE4F3"/>
+    </linearGradient>
+    <mask id="wrenchCut" maskUnits="userSpaceOnUse" x="-400" y="-200" width="900" height="400">
+      <rect x="-400" y="-200" width="900" height="400" fill="#fff"/>
+      <rect x="250" y="-34" width="140" height="68" fill="#000"/>
+      <circle cx="-245" cy="0" r="38" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <circle cx="1330" cy="190" r="120" fill="#FFFFFF" opacity="0.55"/>
+  <circle cx="180" cy="1030" r="90" fill="#FFFFFF" opacity="0.45"/>
+  <ellipse cx="830" cy="1030" rx="600" ry="42" fill="#152A78" opacity="0.10"/>
+
+  <!-- tire -->
+  <g transform="translate(1130 680)">
+    <circle r="320" fill="#24292E"/>
+    <circle r="300" fill="none" stroke="#3B434B" stroke-width="44" stroke-dasharray="34 24"/>
+    <circle r="236" fill="#2E353C"/>
+    <circle r="200" fill="#C9D0DA"/>
+    <circle r="168" fill="#EEF1F5"/>
+    <g fill="#C9D0DA">
+      <circle cx="0" cy="-92" r="20"/><circle cx="87" cy="-28" r="20"/><circle cx="54" cy="74" r="20"/>
+      <circle cx="-54" cy="74" r="20"/><circle cx="-87" cy="-28" r="20"/>
+    </g>
+    <circle r="46" fill="#AEB7C3"/>
+    <circle r="20" fill="#8C96A3"/>
+  </g>
+
+  <!-- clipboard with a form -->
+  <g transform="translate(300 170) rotate(-5 280 360)">
+    <rect x="8" y="14" width="560" height="740" rx="30" fill="#0E1D57" opacity="0.18"/>
+    <rect x="0" y="0" width="560" height="740" rx="30" fill="#152A78"/>
+    <rect x="34" y="70" width="492" height="636" rx="14" fill="#FFFFFF"/>
+    <rect x="180" y="-26" width="200" height="82" rx="20" fill="#D9DDE2" stroke="#0E1D57" stroke-width="10"/>
+    <circle cx="280" cy="6" r="14" fill="#0E1D57"/>
+    <rect x="84" y="128" width="250" height="40" rx="10" fill="#152A78"/>
+    <rect x="84" y="196" width="392" height="16" rx="8" fill="#D9DDE2"/>
+    <rect x="84" y="232" width="330" height="16" rx="8" fill="#D9DDE2"/>
+    <g>
+      <rect x="84" y="300" width="44" height="44" rx="8" fill="#FFFFFF" stroke="#152A78" stroke-width="8"/>
+      <path d="M93 322 L104 334 L121 309" fill="none" stroke="#152A78" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="152" y="314" width="290" height="16" rx="8" fill="#D9DDE2"/>
+      <rect x="84" y="376" width="44" height="44" rx="8" fill="#FFFFFF" stroke="#152A78" stroke-width="8"/>
+      <path d="M93 398 L104 410 L121 385" fill="none" stroke="#152A78" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="152" y="390" width="250" height="16" rx="8" fill="#D9DDE2"/>
+      <rect x="84" y="452" width="44" height="44" rx="8" fill="#FFFFFF" stroke="#152A78" stroke-width="8"/>
+      <path d="M93 474 L104 486 L121 461" fill="none" stroke="#152A78" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="152" y="466" width="270" height="16" rx="8" fill="#D9DDE2"/>
+    </g>
+    <path d="M84 600 C 120 560, 150 640, 190 590 S 260 570, 300 600" fill="none" stroke="#8090C4" stroke-width="7" stroke-linecap="round"/>
+    <rect x="84" y="620" width="230" height="6" rx="3" fill="#D9DDE2"/>
+  </g>
+
+  <!-- wrench across the tire -->
+  <g transform="translate(1110 760) rotate(-35)">
+    <g mask="url(#wrenchCut)">
+      <rect x="-250" y="-34" width="500" height="68" rx="34" fill="#4A5FA8"/>
+      <circle cx="-245" cy="0" r="74" fill="#4A5FA8"/>
+      <circle cx="270" cy="0" r="86" fill="#4A5FA8"/>
+    </g>
+    <rect x="-150" y="-12" width="300" height="24" rx="12" fill="#6F82C4"/>
+  </g>
+
+  <!-- seal with a check mark -->
+  <g transform="translate(860 800)">
+    <path d="M-70 60 L-110 250 L-50 215 L-20 280 L10 100 Z" fill="#0E1D57"/>
+    <path d="M70 60 L110 250 L50 215 L20 280 L-10 100 Z" fill="#0E1D57"/>
+    <circle r="150" fill="#152A78"/>
+    <circle r="150" fill="none" stroke="#FFFFFF" stroke-width="10" opacity="0.9"/>
+    <circle r="120" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-dasharray="6 14" stroke-linecap="round"/>
+    <path d="M-60 2 L-14 50 L66 -46" fill="none" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
