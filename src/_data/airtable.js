@@ -250,7 +250,8 @@ export default async function () {
       body: (r.Body || "").trim(),
       photo: photos[0] || null,
       photoAlt: alts[0],
-      photos: photos.map((img, i) => ({ img, alt: alts[i] || alts[0] })),
+      // ratio (width / height) sizes each photo's column, so 2 photos share one row at the same height, each whole.
+      photos: photos.map((img, i) => ({ img, alt: alts[i] || alts[0], ratio: +(img.width / img.height).toFixed(3) })),
       searchTitle: r["Search Title"] || "",
       searchDescription: r["Search Description"] || ""
     });

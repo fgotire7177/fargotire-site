@@ -82,7 +82,7 @@
         {"name": "Category", "type": "singleSelect", "options": {"choices": [{"name": "Tires"}, {"name": "Service & Repair"}, {"name": "Commercial"}, {"name": "Farm & Ag"}, {"name": "On-Site"}]}},
         {"name": "Summary", "type": "multilineText", "description": "One or two sentences. Shows on the Services page and in Google results if Search Description is blank."},
         {"name": "Body", "type": "richText", "description": "The full page text. Bold, headings, lists and links carry through."},
-        {"name": "Photo", "type": "multipleAttachments", "description": "One or two photos for the top of the page. Landscape works best. Two show side by side, in this order."},
+        {"name": "Photo", "type": "multipleAttachments", "description": "One or two photos for the top of the page, in this order. Two sit side by side in one row, the same height, each shown whole."},
         {"name": "Photo Alt", "type": "singleLineText", "description": "What the photo shows, in plain words, under 125 characters. For two photos, describe each in the same order with | between them."},
         {"name": "Order", "type": "number", "options": {"precision": 0}},
         {"name": "Show", "type": "checkbox", "options": {"color": "greenBright", "icon": "check"}},

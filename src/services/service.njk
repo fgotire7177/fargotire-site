@@ -26,8 +26,9 @@ eleventyComputed:
 <section class="section">
 <div class="wrap two-col">
 <div>
-{#- Two photos in the row's Photo field show side by side, cropped to the same shape (like Batteries & Wiper Blades). -#}
-{%- if svc.photos.length > 1 %}<div class="svc-photos">{% for p in svc.photos %}{{ picture(p.img, p.alt, "(max-width: 900px) 50vw, 280px", true) }}{% endfor %}</div>
+{#- Two photos in the row's Photo field share one row, the same height and each whole, uncropped (Jay, Nov. 7, 2026).
+    Each column's width follows its photo's shape, so a tall photo gets a narrower column. -#}
+{%- if svc.photos.length > 1 %}<div class="svc-photos" style="grid-template-columns:{% for p in svc.photos %} minmax(0, {{ p.ratio }}fr){% endfor %};">{% for p in svc.photos %}{{ picture(p.img, p.alt, "(max-width: 900px) 60vw, 330px", true) }}{% endfor %}</div>
 {%- elif svc.photo %}<div style="margin-bottom: 24px; border-radius: var(--radius); overflow: hidden;">{{ picture(svc.photo, svc.photoAlt, "(max-width: 900px) 100vw, 560px", true) }}</div>{% endif %}
 {%- if svc.body %}
 <div class="prose">{{ svc.body | md | safe }}</div>
