@@ -16,8 +16,16 @@ eleventyComputed:
 
 <section class="section">
 <div class="wrap two-col">
+<div>
 <div class="prose">
 {%- for p in airtable.text.about_history | paras %}<p>{{ p }}</p>{% endfor %}
+</div>
+{#- The jumping tire man fills the space under the history, beside the sign photo (Jay, Nov. 7, 2026).
+    With no about_photo, the tire man figure takes the right column instead, so he isn't shown twice. -#}
+{%- if photo and photo.img %}
+{%- set tmLoad = "lazy" %}
+<div class="about-tireman">{% include "partials/tireman-anim.njk" %}</div>
+{%- endif %}
 </div>
 <div style="display: flex; justify-content: center;">
 {%- if photo and photo.img %}
@@ -27,6 +35,15 @@ eleventyComputed:
 {%- endif %}
 </div>
 </div>
+{#- Full-width photos under the history: Site Images rows named about_wide_1, about_wide_2 and so on, in name order
+    (the storefront and the mural since Nov. 7, 2026). Add a row with the next number to add one. -#}
+{%- set wides = [] %}
+{%- for name, im in airtable.images | dictsort %}{% if name.startsWith("about_wide") and im.img %}{% set _ = wides.push(im) %}{% endif %}{% endfor %}
+{%- if wides.length %}
+<div class="wrap about-wide">
+{%- for im in wides %}{{ picture(im.img, im.alt, "(max-width: 1240px) 100vw, 1200px") }}{% endfor %}
+</div>
+{%- endif %}
 </section>
 
 {%- if airtable.whyUs.length %}

@@ -810,6 +810,14 @@
     {
       "Name": "waiting_room_2",
       "Alt Text": "The front counter, seen from the front door"
+    },
+    {
+      "Name": "about_wide_1",
+      "Alt Text": "The front of the Fargo Tire Service building, with its yellow awning and the service bays"
+    },
+    {
+      "Name": "about_wide_2",
+      "Alt Text": "The mural on the side of the shop: a white Jeep from behind and a red Ford pickup from the front"
     }
   ]
 }

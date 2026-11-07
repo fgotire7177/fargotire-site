@@ -52,8 +52,15 @@ Shop photos (Nov. 5, 2026): Jay said to place them where they fit best, and he a
 - Privacy: "shop area" was cropped to leave out a car with a readable plate. The nitrogen crop leaves out writing scratched on a post. Skipped: "customer stored tires 4" (customer names on tags) and IMG_9337.
 - No photo yet for:
   - Farm Tires, Hard-to-Find, Oil and Warranty (Brakes, Steering and Siping got shop photos from Pictures 4)
-  - a current daylight storefront
-- Five web-sized 2021 files may have come from the old site or Google; confirm the shop owns them. Of those, `middle door 7`, `alignment machine` and `tires upstairs` are in use; `retread.jpeg` and `store front.jpeg` are not.
+  - a current daylight storefront (the 2021 `store front.jpeg` is on About since Nov. 7)
+- Five web-sized 2021 files may have come from the old site or Google; confirm the shop owns them. Of those, `middle door 7`, `alignment machine` and `tires upstairs` are in use, and so is `store front.jpeg` since Nov. 7 (Jay asked for it on About; its EXIF names Google, so it may be a Google Maps photo); `retread.jpeg` is not.
+
+About page (Nov. 7, 2026, Jay):
+- The jumping tire man (`partials/tireman-anim.njk`, shared with the home hero) sits under the history text, beside the sign photo. He's 300px wide there so he fits the space.
+- Under both columns, full width, come Site Images rows named `about_wide_1`, `about_wide_2` and so on, in name order:
+  - `about_wide_1`: the storefront, `store front.jpeg`, 1024px wide, so a little soft at full width.
+  - `about_wide_2`: the mural on the side of the shop (`mural.JPG`, Pictures 1). The left 2% was cut to leave out a parked car's plate.
+  - Add a row with the next number to add a photo.
 
 Pictures 2 (Nov. 6, 2026), in !FargoTire\Pictures 2, placed the same way:
 - `Service truck.JPG` (the shop's crane truck, no plate showing): the On-Site & Roadside home tile and service page.
@@ -122,7 +129,7 @@ Keep the old WordPress slugs where they exist.
 | `/coupons/` | Specials and coupons (nav label "Specials") |
 | `/hours/` | Hours and location (new) |
 | `/services/` and `/services/<Slug>/` | Services index and one page per shown Services row |
-| `/about-us/` | History (Site Text `about_history`), Why Us, photo |
+| `/about-us/` | History (Site Text `about_history`), the jumping tire man, the sign photo, full-width photos (`about_wide_N`), Why Us |
 | `/contact-us/` | Quote form, map, phones, address |
 | `/blog/` and `/blog/<Address>/` | Blog list and posts |
 | `/faq/` | FAQ |
@@ -142,7 +149,7 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
 - Every color lives in `tokens.css`. Paul's colors are king blue and white: `--blue #152A78` is Oracal 651 #049 King blue (sRGB 21, 42, 120), chosen Nov. 2, 2026. Others: `--red #C62828`, `--ink #24292E`, `--white #FFFFFF`, `--gray-50 #F3F4F6`, `--gray-200 #D9DDE2`, `--border #E3E6EA`, `--muted #4B5563`.
 - Use red sparingly (Jay, Nov. 2): only the Request a Quote / Send request buttons, coupon amounts, the holiday bar and the Closed tag. Everything else that was red is blue.
 - The tire man (since Nov. 5, 2026): Paul's color drawings, made into web files in `assets/` by a one-off script from his originals ("2024 tire man with saying.tif" and "tm.jpg", in Jay's OneDrive under !FargoTire\Tire Man). Paul: the speech-bubble one is the main one, the other is for everywhere else. All are on white, so he always sits on a white card or circle with a King blue edge, never straight on blue or charcoal. Use the `tireman(kind, alt, sizes, load)` macro in `partials/icons.njk`:
-  - `anim` (`tireman-anim-*`, since Nov. 6, 2026): the last frame of `assets/tireman-anim.mp4` (Jay's `tire_guy.mp4`, 1080x1214, 6 seconds, no sound track), with him on the tires and a typed "BOY! Have we got TIRES!" bubble. It's the still in the home hero card, about 340px wide. The video sits over it (`.tireman-stage`). Behavior is in `site.js` under "Tire man":
+  - `anim` (`tireman-anim-*`, since Nov. 6, 2026): the last frame of `assets/tireman-anim.mp4` (Jay's `tire_guy.mp4`, 1080x1214, 6 seconds, no sound track), with him on the tires and a typed "BOY! Have we got TIRES!" bubble. It's the still in the home hero card (about 340px wide) and, since Nov. 7, 2026, on About under the history text (300px). Both use `partials/tireman-anim.njk`; set `tmLoad` before including it. The video sits over it (`.tireman-stage`). Behavior is in `site.js` under "Tire man":
     - Hovering plays it: he hops onto the tires, and as the bubble opens (2.8 seconds in) `assets/tireman-saying.mp3` says "BOY! HAVE THEY GOT TIRES!" once. The video ends at 6 seconds and holds the bubble for 1 second, then he hops again, until the cursor leaves. Leaving stops it and shows the still again. The timing is `SAY_AT` (2.72, because the voice starts 0.08 seconds into the clip) and `HOLD_MS` in `site.js`.
     - The clip is the first of the 5 takes in Dave's 15-second "BOY! HAVE THEY GOT TIRES! from dave.mp3" (Pictures 2): 0.7 to 2.95 seconds, cut on MP3 frame boundaries, 2.25 seconds and 90KB. Another take would be a new cut of that file.
     - Browsers allow sound only after a click or tap on the page, so until then a hover is silent. With a mouse, a click never stops it: it turns the sound on and starts the hop over, unless he's talking.
@@ -303,7 +310,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 - Public email, Google Business Profile URL, Facebook URL. (Quote emails go to web@fargotire.com; see Quote form.)
 - The shop's Airtable Team trial ends about Nov. 16, 2026. Afterwards, send one test quote to confirm the Outlook email automation still runs on Free.
 - Which Netlify plan the shop's team ended up on (Free: 300 credits; Personal: $9 a month, 1,000 credits). Update Limits to match.
-- Photos: shop photos placed Nov. 5 and 6 (see Status), for Jay and Paul to adjust. Still needed: farm tires (a shop photo, or a Goodyear product shot at least 1,200px wide), a daylight storefront, and shop photos (or licenses) for Oil, Warranty and Hard-to-Find (odd-size tires on the rack would suit it). Drone shots exist. Brand logos are in Airtable since Nov. 5.
+- Photos: shop photos placed Nov. 5 and 6 (see Status), for Jay and Paul to adjust. Still needed: farm tires (a shop photo, or a Goodyear product shot at least 1,200px wide), a current daylight storefront at least 1,600px wide (the one on About is 1,024px), and shop photos (or licenses) for Oil, Warranty and Hard-to-Find (odd-size tires on the rack would suit it). Drone shots exist. Brand logos are in Airtable since Nov. 5.
 - GoDaddy access: in hand (the web records were changed Nov. 7). The old WordPress host isn't needed anymore (Jay: only its DNS settings mattered).
 - In Airtable, delete the unused Category choices "Farm & Ag" (Services) and "Farm & ag" (Blog Posts). Every row moved to "Farm" on Nov. 7, but the API can't remove choices. A row set to the old Services choice would drop out of the /services/ groups.
 

@@ -1,0 +1,12 @@
+{#- The animated tire man, on the home hero and on About (since Nov. 7, 2026). The still is the video's last frame.
+    Hovering (or a tap or click) plays the video: he hops onto the tires, the bubble comes up, the clip plays, and it
+    repeats until the cursor leaves (site.js, "Tire man", which drives the first [data-tireman] on a page).
+    The drawing's speech bubble carries the tagline, so the alt text says it.
+    Set tmLoad ("high", "eager" or "lazy") before including; it defaults to "high" for the home hero. -#}
+{%- from "partials/icons.njk" import tireman -%}
+{%- set tmBiz = airtable.biz -%}
+<div class="art-card hero-card" data-tireman>
+<div class="tireman-stage">{{ tireman("anim", "Cartoon of the " ~ tmBiz.Name ~ " tire man in a blue jacket and red bow tie, standing on a stack of tires" ~ ((" and saying \"" ~ tmBiz.Tagline ~ "\"") if tmBiz.Tagline else ""), "(max-width: 520px) 66vw, 340px", tmLoad or "high") }}
+<video src="/assets/tireman-anim.mp4" width="1080" height="1214" muted playsinline preload="none" disablepictureinpicture disableremoteplayback aria-hidden="true"></video></div>
+<audio src="/assets/tireman-saying.mp3" preload="none"></audio>
+</div>
