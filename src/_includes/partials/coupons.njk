@@ -23,23 +23,3 @@
 </article>
 {%- endmacro -%}
 
-{%- macro featuredCard(c, biz, today) -%}
-<article class="featured" id="{{ c.id }}-featured" data-starts="{{ c.starts }}" data-expires="{{ c.expires }}" data-print-footer="{{ biz.Name }} · {{ biz.Street }}, {{ biz.City }} · {{ biz.Phone }}"{% if c.starts and c.starts > today %} hidden{% endif %}>
-<div class="featured-left">
-{%- if c.sample %}<span class="chip-sample">Sample</span>{% endif %}
-<p class="coupon-big">{{ c.big }}</p>
-<p class="featured-applies">{{ c.appliesTo }}</p>
-</div>
-<div class="featured-right">
-<h3>{{ c.appliesTo }}</h3>
-{%- if c.details %}<p class="lead">{{ c.details }}</p>{% endif %}
-{%- if c.finePrint %}<p class="coupon-fine">{{ c.finePrint }}</p>{% endif %}
-{%- if c.expires %}<p class="coupon-valid">Valid through {{ c.expires | apDate }}</p>{% endif %}
-<div class="actions coupon-actions">
-<a class="btn btn-blue btn-small" href="/contact-us/?coupon={{ c.requestLabel | urlencode }}#quote">Request this special</a>
-<a class="btn btn-outline-blue btn-small" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a>
-{%- if not c.special %}<button class="btn btn-outline-blue btn-small" type="button" data-print-coupon="{{ c.id }}-featured">Print coupon</button>{% endif %}
-</div>
-</div>
-</article>
-{%- endmacro -%}

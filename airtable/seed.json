@@ -176,36 +176,23 @@
       "Applies To": "4 select Goodyear tires",
       "Details": "Get up to $100 back by online or mail-in rebate when you buy a set of 4 qualifying Goodyear tires.",
       "Fine Print": "Rebate from Goodyear. Ask us for details.",
-      "Starts": "2026-09-01",
       "Expires": "2026-11-30",
       "Kind": "Special",
       "Order": 70,
+      "Starts": "2026-09-01",
       "Show": true
     },
     {
-      "Title": "BFGoodrich $80 rebate on 4 tires",
+      "Title": "Goodyear $200 rebate on 4 select tires",
       "Offer Type": "Rebate",
-      "Amount": 80,
-      "Applies To": "4 BFGoodrich tires",
-      "Details": "Get $80 on a Visa Reward Card or Visa Virtual Account when you buy 4 new BFGoodrich passenger or light truck tires.",
-      "Fine Print": "Rebate from BFGoodrich. Buy by Nov. 30, 2026, then submit online at BFGoodrich.tirerewardcenter.com by Dec. 31, 2026. Not valid with any other offer.",
-      "Starts": "2026-09-03",
+      "Amount": 200,
+      "Applies To": "4 select Goodyear tires",
+      "Details": "Get up to $200 back by online or mail-in rebate when you buy a set of 4 qualifying Goodyear tires.",
+      "Fine Print": "Rebate from Goodyear. Ask us for details.",
       "Expires": "2026-11-30",
       "Kind": "Special",
-      "Order": 72,
-      "Show": true
-    },
-    {
-      "Title": "Michelin $80 rebate on 4 tires",
-      "Offer Type": "Rebate",
-      "Amount": 80,
-      "Applies To": "4 Michelin tires",
-      "Details": "Get $80 on a Visa Reward Card or Visa Virtual Account when you buy 4 new Michelin passenger or light truck tires.",
-      "Fine Print": "Rebate from Michelin. Buy by Nov. 30, 2026, then submit online at Michelin.tirerewardcenter.com by Dec. 31, 2026. Not valid with any other offer.",
-      "Starts": "2026-09-03",
-      "Expires": "2026-11-30",
-      "Kind": "Special",
-      "Order": 74,
+      "Order": 71,
+      "Starts": "2026-11-07",
       "Show": true
     },
     {
@@ -215,10 +202,36 @@
       "Applies To": "4 select Cooper tires",
       "Details": "Get $70 back on a set of 4 select Cooper tires, paid by prepaid card. Pay with the Goodyear Credit Card and get up to $140 back, depending on the tire line.",
       "Fine Print": "Rebate from Cooper. Buy by Nov. 30, 2026, then submit the online or mail-in rebate by Dec. 31, 2026. Ask us which tire lines qualify.",
-      "Starts": "2026-09-01",
       "Expires": "2026-11-30",
       "Kind": "Special",
-      "Order": 76,
+      "Order": 72,
+      "Starts": "2026-09-01",
+      "Show": true
+    },
+    {
+      "Title": "BFGoodrich $80 rebate on 4 tires",
+      "Offer Type": "Rebate",
+      "Amount": 80,
+      "Applies To": "4 BFGoodrich tires",
+      "Details": "Get $80 on a Visa Reward Card or Visa Virtual Account when you buy 4 new BFGoodrich passenger or light truck tires.",
+      "Fine Print": "Rebate from BFGoodrich. Buy by Nov. 30, 2026, then submit online at BFGoodrich.tirerewardcenter.com by Dec. 31, 2026. Not valid with any other offer.",
+      "Expires": "2026-11-30",
+      "Kind": "Special",
+      "Order": 73,
+      "Starts": "2026-09-03",
+      "Show": true
+    },
+    {
+      "Title": "Michelin $80 rebate on 4 tires",
+      "Offer Type": "Rebate",
+      "Amount": 80,
+      "Applies To": "4 Michelin tires",
+      "Details": "Get $80 on a Visa Reward Card or Visa Virtual Account when you buy 4 new Michelin passenger or light truck tires.",
+      "Fine Print": "Rebate from Michelin. Buy by Nov. 30, 2026, then submit online at Michelin.tirerewardcenter.com by Dec. 31, 2026. Not valid with any other offer.",
+      "Expires": "2026-11-30",
+      "Kind": "Special",
+      "Order": 74,
+      "Starts": "2026-09-03",
       "Show": true
     },
     {
@@ -294,7 +307,8 @@
       "Category": "Farm",
       "Summary": "Farm tires sold, mounted and serviced, with on-site service available.",
       "Order": 30,
-      "Show": true
+      "Show": true,
+      "Photo Alt": "A Goodyear farm tractor tire on its wheel"
     },
     {
       "Name": "Industrial & Off-the-Road Tires",
@@ -318,7 +332,8 @@
       "Category": "Tires",
       "Summary": "Do you have an odd size or hard-to-find tire? We can find it for you!",
       "Order": 60,
-      "Show": true
+      "Show": true,
+      "Photo Alt": "A BFGoodrich catalog page of classic-car bias tires with whitewalls and red lines"
     },
     {
       "Name": "Tire Services",

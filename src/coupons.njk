@@ -4,7 +4,7 @@ title: Tire and Service Specials and Coupons
 eleventyComputed:
   description: "Current tire and service specials and coupons at {{ airtable.biz.Name }}, {{ airtable.biz.Street }} in {{ airtable.biz.City }}, {{ airtable.biz.State }}."
 ---
-{%- from "partials/coupons.njk" import couponCard, featuredCard -%}
+{%- from "partials/coupons.njk" import couponCard -%}
 {%- set biz = airtable.biz -%}
 {%- set t = airtable.text -%}
 <section class="page-hero bg-blue on-dark">
@@ -14,17 +14,8 @@ eleventyComputed:
 </div></div>
 </section>
 
-{%- if airtable.featured.length %}
-<section class="section-tight" aria-labelledby="featured-h" data-hide-when-empty>
-<div class="wrap">
-<h2 id="featured-h" class="h2-sm" style="margin-bottom: 16px;">Featured special</h2>
-<div data-coupons data-limit="1">
-{%- for c in airtable.featured %}{{ featuredCard(c, biz, site.today) }}{% endfor %}
-</div>
-</div>
-</section>
-{%- endif %}
-
+{#- No "Featured special" card here since Nov. 7, 2026 (Jay): it repeated a row already listed below.
+    Featured still picks the home page's specials strip. -#}
 {%- if airtable.specials.length %}
 <section class="section-tight" aria-labelledby="specials-h" data-hide-when-empty>
 <div class="wrap">

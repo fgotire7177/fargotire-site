@@ -6,7 +6,6 @@
   .bg-blue h1, .bg-blue p { color: #000 !important; }
   body.printing-coupon main > *:not(.has-print-target) { display: none !important; }
   body.printing-coupon .has-print-target .coupon:not(.print-target),
-  body.printing-coupon .has-print-target .featured:not(.print-target),
   body.printing-coupon .has-print-target h2,
   body.printing-coupon .has-print-target .section-head,
   body.printing-coupon .has-print-target > .wrap > p { display: none !important; }

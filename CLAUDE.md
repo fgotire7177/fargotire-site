@@ -51,7 +51,7 @@ Shop photos (Nov. 5, 2026): Jay said to place them where they fit best, and he a
 - Blog covers: nitrogen (shown), plus winter timing and foam-filled (hidden).
 - Privacy: "shop area" was cropped to leave out a car with a readable plate. The nitrogen crop leaves out writing scratched on a post. Skipped: "customer stored tires 4" (customer names on tags) and IMG_9337.
 - No photo yet for:
-  - Farm Tires, Hard-to-Find, Oil and Warranty (Brakes, Steering and Siping got shop photos from Pictures 4)
+  - Oil and Warranty (Brakes, Steering and Siping got shop photos from Pictures 4; Farm Tires and Hard-to-Find got pictures from Pictures 5)
   - a current daylight storefront (the 2021 `store front.jpeg` is on About since Nov. 7)
 - Five web-sized 2021 files may have come from the old site or Google; confirm the shop owns them. Of those, `middle door 7`, `alignment machine` and `tires upstairs` are in use, and so is `store front.jpeg` since Nov. 7 (Jay asked for it on About; its EXIF names Google, so it may be a Google Maps photo); `retread.jpeg` is not.
 
@@ -75,7 +75,11 @@ Pictures 4 (Nov. 6, 2026), in !FargoTire\Pictures 4 (Pictures 3 holds the same 6
 - `Tire siping.jpg` (a tire in the shop's siping machine): Tire Siping, 4:3.
 - `Battery.jpg` (an ACDelco battery): Batteries & Wiper Blades, beside the wiper photo (Jay chose both). Since then a service page shows up to 2 photos side by side in one row (`.svc-photos`). Their order is the Photo field's order, and Photo Alt holds one description per photo, split by ` | `. Since Nov. 7, 2026 (Jay) each is shown whole, never cropped, at the same height: `service.njk` sizes each column by its photo's width/height (`ratio`), so a tall photo gets a narrower column. Before that both were cropped to 4:3, which cut On-Site's tall job-site photo too tight. Stacking them on 2 rows was tried, and Jay wanted one row back.
 - On-Site & Roadside has a second photo (Nov. 7, 2026): the shop's truck at work on a job site, crane raised beside a customer's wheel loader. A tight square crop (`on-site-service-truck.png`) went up first. Then the full phone photo arrived in a new hidden Services row, "On site service truck" (`service-truck`, Show unticked, no page). Its web copy, `svc-onsite-jobsite.jpg`, trims only plain dirt at the bottom and replaced the square on the On-Site row. The hidden row can be deleted.
-- Not used: `Hard to find tires.jpg` is a phone photo of a printed BFGoodrich vintage tire catalog page, so the artwork isn't the shop's (Jay: skip it). `Farm tire.jpg` is a Goodyear product shot only 174px wide.
+- Not used at first: `Hard to find tires.jpg` is a phone photo of a printed BFGoodrich vintage tire catalog page, so the artwork isn't the shop's. `Farm tire.jpg` is a Goodyear product shot only 174px wide.
+
+Pictures 5 (Nov. 7, 2026) holds those same 2 files, and Jay asked for them on their pages:
+- The catalog page is on Hard-to-Find Tires, uncropped (it's already about 4:3).
+- The Goodyear farm tire is on Farm Tires at its own 174x230 size. A service photo under 480px wide shows centered at its own size (`.svc-photo--small`) instead of stretched. A product shot at least 1,200px wide, or a shop photo, would fill the column.
 
 Continue Milestone 4 (Airtable buttons, IndexNow) in the list at the bottom.
 
@@ -214,11 +218,13 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
 - Big line from Offer Type and Amount: `$20 OFF`, `10% OFF`, `$49.95`, `FREE`, or `$100 REBATE` (Offer Type "Rebate", added Nov. 4, 2026 for manufacturer rebates, so they don't read as money off at the counter). Whole amounts show no decimals.
 - Card: big line, Applies To as the headline, Details, Fine Print (small), `Valid through Nov. 30, 2026`.
 - Visible when Show is ticked and Starts (if set) is on or before today, and today is on or before Expires, in Chicago. Render `data-starts` and `data-expires` so JS hides expired and not-yet-started coupons without a rebuild.
-- Home strip: Featured coupons, up to 3, by Order then Expires.
+- Home strip: Featured coupons, up to 3, by Order then Expires. Featured only picks the home strip: since Nov. 7, 2026 (Jay) `/coupons/` has no large "Featured special" card, which repeated a row already listed there.
 - Kind (Coupons field, added Nov. 4, 2026): Coupon or Special. A Special (like the Goodyear rebate) is something to ask about, not a printable coupon. A blank Kind means Special for Offer Type Rebate and Coupon for everything else.
 - Manufacturer rebates (Nov. 6, 2026, from the flyers in Pictures 2): Goodyear up to $100 (Paul's row; dates and details added), BFGoodrich $80, Michelin $80, and Cooper $70, or up to $140 with the Goodyear Credit Card. The Cooper big line shows the $70 every tire line gets, and Details explain the "up to". All 4 hide after Nov. 30, 2026. The flyer images aren't on the site: the Goodyear graphic is 255px wide and repeats the card text, and the other 3 are photos of paper forms.
-- `airtable/seed.json` Coupons matches Airtable as of Nov. 6, 2026, except the hidden "4 Free Tires for Jay Manley" test row.
-- `/coupons/`: the first Featured row as the large featured card, then "Specials and rebates" (solid cards with Request this special and Call, no Print), then "Coupons" (a grid with dashed borders). Each heading hides when it has nothing visible. The Site Text `specials_footer` line sits at the bottom.
+- Goodyear has 2 rebate rows on purpose (Jay, Nov. 7, 2026): $100 and $200 on 4 select tires, the $200 one starting Nov. 7. Jay will send which tires each covers, for their Details.
+- The 4 coupons added in Airtable Nov. 7 have no end date on purpose (Jay): 50% off nitrogen fill, 50% off balance and rotation, $10 off alignment, $5 off oil change. They show until Show is unticked. No shown coupon is Featured, so the home page has no specials strip.
+- `airtable/seed.json` Coupons matches Airtable as of Nov. 7, 2026, except the hidden "4 Free Tires for Jay Manley" test row.
+- `/coupons/`: "Specials and rebates" (solid cards with Request this special and Call, no Print), then "Coupons" (a grid with dashed borders). Each heading hides when it has nothing visible. The Site Text `specials_footer` line sits at the bottom.
 - When nothing is visible: "No specials posted right now. Call (701) 232-7177 for today's deals."
 - Each coupon gets "Print coupon" (a print stylesheet that prints only that coupon; Specials get Call instead) and "Request this special" (links to `/contact-us/?coupon=<title>#quote`, which fills the hidden Coupon field).
 - Production never shows "Sample" badges. Sample rows in the seed have Show unticked.
@@ -310,7 +316,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 - Public email, Google Business Profile URL, Facebook URL. (Quote emails go to web@fargotire.com; see Quote form.)
 - The shop's Airtable Team trial ends about Nov. 16, 2026. Afterwards, send one test quote to confirm the Outlook email automation still runs on Free.
 - Which Netlify plan the shop's team ended up on (Free: 300 credits; Personal: $9 a month, 1,000 credits). Update Limits to match.
-- Photos: shop photos placed Nov. 5 and 6 (see Status), for Jay and Paul to adjust. Still needed: farm tires (a shop photo, or a Goodyear product shot at least 1,200px wide), a current daylight storefront at least 1,600px wide (the one on About is 1,024px), and shop photos (or licenses) for Oil, Warranty and Hard-to-Find (odd-size tires on the rack would suit it). Drone shots exist. Brand logos are in Airtable since Nov. 5.
+- Photos: shop photos placed Nov. 5 and 6 (see Status), for Jay and Paul to adjust. Still needed: a bigger farm tire picture (a shop photo, or a Goodyear product shot at least 1,200px wide; the one on Farm Tires is 174px), a current daylight storefront at least 1,600px wide (the one on About is 1,024px), and shop photos (or licenses) for Oil and Warranty. Drone shots exist. Brand logos are in Airtable since Nov. 5.
 - GoDaddy access: in hand (the web records were changed Nov. 7). The old WordPress host isn't needed anymore (Jay: only its DNS settings mattered).
 - In Airtable, delete the unused Category choices "Farm & Ag" (Services) and "Farm & ag" (Blog Posts). Every row moved to "Farm" on Nov. 7, but the API can't remove choices. A row set to the old Services choice would drop out of the /services/ groups.
 
