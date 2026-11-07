@@ -53,7 +53,7 @@ Shop photos (Nov. 5, 2026): Jay said to place them where they fit best, and he a
 - Every shown service has a photo since Nov. 7, 2026:
   - Brakes, Steering and Siping got shop photos from Pictures 4, and Farm Tires and Hard-to-Find got pictures from Pictures 5.
   - Extended Warranty Work has an illustration (see below).
-  - Oil, Lube & Filter has a shop photo Jay pasted into chat: a car on the lift with the oil drain funnel under it, uncropped 3:4.
+  - Oil, Lube & Filter has a shop photo Jay pasted into chat: a car on the lift with the oil drain funnel under it, uncropped 3:4. At Jay's request the white floor dry on the concrete was painted out (`svc-oil-2.jpg`). The fill is clean floor color around the patch plus concrete grain from the floor just above it, and the stand's pole was left untouched.
 - Still wanted:
   - a current daylight storefront (the 2021 `store front.jpeg` is on About since Nov. 7)
 - Five web-sized 2021 files may have come from the old site or Google; confirm the shop owns them. Of those, `middle door 7`, `alignment machine` and `tires upstairs` are in use, and so is `store front.jpeg` since Nov. 7 (Jay asked for it on About; its EXIF names Google, so it may be a Google Maps photo); `retread.jpeg` is not.
