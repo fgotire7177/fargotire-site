@@ -289,9 +289,9 @@
       "Show": true
     },
     {
-      "Name": "Farm & Ag Tires",
+      "Name": "Farm Tires",
       "Slug": "farm-ag-tires",
-      "Category": "Farm & Ag",
+      "Category": "Farm",
       "Summary": "Farm tires sold, mounted and serviced, with on-site service available.",
       "Order": 30,
       "Show": true
@@ -394,7 +394,7 @@
     {
       "Name": "Tire Foam Fill",
       "Slug": "tire-foam-fill",
-      "Category": "Farm & Ag",
+      "Category": "Farm",
       "Summary": "Rely foam filling for equipment tires that can't afford a flat.",
       "Order": 130,
       "Show": true
@@ -613,14 +613,14 @@
     {
       "Title": "Foam-filled tires for farm and industrial equipment",
       "Address": "foam-filled-tires",
-      "Category": "Farm & ag",
+      "Category": "Farm",
       "Summary": "When foam fill makes sense, and when it doesn't.",
       "Show": false
     },
     {
       "Title": "On-site tire service during harvest",
       "Address": "on-site-tire-service-harvest",
-      "Category": "Farm & ag",
+      "Category": "Farm",
       "Summary": "How our service trucks keep equipment rolling in the field.",
       "Show": false
     },

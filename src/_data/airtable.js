@@ -8,7 +8,7 @@ import site from "./site.js";
 
 const TABLES = ["Business Info", "Hours", "Special Hours", "Coupons", "Services", "Who We Serve", "Why Us", "Brands", "Blog Posts", "FAQ", "Site Text", "Site Images"];
 const SAMPLE_TABLES = new Set(["Coupons", "Special Hours", "Blog Posts"]);
-const CATEGORY_ORDER = ["Tires", "Commercial", "Farm & Ag", "On-Site", "Service & Repair"];
+const CATEGORY_ORDER = ["Tires", "Commercial", "Farm", "On-Site", "Service & Repair"];
 const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const AP_MONTHS = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
 

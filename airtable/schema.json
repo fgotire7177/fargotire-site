@@ -79,7 +79,7 @@
       "fields": [
         {"name": "Name", "type": "singleLineText"},
         {"name": "Slug", "type": "singleLineText", "description": "End of the page address, lowercase words joined by hyphens. Don't change it once the page is live, or old links break."},
-        {"name": "Category", "type": "singleSelect", "options": {"choices": [{"name": "Tires"}, {"name": "Service & Repair"}, {"name": "Commercial"}, {"name": "Farm & Ag"}, {"name": "On-Site"}]}},
+        {"name": "Category", "type": "singleSelect", "options": {"choices": [{"name": "Tires"}, {"name": "Service & Repair"}, {"name": "Commercial"}, {"name": "Farm"}, {"name": "On-Site"}]}},
         {"name": "Summary", "type": "multilineText", "description": "One or two sentences. Shows on the Services page and in Google results if Search Description is blank."},
         {"name": "Body", "type": "richText", "description": "The full page text. Bold, headings, lists and links carry through."},
         {"name": "Photo", "type": "multipleAttachments", "description": "One or two photos for the top of the page, in this order. Two sit side by side in one row, the same height, each shown whole."},
@@ -132,7 +132,7 @@
         {"name": "Title", "type": "singleLineText", "description": "The post title shown on the page and in the blog list."},
         {"name": "Address", "type": "singleLineText", "description": "End of the page address: fargotire.com/blog/<Address>/. Lowercase words joined by hyphens. Don't change it on a published post."},
         {"name": "Date", "type": "date", "options": {"dateFormat": {"name": "us"}}, "description": "Publish date shown on the post. Newest posts list first."},
-        {"name": "Category", "type": "singleSelect", "options": {"choices": [{"name": "Winter driving"}, {"name": "Tire care"}, {"name": "Farm & ag"}, {"name": "Commercial"}, {"name": "Shop news"}]}},
+        {"name": "Category", "type": "singleSelect", "options": {"choices": [{"name": "Winter driving"}, {"name": "Tire care"}, {"name": "Farm"}, {"name": "Commercial"}, {"name": "Shop news"}]}},
         {"name": "Show", "type": "checkbox", "options": {"color": "greenBright", "icon": "check"}, "description": "Ticked: on the website. Unticked: hidden, and its address forwards to the blog."},
         {"name": "Cover Photo", "type": "multipleAttachments", "description": "One picture. It leads the post, shows on the blog list, and is the picture when the post is shared."},
         {"name": "Cover Photo Alt", "type": "singleLineText"},

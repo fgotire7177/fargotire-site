@@ -34,7 +34,13 @@ Since then (Nov. 2, 2026):
 - The repo is on GitHub at `fgotire7177/fargotire-site`.
 - The Airtable base "Fargo Tire Service Website" (`app0Uq2vOASSgJXvu`, workspace `wspgEJFdTL9Nc4hm6`, shop's account) was created by `npm run airtable:setup` and holds the seed. A build from it costs 12 API calls (one per table) and matches the seed build page for page. The only exception is the order of undated hidden blog posts, which is whatever order Airtable returns.
 
-- The Netlify project `fargotire-site` (shop's team) deploys `main` to https://fargotire-site.netlify.app. Production visitor access must stay public; protect previews only. Tested Nov. 2: pages, redirects and headers; a quote with a photo landed in Leads with the photo attached; the Update website link started a hook deploy.
+- The Netlify project `fargotire-site` (shop's team) deploys `main` to https://fargotire.com (launched Nov. 7, 2026; before that only https://fargotire-site.netlify.app, which still serves the site). Production visitor access must stay public; protect previews only.
+
+Launch (Nov. 7, 2026):
+- 2 records were changed at GoDaddy: A `@` from the old WordPress host's 208.65.99.164 to Netlify's 75.2.60.5, and CNAME `www` from `@` to `fargotire-site.netlify.app`. NS, MX, both TXT and the `autodiscover` CNAME were left as they were, and checked unchanged afterwards.
+- fargotire.com was then added in Netlify as the primary domain, so www.fargotire.com redirects to it. Netlify's certificate covering both names was issued at 3:27 PM.
+- The deploy right after it (the "Farm" rename) turned off pre-launch mode.
+- Netlify recommends www as primary when DNS stays elsewhere (the apex A record skips part of its CDN). For a local shop the bare domain is fine; switching later is one Netlify setting plus one deploy. Tested Nov. 2: pages, redirects and headers; a quote with a photo landed in Leads with the photo attached; the Update website link started a hook deploy.
 
 Image pipeline (Nov. 5, 2026): all 7 shown Brands rows have a PNG in Logo (from Jay; the Toyo file arrived white on transparent and was made black so it shows on the white tiles). A local build from Airtable downloaded and resized them, and the Nov. 5 Netlify deploy did the same. SVGs or larger PNGs would look sharper on high-res phones.
 
@@ -45,7 +51,7 @@ Shop photos (Nov. 5, 2026): Jay said to place them where they fit best, and he a
 - Blog covers: nitrogen (shown), plus winter timing and foam-filled (hidden).
 - Privacy: "shop area" was cropped to leave out a car with a readable plate. The nitrogen crop leaves out writing scratched on a post. Skipped: "customer stored tires 4" (customer names on tags) and IMG_9337.
 - No photo yet for:
-  - Farm & Ag, Hard-to-Find, Oil and Warranty (Brakes, Steering and Siping got shop photos from Pictures 4)
+  - Farm Tires, Hard-to-Find, Oil and Warranty (Brakes, Steering and Siping got shop photos from Pictures 4)
   - a current daylight storefront
 - Five web-sized 2021 files may have come from the old site or Google; confirm the shop owns them. Of those, `middle door 7`, `alignment machine` and `tires upstairs` are in use; `retread.jpeg` and `store front.jpeg` are not.
 
@@ -298,7 +304,8 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 - The shop's Airtable Team trial ends about Nov. 16, 2026. Afterwards, send one test quote to confirm the Outlook email automation still runs on Free.
 - Which Netlify plan the shop's team ended up on (Free: 300 credits; Personal: $9 a month, 1,000 credits). Update Limits to match.
 - Photos: shop photos placed Nov. 5 and 6 (see Status), for Jay and Paul to adjust. Still needed: farm tires (a shop photo, or a Goodyear product shot at least 1,200px wide), a daylight storefront, and shop photos (or licenses) for Oil, Warranty and Hard-to-Find (odd-size tires on the rack would suit it). Drone shots exist. Brand logos are in Airtable since Nov. 5.
-- GoDaddy (registrar/DNS) and current host access.
+- GoDaddy access: in hand (the web records were changed Nov. 7). The old WordPress host isn't needed anymore (Jay: only its DNS settings mattered).
+- In Airtable, delete the unused Category choices "Farm & Ag" (Services) and "Farm & ag" (Blog Posts). Every row moved to "Farm" on Nov. 7, but the API can't remove choices. A row set to the old Services choice would drop out of the /services/ groups.
 
 ## Milestones
 
@@ -321,4 +328,4 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
    - `docs/paul-claude-instructions.md`
    - the owner guide in README.md
    - ~~an optional Airtable interface for Paul~~ done Nov. 4: "Quote Requests", a Kanban board of Leads (see Quote form)
-7. Launch: DNS cutover, Search Console, Google Business Profile check, a week of watching, then handoff. Before launch, check that every coupon with Show ticked is meant for the public (the "4 Free Tires for Jay Manley" test coupon added Nov. 2 had Show unticked as of Nov. 6; delete it before launch). After fargotire.com is the primary domain in Netlify, trigger one deploy: that removes the pre-launch noindex, switches canonical URLs and the sitemap to fargotire.com, and runs IndexNow for the first time (check the function log for 200 or 202).
+7. Launch: ~~DNS cutover~~ (done Nov. 7, 2026, see Status), Search Console, Google Business Profile check, a week of watching, then handoff. Before launch, check that every coupon with Show ticked is meant for the public (the "4 Free Tires for Jay Manley" test coupon added Nov. 2 had Show unticked as of Nov. 6; delete it before launch). After fargotire.com is the primary domain in Netlify, trigger one deploy: that removes the pre-launch noindex, switches canonical URLs and the sitemap to fargotire.com, and runs IndexNow for the first time (check the function log for 200 or 202).
