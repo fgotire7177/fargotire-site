@@ -32,7 +32,8 @@ eleventyComputed:
 {%- if svc.body %}
 <div class="prose">{{ svc.body | md | safe }}</div>
 {%- else %}
-<div class="prose"><p>{{ svc.summary }}</p><p>Questions? Call <a href="tel:{{ biz.Phone | tel }}">{{ biz.Phone }}</a>.</p></div>
+{#- The Call button right below carries the number (Jay, Nov. 7, 2026). -#}
+<div class="prose"><p>{{ svc.summary }}</p><p>Questions? Call the number below.</p></div>
 {%- endif %}
 <p class="actions" style="margin-top: 24px;"><a class="btn btn-blue" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a></p>
 </div>
