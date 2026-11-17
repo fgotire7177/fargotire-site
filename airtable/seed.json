@@ -15,7 +15,7 @@
       "Toll Free": "800-365-2161",
       "Fax": "(701) 232-2939",
       "Time Zone": "America/Chicago",
-      "Form Notice Email": "web@fargotire.com"
+      "Form Notice Email": "info@fargotire.com"
     }
   ],
   "Hours": [
@@ -81,7 +81,8 @@
       "Date": "2026-11-26",
       "Type": "Closed",
       "Show From Days": 14,
-      "Show": false
+      "Message": "Closed on Thanksgiving Day - November 26, 2026",
+      "Show": true
     },
     {
       "Label": "Christmas Eve",

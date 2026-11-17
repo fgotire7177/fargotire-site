@@ -220,6 +220,7 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
   - Opening Late: `Label: Opening at 10:00 AM Weekday, Mon. D.`
   - Special Hours: `Label: Open 9:00 AM to 1:00 PM Weekday, Mon. D.`
 - Render rows at build with `data-start` and `data-end`; JS hides any outside their window, so nothing needs a rebuild to expire. The build also drops rows whose end date has passed.
+- Thanksgiving 2026 (Jay, Nov. 17, 2026): the Thanksgiving row is shown, with Message "Closed on Thanksgiving Day - November 26, 2026" (Jay's wording, hyphen included). It shows from Nov. 12 (Show From Days 14) and hides itself at midnight starting Nov. 27, Chicago time, with no rebuild. The bar text is bold (700) since then.
 
 ### Coupons
 
@@ -242,7 +243,7 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
 - Netlify Form named `quote`, with a honeypot (`netlify-honeypot="bot-field"`). It appears on `/contact-us/` and at the bottom of the home page. Use the same name and fields in both places.
 - Fields, matching the Leads table:
   - Name, Phone, Email
-  - Contact Pref (Call/Text/Email)
+  - Contact Pref (Call/Email; the Text choice was removed on GitHub Nov. 16, 2026)
   - Need (select): Passenger or light truck tires, Semi or commercial tires, Farm tires, Service or repair, Just a question. Since Nov. 4, 2026; the old Leads choices "Farm or ag tires" and "On-site service" can be deleted in Airtable.
   - Vehicle or Equipment, Tire Size, Quantity
   - Photo (one image, optional)
@@ -252,7 +253,7 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
 - Netlify only captures fields present in the built HTML, so no JS-added fields.
 - `submission-created` creates a Leads record: Received = now, Status = New, Page and Coupon filled. If the photo can't be attached cleanly, store its link in Message instead.
 - Leads Status stages (Nov. 4, 2026): New, Contacted, In Process, Completed, Canceled (default New). Quoted, Won and Lost were renamed to the last 3, and Spam was removed. The Airtable interface "Quote Requests" (published, built by hand in the UI; the API can't create interfaces) has one Kanban page on Leads, stacked by Status, newest Received first. Cards show Name, Need, Phone, Vehicle or Equipment, Tire Size and Received. Dragging a card changes Status, and clicking one opens every field, editable. Nobody has been invited to it yet: Paul needs to be a base collaborator or an interface-only user (an editor seat, 5 on Free).
-- Email notices come from an Airtable automation in the website base, "Email new quote requests": when a Leads record is created, a "Find records" step reads Business Info (Grid view, 1 record), then a Microsoft Outlook "Send email" step sends the lead's fields from web@fargotire.com to Business Info's **Form Notice Email** (since Nov. 5, 2026; web@fargotire.com for now, likely info@fargotire.com after launch). To change who gets quote emails, edit that field; no automation change needed. The email's "Open in Airtable" link is the trigger's Base record URL (fixed Nov. 5, 2026; before that it was typed-in text pointing at one old test lead). Netlify's own form email notices need its Pro plan, so they aren't used. No email code. Tested end to end Nov. 2, 2026. It uses Airtable automation runs (100 a month on Free).
+- Email notices come from an Airtable automation in the website base, "Email new quote requests": when a Leads record is created, a "Find records" step reads Business Info (Grid view, 1 record), then a Microsoft Outlook "Send email" step sends the lead's fields from web@fargotire.com to Business Info's **Form Notice Email** (since Nov. 5, 2026; info@fargotire.com since Nov. 8, 2026, web@fargotire.com before that). To change who gets quote emails, edit that field; no automation change needed. The email's "Open in Airtable" link is the trigger's Base record URL (fixed Nov. 5, 2026; before that it was typed-in text pointing at one old test lead). Netlify's own form email notices need its Pro plan, so they aren't used. No email code. Tested end to end Nov. 2, 2026, and again Nov. 8, 2026 after the switch to info@fargotire.com (the email arrived). It uses Airtable automation runs (100 a month on Free).
 - After sending, show the Site Text `quote_thanks` message.
 - Add reCAPTCHA only if spam shows up.
 
@@ -321,7 +322,7 @@ Write `docs/paul-claude-instructions.md`: a short skill or instruction set for P
 
 - Confirm the regular hours with Paul. They come from Goodyear's listing. Holiday closures were confirmed by Jay on Nov. 4, 2026: New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day, Christmas Day (Site Text `holiday_closures`, listed on /hours/). The dated Special Hours rows that drive the holiday bar are still hidden samples. The after-hours note under Regular hours was removed Nov. 4 by emptying Business Info's After Hours Note.
 - Logo files, if Paul has any.
-- Public email, Google Business Profile URL, Facebook URL. (Quote emails go to web@fargotire.com; see Quote form.)
+- Public email, Google Business Profile URL, Facebook URL. (Quote emails go to info@fargotire.com since Nov. 8, 2026; see Quote form.)
 - The shop's Airtable Team trial ends about Nov. 16, 2026. Afterwards, send one test quote to confirm the Outlook email automation still runs on Free.
 - Which Netlify plan the shop's team ended up on (Free: 300 credits; Personal: $9 a month, 1,000 credits). Update Limits to match.
 - Photos: shop photos placed Nov. 5 and 6 (see Status), for Jay and Paul to adjust. Still needed: a bigger farm tire picture (a shop photo, or a Goodyear product shot at least 1,200px wide; the one on Farm Tires is 174px), a current daylight storefront at least 1,600px wide (the one on About is 1,024px), and a shop photo for Extended Warranty Work if one would suit better than the illustration. Drone shots exist. Brand logos are in Airtable since Nov. 5.
