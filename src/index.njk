@@ -40,9 +40,9 @@ title: Tires in Fargo, ND
 <a class="btn btn-outline-white" href="tel:{{ biz.Phone | tel }}">Call {{ biz.Phone }}</a>
 </div>
 </div>
-{#- Full-width line under both the tire man and the Call button. Text comes from Site Text > hero_specials; "specials page" links to /coupons/. -#}
+{#- Full-width line under both the tire man and the Call button. Text comes from Site Text > hero_specials; "specials page" links to /coupons/ and "blogs" to /blog/. -#}
 {%- if t.hero_specials %}
-<p class="hero-specials">{{ t.hero_specials | escape | replace("specials page", '<a href="/coupons/">specials page</a>') | safe }}</p>
+<p class="hero-specials">{{ t.hero_specials | escape | replace("specials page", '<a href="/coupons/">specials page</a>') | replace("our blogs", 'our <a href="/blog/">blogs</a>') | safe }}</p>
 {%- endif %}
 </div>
 </section>

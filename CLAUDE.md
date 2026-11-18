@@ -178,7 +178,7 @@ Redirects (301): `/employment/` to `/contact-us/`; `/specials/` to `/coupons/`; 
 - Home page edits from Paul (Nov. 5, 2026):
   - The hero has only the Call button, because the header's Request a Quote button sits right above it.
   - The brands heading is Site Text `brands_heading` ("Brands we have in stock"), and `brands_text` under the tiles is bold at 21px (`.brands-note`).
-- Home hero specials line (Paul, Nov. 18, 2026): Site Text `hero_specials` ("Check out our specials page for our specials and coupons.") shows full width under both the tire man and the Call button (`.hero-specials`). The words "specials page" link to `/coupons/`. Empty the row's Text to hide the line.
+- Home hero specials line (Paul, Nov. 18, 2026): Site Text `hero_specials` ("Check out our specials page for our specials and coupons, they change often. Check out our blogs.", reworded by Paul the same day) shows full width under both the tire man and the Call button (`.hero-specials`). The words "specials page" link to `/coupons/` and "blogs" (in "our blogs") to `/blog/`. Empty the row's Text to hide the line.
 - Service pages (every `/services/<Slug>/`) show only a Call button in the page body, with no Request a Quote button (Jay, Nov. 5, 2026). The header and the phone bar still have Request a Quote.
 - Waiting room (Nov. 5, 2026):
   - The FAQ "Do you have a waiting room?" sits right after "Do I need an appointment?". Its answer links to `/waiting-room/` with markdown; FAQ structured data strips links to plain text.
