@@ -244,7 +244,7 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
 - Fields, matching the Leads table:
   - Name, Phone, Email
   - Contact Pref (Call/Email; the Text choice was removed on GitHub Nov. 16, 2026)
-  - Need (select): All Season, All Weather, Winter, Semi, Farm, Just a question (Paul, Nov. 17, 2026). `submission-created` uses typecast, so a new choice is added to Leads by itself the first time it is sent. The old Leads choices (Passenger or light truck tires, Semi or commercial tires, Farm tires, Farm or ag tires, Service or repair, On-site service) stay on older leads and can be deleted in Airtable once those are worked.
+  - Need (select): All Season Tires, All Weather Tires, Winter Tires, Semi Tires, Farm Tires, Just a question (Paul, Nov. 17, 2026). `submission-created` uses typecast, so a new choice is added to Leads by itself the first time it is sent. The old Leads choices (Passenger or light truck tires, Semi or commercial tires, Farm tires, Farm or ag tires, Service or repair, On-site service) stay on older leads and can be deleted in Airtable once those are worked.
   - Vehicle or Equipment, Tire Size, Quantity
   - Photo (one image, optional)
   - Message
