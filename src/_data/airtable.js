@@ -213,9 +213,13 @@ export default async function () {
     .filter((r) => r.end >= today)
     .sort((a, b) => a.date.localeCompare(b.date));
 
-  const coupons = shown("Coupons")
+  const couponRows = shown("Coupons")
     .filter((c) => !c.Expires || c.Expires >= today)
-    .sort((a, b) => byOrder(a, b) || String(a.Expires || "9999").localeCompare(String(b.Expires || "9999")))
+    .sort((a, b) => byOrder(a, b) || String(a.Expires || "9999").localeCompare(String(b.Expires || "9999")));
+  // Optional Picture (Nov. 19, 2026, Paul): one image per row, like a rebate flyer, shown on /coupons/ cards.
+  const couponPictures = [];
+  for (const c of couponRows) couponPictures.push(await image(first(c.Picture), [480, 960, 1600]));
+  const coupons = couponRows
     .map((c, i) => ({
       id: `coupon-${slug(c["Applies To"] || c.Title)}-${i + 1}`,
       big: bigLine(c),
@@ -229,6 +233,8 @@ export default async function () {
       // Kind wins when set; a blank Kind means Special for Rebates and Coupon for everything else.
       special: c.Kind === "Special" || (!c.Kind && c["Offer Type"] === "Rebate"),
       sample: c.Show !== true,
+      picture: couponPictures[i],
+      pictureAlt: c["Picture Alt"] || `${c["Applies To"] || c.Title || "Special"} flyer`,
       requestLabel: `${bigLine(c)} ${c["Applies To"] || c.Title || ""}`.trim()
     }));
 

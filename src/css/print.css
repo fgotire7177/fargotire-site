@@ -1,6 +1,6 @@
 /* Printing a coupon prints only that coupon. Printing any other page prints the main content. */
 @media print {
-  .holiday-bar, .utility, .site-header, .site-footer, .mobile-bar, .skip-link, .coupon-actions, .no-print { display: none !important; }
+  .holiday-bar, .utility, .site-header, .site-footer, .mobile-bar, .skip-link, .coupon-actions, .coupon-pic-hint, .no-print { display: none !important; }
   body { padding: 0 !important; font-size: 12pt; }
   .bg-blue, .bg-ink, .bg-gray { background: none !important; color: #000 !important; }
   .bg-blue h1, .bg-blue p { color: #000 !important; }
