@@ -3,6 +3,8 @@
 {%- macro couponCard(c, variant, biz, today) -%}
 <article class="coupon coupon--{{ variant }}" id="{{ c.id }}-{{ variant }}" data-starts="{{ c.starts }}" data-expires="{{ c.expires }}" data-print-footer="{{ biz.Name }} · {{ biz.Street }}, {{ biz.City }} · {{ biz.Phone }}"{% if c.starts and c.starts > today %} hidden{% endif %}>
 {%- if c.sample %}<span class="chip-sample">Sample</span>{% endif %}
+{#- The optional Picture (a rebate flyer, say) shows on /coupons/ only, not in the home strip. It links to the full-size file. -#}
+{%- if c.picture and variant != "card" %}<a class="coupon-pic" href="{{ c.picture.src }}" target="_blank" rel="noopener"><picture>{% for s in c.picture.sources %}<source type="{{ s.type }}" srcset="{{ s.srcset }}" sizes="(max-width: 700px) 100vw, 400px">{% endfor %}<img src="{{ c.picture.src }}" srcset="{{ c.picture.srcset }}" sizes="(max-width: 700px) 100vw, 400px" width="{{ c.picture.width }}" height="{{ c.picture.height }}" alt="{{ c.pictureAlt }}" loading="lazy" decoding="async"></picture><span class="coupon-pic-hint">Tap to see full size</span></a>{% endif %}
 <p class="coupon-big">{{ c.big }}</p>
 <h3>{{ c.appliesTo }}</h3>
 {%- if c.details %}<p class="coupon-details">{{ c.details }}</p>{% endif %}

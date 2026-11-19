@@ -113,6 +113,9 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; text
 .coupon-details { color: var(--muted); font-size: 15px; }
 .coupon-fine { color: var(--muted); font-size: 13px; }
 .coupon-valid { margin: 8px 0 12px; font-weight: 700; font-size: 15px; color: var(--ink); }
+.coupon-pic { display: block; margin: -4px 0 6px; text-decoration: none; color: var(--muted); }
+.coupon-pic img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border); }
+.coupon-pic-hint { display: block; margin-top: 4px; font-size: 13px; text-align: center; }
 .coupon-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px; }
 .no-coupons { color: var(--muted); margin-bottom: 12px; }
 .specials-end { padding-top: 0; }
