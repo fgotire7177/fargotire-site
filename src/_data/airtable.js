@@ -98,6 +98,7 @@ function bigLine(c) {
     case "Special Price": return n != null ? `$${money(n)}` : "SPECIAL";
     case "Free": return "FREE";
     case "Rebate": return n != null ? `$${money(n)} REBATE` : "REBATE";
+    case "Instant Rebate": return n != null ? `$${money(n)} INSTANT REBATE` : "INSTANT REBATE";
     default: return "SPECIAL";
   }
 }
@@ -226,8 +227,8 @@ export default async function () {
       expires: c.Expires || "",
       featured: Boolean(c.Featured),
       // A special (like a manufacturer rebate) is something to ask about, not a printable coupon.
-      // Kind wins when set; a blank Kind means Special for Rebates and Coupon for everything else.
-      special: c.Kind === "Special" || (!c.Kind && c["Offer Type"] === "Rebate"),
+      // Kind wins when set; a blank Kind means Special for Rebates (mail-in or instant) and Coupon for everything else.
+      special: c.Kind === "Special" || (!c.Kind && (c["Offer Type"] === "Rebate" || c["Offer Type"] === "Instant Rebate")),
       sample: c.Show !== true,
       requestLabel: `${bigLine(c)} ${c["Applies To"] || c.Title || ""}`.trim()
     }));
