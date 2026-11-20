@@ -5,8 +5,8 @@
 {%- if c.sample %}<span class="chip-sample">Sample</span>{% endif %}
 <p class="coupon-big">{{ c.big }}</p>
 <h3>{{ c.appliesTo }}</h3>
-{%- if c.details %}<p class="coupon-details">{{ c.details }}</p>{% endif %}
-{%- if c.finePrint %}<p class="coupon-fine">{{ c.finePrint }}</p>{% endif %}
+{%- if c.details %}<p class="coupon-details">{{ c.details | rebateWords | safe }}</p>{% endif %}
+{%- if c.finePrint %}<p class="coupon-fine">{{ c.finePrint | rebateWords | safe }}</p>{% endif %}
 {%- if c.expires %}<p class="coupon-valid">Valid through {{ c.expires | apDate }}</p>{% else %}<p class="coupon-valid">Ongoing</p>{% endif %}
 <div class="coupon-actions">
 {%- if variant == "card" %}

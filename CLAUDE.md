@@ -227,6 +227,7 @@ Computed in the browser in the shop's time zone, `America/Chicago`, using `Intl.
 
 - Big line from Offer Type and Amount: `$20 OFF`, `10% OFF`, `$49.95`, `FREE`, or `$100 REBATE` (Offer Type "Rebate", added Nov. 4, 2026 for manufacturer rebates, so they don't read as money off at the counter). Whole amounts show no decimals. Offer Type "Instant Rebate" (added Nov. 20, 2026, Paul, for the Michelin $60 instant rebate) reads `$60 INSTANT REBATE` and, like Rebate, counts as a Special when Kind is blank.
 - Card: big line, Applies To as the headline, Details, Fine Print (small), `Valid through Nov. 30, 2026`.
+- In Details and Fine Print, the words "instant" and "mail-in" always show as bold capitals, INSTANT and MAIL-IN (Paul, Nov. 20, 2026). The `rebateWords` filter in `eleventy.config.js` does it at build, so Airtable text can be typed normally.
 - Visible when Show is ticked and Starts (if set) is on or before today, and today is on or before Expires, in Chicago. Render `data-starts` and `data-expires` so JS hides expired and not-yet-started coupons without a rebuild.
 - Home strip: Featured coupons, up to 3, by Order then Expires. Featured only picks the home strip: since Nov. 7, 2026 (Jay) `/coupons/` has no large "Featured special" card, which repeated a row already listed there.
 - Kind (Coupons field, added Nov. 4, 2026): Coupon or Special. A Special (like the Goodyear rebate) is something to ask about, not a printable coupon. A blank Kind means Special for Offer Type Rebate and Coupon for everything else.

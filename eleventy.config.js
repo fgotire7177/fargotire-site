@@ -29,6 +29,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "node_modules/@fontsource/dancing-script/files/dancing-script-latin-600-normal.woff2": "fonts/dancing-script-600.woff2" });
 
   eleventyConfig.addFilter("md", (s) => (s ? md.render(String(s)) : ""));
+  // Coupon text: escape it, then show "instant" and "mail-in" as bold capitals (Paul, Nov. 20, 2026).
+  // Returns HTML, so templates must follow it with | safe.
+  eleventyConfig.addFilter("rebateWords", (s) => String(s || "")
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+    .replace(/\b(instant|mail-in)\b/gi, (w) => `<strong>${w.toUpperCase()}</strong>`));
   eleventyConfig.addFilter("paras", (s) => String(s || "").split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean));
   eleventyConfig.addFilter("lines", (s) => String(s || "").split(/\n/).map((p) => p.trim()).filter(Boolean));
   eleventyConfig.addFilter("apDate", (iso) => { if (!iso) return ""; const p = parts(iso); return `${AP_MONTHS[p.m - 1]} ${p.d}, ${p.y}`; });
