@@ -20,9 +20,12 @@ eleventyComputed:
 <section class="section-tight" aria-labelledby="specials-h" data-hide-when-empty>
 <div class="wrap">
 <h2 id="specials-h" class="h2-sm" style="margin-bottom: 16px;">Specials and rebates</h2>
-<div class="coupon-row" data-coupons>
-{%- for c in airtable.specials %}{{ couponCard(c, "special", biz, site.today) }}{% endfor %}
+{#- One line per tens of Order (60s, 70s, 80s), so each brand starts a new line. -#}
+{%- for group in airtable.specialGroups %}
+<div class="coupon-row coupon-row--line" data-coupons data-line>
+{%- for c in group %}{{ couponCard(c, "special", biz, site.today) }}{% endfor %}
 </div>
+{%- endfor %}
 </div>
 </section>
 {%- endif %}

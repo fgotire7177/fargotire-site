@@ -105,6 +105,9 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; text
 
 /* Coupons */
 .coupon-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px; }
+/* Specials lines: same column width on every line, even when a line has only 2 cards. */
+.coupon-row--line { grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.coupon-row--line + .coupon-row--line { margin-top: 18px; }
 .coupon { background: var(--white); border-radius: var(--radius); padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 6px; }
 .coupon--card, .coupon--special { border-top: 6px solid var(--blue); box-shadow: var(--shadow); }
 .coupon--dashed { border: 2px dashed var(--field-border); }

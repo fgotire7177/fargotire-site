@@ -90,6 +90,20 @@ function money(n) {
   return Number.isInteger(n) ? String(n) : Number(n).toFixed(2);
 }
 
+// Specials on /coupons/ sit on lines by the tens of their Order (Paul, Nov. 20, 2026):
+// 60 and 61 share a line, 70 starts the next one. Rows without an Order share a last line.
+function lineGroups(list) {
+  const groups = [];
+  let key;
+  for (const c of list) {
+    const k = c.order == null ? "none" : Math.floor(c.order / 10);
+    if (!groups.length || k !== key) groups.push([]);
+    groups[groups.length - 1].push(c);
+    key = k;
+  }
+  return groups;
+}
+
 function bigLine(c) {
   const n = typeof c.Amount === "number" ? c.Amount : null;
   switch (c["Offer Type"]) {
@@ -230,6 +244,7 @@ export default async function () {
       // Kind wins when set; a blank Kind means Special for Rebates (mail-in or instant) and Coupon for everything else.
       special: c.Kind === "Special" || (!c.Kind && (c["Offer Type"] === "Rebate" || c["Offer Type"] === "Instant Rebate")),
       sample: c.Show !== true,
+      order: typeof c.Order === "number" ? c.Order : null,
       requestLabel: `${bigLine(c)} ${c["Applies To"] || c.Title || ""}`.trim()
     }));
 
@@ -338,6 +353,7 @@ export default async function () {
     holidayLive: special.some((s) => s.live),
     coupons: coupons.filter((c) => !c.special),
     specials: coupons.filter((c) => c.special),
+    specialGroups: lineGroups(coupons.filter((c) => c.special)),
     featured: coupons.filter((c) => c.featured),
     services,
     serviceGroups,

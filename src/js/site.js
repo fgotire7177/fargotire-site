@@ -106,8 +106,15 @@
       if (live && (!limit || visible < limit)) { c.hidden = false; visible++; } else { c.hidden = true; }
     });
     if (visible) anyCoupon = true;
-    var hideWhenEmpty = box.closest("[data-hide-when-empty]");
-    if (hideWhenEmpty) hideWhenEmpty.hidden = visible === 0;
+    if (box.hasAttribute("data-line")) box.hidden = visible === 0;
+  });
+  // A section hides only when none of its coupon boxes has a visible coupon.
+  document.querySelectorAll("[data-hide-when-empty]").forEach(function (sec) {
+    var any = false;
+    sec.querySelectorAll("[data-coupons]").forEach(function (box) {
+      if (box.querySelector("[data-expires]:not([hidden])")) any = true;
+    });
+    sec.hidden = !any;
   });
   document.querySelectorAll(".no-coupons").forEach(function (p) { p.hidden = anyCoupon; });
 
